@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://BadFish1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0.651123, 2.15257, 0, 0, 0, 0, 478.323, 2.15257, 0, 0, 0, 0, 478.323, 715.321, 0, 0, 0, 0, -1.01904, 713.65, 0, 0, 0, 0, 0.651123, 2.15257 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+BadFish1 = ExtResource( 2 )
+
+[node name="Fish" parent="." instance=ExtResource( 3 )]
+
+[node name="BadFishTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 240, 400 )
+
+[node name="BadFishPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="BFSpawnLocation" type="PathFollow2D" parent="BadFishPath"]
+position = Vector2( 0.651123, 2.15257 )
+
+[connection signal="hit" from="Fish" to="." method="_on_Fish_hit"]
+[connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
