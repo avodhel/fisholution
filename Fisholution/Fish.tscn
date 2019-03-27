@@ -67,13 +67,15 @@ tracks/0/keys = {
 radius = 6.29352
 
 [node name="Fish" type="Area2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
+speed = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 11
+frame = 2
 region_enabled = true
 region_rect = Rect2( 0, 0, 96.75, 128 )
 
