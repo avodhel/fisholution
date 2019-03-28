@@ -8,7 +8,7 @@ func _ready():
 	var rand_vector = Vector2(rand_scale, rand_scale)
 	$Sprite.scale = rand_vector
 	$CollisionShape2D.scale = rand_vector
-	$CollisionShape2D.rotation_degrees = 90
+#	$CollisionShape2D.rotation_degrees = 90
 
 func _process(delta):
 	$Sprite/AnimationPlayer.play("right")

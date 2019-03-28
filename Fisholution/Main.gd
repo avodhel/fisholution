@@ -1,7 +1,6 @@
 extends Node
 
-export (PackedScene) var BadFish1
-#export (Array, PackedScene) var BadFishes
+export (Array, PackedScene) var BadFishes
 var score
 
 func _ready():
@@ -35,15 +34,15 @@ func _on_BadFishTimer_timeout():
 	# Choose a random location on Path2D.
     $BadFishPath/BFSpawnLocation.set_offset(randi())
     # Create a Mob instance and add it to the scene.
-    var badfish1 = BadFish1.instance()
-    add_child(badfish1)
+    var badfish = BadFishes[randi() % BadFishes.size()].instance()
+    add_child(badfish)
     # Set the mob's direction perpendicular to the path direction.
     var direction = $BadFishPath/BFSpawnLocation.rotation + PI / 2
     # Set the mob's position to a random location.
-    badfish1.position = $BadFishPath/BFSpawnLocation.position
+    badfish.position = $BadFishPath/BFSpawnLocation.position
     # Add some randomness to the direction.
     direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
-    badfish1.rotation = direction
+    badfish.rotation = direction
     # Set the velocity (speed & direction).
-    badfish1.linear_velocity = Vector2(rand_range(badfish1.min_speed, badfish1.max_speed), 0)
-    badfish1.linear_velocity = badfish1.linear_velocity.rotated(direction)
+    badfish.linear_velocity = Vector2(rand_range(badfish.min_speed, badfish.max_speed), 0)
+    badfish.linear_velocity = badfish.linear_velocity.rotated(direction)
