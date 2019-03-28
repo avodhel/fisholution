@@ -14,6 +14,11 @@ _data = {
 script = ExtResource( 1 )
 BadFish1 = ExtResource( 2 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 491.0
+margin_bottom = 730.0
+color = Color( 0.0470588, 0.447059, 0.576471, 1 )
+
 [node name="Fish" parent="." instance=ExtResource( 3 )]
 
 [node name="BadFishTimer" type="Timer" parent="."]
@@ -23,6 +28,7 @@ wait_time = 0.5
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 240, 450 )
