@@ -45,9 +45,14 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-	hide()
-	emit_signal("hit") #game will know fish died
-	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
+#	print(body.sprite_scale)
+
+	if body.sprite_scale > scale: #if badfish is bigger than our fish
+		hide()
+		emit_signal("hit") #game will know fish died
+		call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
+	else:
+		body.hide()
 
 func start(pos):
 	position = pos
