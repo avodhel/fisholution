@@ -26,6 +26,7 @@ func _on_StartTimer_timeout():
 
 func _on_ScoreTimer_timeout():
 	score += 1
+	$HUD/ScoreLabel.text = str(score) #score problem fixed with this line
 
 func _on_BadFishTimer_timeout():
 	# Choose a random location on Path2D.
