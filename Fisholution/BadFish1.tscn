@@ -68,8 +68,6 @@ tracks/0/keys = {
 height = 12.4372
 
 [node name="BadFish1" type="RigidBody2D"]
-rotation = 1.5708
-scale = Vector2( 3, 3 )
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 1 )
@@ -77,10 +75,11 @@ min_speed = 150
 max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 11
+frame = 8
 region_enabled = true
 region_rect = Rect2( 192, -0.5, 97, 128.25 )
 
@@ -92,6 +91,8 @@ anims/up = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.32867, -0.166082 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
 shape = SubResource( 5 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
