@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fisholution.png" type="Texture" id=2]
+[ext_resource path="res://Textures/bubble.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -66,6 +67,9 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 6.29352
 
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
+
 [node name="Fish" type="Area2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
@@ -88,8 +92,16 @@ anims/up = SubResource( 4 )
 position = Vector2( 1.3986, 0.349649 )
 shape = SubResource( 5 )
 
-[node name="Trail" type="Particles2D" parent="."]
+[node name="Bubble" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+scale = Vector2( 4, 4 )
 amount = 10
 speed_scale = 2.0
+local_coords = false
+texture = ExtResource( 3 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 0.0
+scale_amount = 0.03
+color_ramp = SubResource( 6 )
 
 [connection signal="body_entered" from="." to="." method="_on_Fish_body_entered"]

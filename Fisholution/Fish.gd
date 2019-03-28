@@ -35,7 +35,10 @@ func _process(delta):
 #        print($CollisionShape2D.rotation_degrees)
 
 	if velocity.length() > 0:
+        $Bubble.emitting = true
         velocity = velocity.normalized() * speed
+	else:
+        $Bubble.emitting = false
         
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screensize.x)
