@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://BadFish.gd" type="Script" id=1]
+[ext_resource path="res://Textures/fisholution.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "down"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 3, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6, 8 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 9, 11 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 6.39224
+height = 19.507
+
+[node name="BadFish1" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 1 )
+min_speed = 150
+max_speed = 250
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+vframes = 4
+hframes = 3
+frame = 8
+region_enabled = true
+region_rect = Rect2( 96, -1, 96.5, 129.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/down = SubResource( 1 )
+anims/left = SubResource( 2 )
+anims/right = SubResource( 3 )
+anims/up = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.32867, -0.166082 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+shape = SubResource( 5 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
