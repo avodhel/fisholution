@@ -16,22 +16,22 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
         velocity.x += 1
         $Sprite/AnimationPlayer.play("right")
-        $CollisionShape2D.rotation_degrees = 90
+#        $CollisionShape2D.rotation_degrees = 90
 #        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_left"):
         velocity.x -= 1
         $Sprite/AnimationPlayer.play("left")
-        $CollisionShape2D.rotation_degrees = 90
+#        $CollisionShape2D.rotation_degrees = 90
 #        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_down"):
         velocity.y += 1
         $Sprite/AnimationPlayer.play("down")
-        $CollisionShape2D.rotation_degrees = 0
+#        $CollisionShape2D.rotation_degrees = 0
 #        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_up"):
         velocity.y -= 1
         $Sprite/AnimationPlayer.play("up")
-        $CollisionShape2D.rotation_degrees = 0
+#        $CollisionShape2D.rotation_degrees = 0
 #        print($CollisionShape2D.rotation_degrees)
 
 	if velocity.length() > 0:
