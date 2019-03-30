@@ -9,6 +9,7 @@ func _ready():
 func new_game():
 	score = 0
 	$Fish.start($StartPosition.position)
+	$Fish.scale = Vector2(2, 2)
 	$StartTimer.start()
 	$HUD.show_message("Get Ready")
 	$HUD.update_score(score)

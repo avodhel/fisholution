@@ -6,13 +6,12 @@ signal xp_gained # when fish eat little fish
 export (int) var speed = 200
 var velocity = Vector2()
 var screensize
-
-var fish_scale
+#var fish_scale
 
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
-	fish_scale = $Sprite.scale
+#	fish_scale = $Sprite.scale
 
 func _process(delta):
 	velocity = Vector2()
@@ -56,3 +55,5 @@ func start(pos):
 	show()
 	monitoring = true
 
+func _on_HUD_fisholution_up(): # when fisholution level increase
+	scale += Vector2(0.5, 0.5)

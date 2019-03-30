@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal start_game # emit when we push the start button
+signal fisholution_up
 
 func show_message(text):
 	$MessageLabel.text = text
@@ -27,3 +28,6 @@ func _on_StartButton_pressed():
 
 func _on_Fish_xp_gained():
 	$FisholutionBar.fisholution_process(10)
+
+func _on_FisholutionBar_fisholution_up():
+	emit_signal("fisholution_up")
