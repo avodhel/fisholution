@@ -6,9 +6,12 @@ export (int) var speed = 200
 var velocity = Vector2()
 var screensize
 
+var fish_scale
+
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
+	fish_scale = $Sprite.scale
 
 func _process(delta):
 	velocity = Vector2()
@@ -16,23 +19,15 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
         velocity.x += 1
         $Sprite/AnimationPlayer.play("right")
-#        $CollisionShape2D.rotation_degrees = 90
-#        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_left"):
         velocity.x -= 1
         $Sprite/AnimationPlayer.play("left")
-#        $CollisionShape2D.rotation_degrees = 90
-#        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_down"):
         velocity.y += 1
         $Sprite/AnimationPlayer.play("down")
-#        $CollisionShape2D.rotation_degrees = 0
-#        print($CollisionShape2D.rotation_degrees)
 	if Input.is_action_pressed("ui_up"):
         velocity.y -= 1
         $Sprite/AnimationPlayer.play("up")
-#        $CollisionShape2D.rotation_degrees = 0
-#        print($CollisionShape2D.rotation_degrees)
 
 	if velocity.length() > 0:
         $Bubble.emitting = true
@@ -45,7 +40,7 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-#	print(body.sprite_scale)
+#	print(body.collider.name)
 
 	if body.sprite_scale > scale: #if badfish is bigger than our fish
 		hide()
@@ -58,3 +53,4 @@ func start(pos):
 	position = pos
 	show()
 	monitoring = true
+

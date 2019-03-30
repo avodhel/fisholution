@@ -1,40 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://BadFish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fisholution.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "down"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 2 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "left"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 3, 5 ]
-}
-
-[sub_resource type="Animation" id=3]
 resource_name = "right"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -48,25 +17,49 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 6, 8 ]
 }
-
-[sub_resource type="Animation" id=4]
-resource_name = "up"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("../mouthColl:shape:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 9, 11 ]
+"values": [ Vector2( -6.95063, -13.8533 ), Vector2( -6.95063, -13.8533 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../mouthColl:shape:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.48481, -13.6216 ), Vector2( 6.48481, -13.6216 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 10.9865
-height = 10.2885
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -6.95063, -13.8533 )
+b = Vector2( 6.48481, -13.6216 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, -13, 15, 12, -15, 12 )
 
 [node name="BadFish1" type="RigidBody2D"]
 collision_mask = 0
@@ -85,17 +78,20 @@ region_enabled = true
 region_rect = Rect2( 192, -0.5, 97, 128.25 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/down = SubResource( 1 )
-anims/left = SubResource( 2 )
-anims/right = SubResource( 3 )
-anims/up = SubResource( 4 )
+anims/right = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.32867, -0.166082 )
+[node name="mouthColl" type="CollisionShape2D" parent="."]
+position = Vector2( 0.46312, 1.38987 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
+
+[node name="bodyColl" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+shape = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.92659, 0 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

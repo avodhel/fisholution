@@ -90,7 +90,7 @@ anims/left = SubResource( 2 )
 anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="bodyColl" type="CollisionShape2D" parent="."]
 position = Vector2( -1.32867, -0.166082 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
