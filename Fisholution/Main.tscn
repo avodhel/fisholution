@@ -1,13 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://BadFish1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BadFish2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://BadFish3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Fish.tscn" type="PackedScene" id=5]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sounds/gameover.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/gameover.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -16,14 +14,14 @@ _data = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-BadFishes = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+BadFishes = [ ExtResource( 2 ) ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 491.0
 margin_bottom = 730.0
 color = Color( 0.0470588, 0.447059, 0.576471, 1 )
 
-[node name="Fish" parent="." instance=ExtResource( 5 )]
+[node name="Fish" parent="." instance=ExtResource( 3 )]
 
 [node name="BadFishTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -44,13 +42,13 @@ curve = SubResource( 1 )
 position = Vector2( 0.651123, 2.15257 )
 rotation = 6.08993e-008
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 5 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 6 )
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
 [connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
