@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://advanced_pixel-7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://FisholutionBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -21,12 +22,20 @@ script = ExtResource( 1 )
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
+margin_left = -212.0
+margin_top = 15.0
+margin_right = -12.0
+margin_bottom = 79.0
 custom_fonts/font = SubResource( 1 )
+text = "1"
 align = 1
 valign = 1
+
+[node name="FisholutionBar" parent="." instance=ExtResource( 3 )]
+margin_left = 286.573
+margin_top = 37.9544
+margin_right = 436.573
+margin_bottom = 58.9544
 
 [node name="MessageLabel" type="Label" parent="."]
 anchor_left = 0.5

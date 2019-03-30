@@ -352,15 +352,15 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="SegmentShape2D" id=7]
+[sub_resource type="SegmentShape2D" id=5]
 a = Vector2( -2.68031, -15.8022 )
 b = Vector2( 5.05542, -15.8022 )
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 5.05542
 height = 17.3427
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
@@ -383,10 +383,10 @@ anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
 
 [node name="mouthColl" type="CollisionShape2D" parent="."]
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Bubble" type="CPUParticles2D" parent="."]
 show_behind_parent = true
@@ -398,6 +398,6 @@ texture = ExtResource( 3 )
 gravity = Vector2( 0, 0 )
 initial_velocity = 0.0
 scale_amount = 0.03
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 7 )
 
 [connection signal="body_entered" from="." to="." method="_on_Fish_body_entered"]

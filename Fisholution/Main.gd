@@ -12,7 +12,9 @@ func new_game():
 	$StartTimer.start()
 	$HUD.show_message("Get Ready")
 	$HUD.update_score(score)
+	$HUD/FisholutionBar.show()
 	$Music.play()
+	$HUD/FisholutionBar.reset_fisholution()
 
 func game_over():
 	$ScoreTimer.stop()

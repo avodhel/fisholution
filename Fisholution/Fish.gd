@@ -1,6 +1,7 @@
 extends Area2D
 
 signal hit #when something hits our fish
+signal xp_gained # when fish eat little fish
 
 export (int) var speed = 200
 var velocity = Vector2()
@@ -48,6 +49,7 @@ func _on_Fish_body_entered(body): #when something hit fish's collision this func
 		call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
 	else:
 		body.hide()
+		emit_signal("xp_gained")
 
 func start(pos):
 	position = pos

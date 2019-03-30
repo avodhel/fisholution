@@ -23,3 +23,7 @@ func _on_MessageTimer_timeout():
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
+	$FisholutionBar.show()
+
+func _on_Fish_xp_gained():
+	$FisholutionBar.fisholution_process(10)

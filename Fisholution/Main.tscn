@@ -36,6 +36,7 @@ one_shot = true
 position = Vector2( 240, 450 )
 
 [node name="BadFishPath" type="Path2D" parent="."]
+editor/display_folded = true
 curve = SubResource( 1 )
 
 [node name="BFSpawnLocation" type="PathFollow2D" parent="BadFishPath"]
@@ -51,6 +52,7 @@ stream = ExtResource( 5 )
 stream = ExtResource( 6 )
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
+[connection signal="xp_gained" from="Fish" to="HUD" method="_on_Fish_xp_gained"]
 [connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
