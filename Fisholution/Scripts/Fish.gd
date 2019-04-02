@@ -42,7 +42,7 @@ func _process(delta):
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 #	print(body.collider.name)
 
-	if body.sprite_scale > scale: #if badfish is bigger than our fish
+	if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if badfish is bigger than our fish
 		hide()
 		emit_signal("hit") #game will know fish died
 		call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
@@ -57,3 +57,5 @@ func start(pos):
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	scale += Vector2(0.5, 0.5)
+	$Camera2D.zoom += Vector2(0.1, 0.1)
+	print($Camera2D.zoom)

@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://BadFish.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fisholution.png" type="Texture" id=2]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -65,8 +66,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 6.39224
-height = 19.507
+radius = 13.3296
+height = 5.21682
 
 [node name="BadFish1" type="RigidBody2D"]
 collision_mask = 0
@@ -82,7 +83,7 @@ vframes = 4
 hframes = 3
 frame = 8
 region_enabled = true
-region_rect = Rect2( 96, -1, 96.5, 129.5 )
+region_rect = Rect2( -1, 128.5, 97.5, 128.5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/down = SubResource( 1 )
