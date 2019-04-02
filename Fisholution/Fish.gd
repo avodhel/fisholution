@@ -36,8 +36,8 @@ func _process(delta):
         $Bubble.emitting = false
         
 	position += velocity * delta
-	position.x = clamp(position.x, 0, screensize.x)
-	position.y = clamp(position.y, 0, screensize.y)
+#	position.x = clamp(position.x, 0, screensize.x)
+#	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 #	print(body.collider.name)

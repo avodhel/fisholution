@@ -16,32 +16,44 @@ _data = {
 script = ExtResource( 1 )
 BadFishes = [ ExtResource( 2 ) ]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 491.0
-margin_bottom = 730.0
+[node name="Fish" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 450 )
+scale = Vector2( 1, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Fish"]
+scale = Vector2( 0.5, 0.5 )
+current = true
+zoom = Vector2( 5, 5 )
+
+[node name="BackGround" type="ColorRect" parent="Fish"]
+show_behind_parent = true
+margin_left = -234.989
+margin_top = -441.083
+margin_right = -134.989
+margin_bottom = -341.083
+rect_scale = Vector2( 4.76955, 7.19327 )
 color = Color( 0.0470588, 0.447059, 0.576471, 1 )
 
-[node name="Fish" parent="." instance=ExtResource( 3 )]
+[node name="BadFishPath" type="Path2D" parent="Fish"]
+editor/display_folded = true
+position = Vector2( -240, -450 )
+curve = SubResource( 1 )
 
-[node name="BadFishTimer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="BFSpawnLocation" type="PathFollow2D" parent="Fish/BadFishPath"]
+position = Vector2( 0.651123, 2.15257 )
+rotation = 6.08993e-008
 
-[node name="ScoreTimer" type="Timer" parent="."]
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 240, 450 )
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 240, 450 )
+[node name="BadFishTimer" type="Timer" parent="."]
+wait_time = 0.5
 
-[node name="BadFishPath" type="Path2D" parent="."]
-editor/display_folded = true
-curve = SubResource( 1 )
-
-[node name="BFSpawnLocation" type="PathFollow2D" parent="BadFishPath"]
-position = Vector2( 0.651123, 2.15257 )
-rotation = 6.08993e-008
+[node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
@@ -53,8 +65,8 @@ stream = ExtResource( 6 )
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
 [connection signal="xp_gained" from="Fish" to="HUD" method="_on_Fish_xp_gained"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="fisholution_up" from="HUD" to="Fish" method="_on_HUD_fisholution_up"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
