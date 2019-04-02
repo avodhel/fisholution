@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.651123, 2.15257, 0, 0, 0, 0, 478.323, 2.15257, 0, 0, 0, 0, 478.323, 715.321, 0, 0, 0, 0, -1.01904, 713.65, 0, 0, 0, 0, 0.651123, 2.15257 )
+"points": PoolVector2Array( 0, 0, 0, 0, -6.48004, -2.05524, 0, 0, 0, 0, 475.044, -2.05524, 0, 0, 0, 0, 481.551, 710.47, 0, 0, 0, 0, -6.48004, 710.47, 0, 0, 0, 0, -9.73358, -2.05524 )
 }
 
 [node name="Main" type="Node"]
@@ -21,27 +21,29 @@ position = Vector2( 240, 450 )
 scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Fish"]
+position = Vector2( 0.381012, -44.4285 )
 scale = Vector2( 0.5, 0.5 )
 current = true
-zoom = Vector2( 5, 5 )
+zoom = Vector2( 3, 3 )
 
-[node name="BackGround" type="ColorRect" parent="Fish"]
+[node name="Background" type="ColorRect" parent="Fish"]
 show_behind_parent = true
-margin_left = -234.989
-margin_top = -441.083
-margin_right = -134.989
-margin_bottom = -341.083
-rect_scale = Vector2( 4.76955, 7.19327 )
-color = Color( 0.0470588, 0.447059, 0.576471, 1 )
+margin_left = -120.0
+margin_top = -225.0
+margin_right = -80.0
+margin_bottom = -185.0
+rect_scale = Vector2( 5.95151, 8.95287 )
+color = Color( 0.160784, 0.564706, 0.815686, 1 )
 
 [node name="BadFishPath" type="Path2D" parent="Fish"]
 editor/display_folded = true
-position = Vector2( -240, -450 )
+position = Vector2( -120, -225 )
+scale = Vector2( 0.5, 0.5 )
 curve = SubResource( 1 )
 
 [node name="BFSpawnLocation" type="PathFollow2D" parent="Fish/BadFishPath"]
-position = Vector2( 0.651123, 2.15257 )
-rotation = 6.08993e-008
+position = Vector2( -6.48004, -2.05524 )
+rotation = 6.07948e-008
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 240, 450 )
