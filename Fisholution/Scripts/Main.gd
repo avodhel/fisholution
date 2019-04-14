@@ -43,7 +43,7 @@ func _on_BadFishTimer_timeout():
     var direction = $Fish/BadFishPath/BFSpawnLocation.rotation + PI / 2
     # Set the badfish's position to a random location.
     badfish.position = $Fish/BadFishPath/BFSpawnLocation.global_position
-#    # Add some randomness to the direction.
+    # Add some randomness to the direction.
     direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
     badfish.rotation = direction
     # Set the velocity (speed & direction).

@@ -20,7 +20,7 @@ func fisholution_level_up(level_up):
 	level = level_up
 	value = 0
 	max_value += max_value / 2
-	print(max_value)
+#	print(max_value)
 	emit_signal("fisholution_up")
 	
 func reset_fisholution():

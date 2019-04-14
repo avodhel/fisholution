@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://advanced_pixel-7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/FisholutionBar.tscn" type="PackedScene" id=3]
-
-
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -14,7 +12,10 @@ font_data = ExtResource( 2 )
 size = 80
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.4, 0.635294, 0.305882, 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 64
 font_data = ExtResource( 2 )
 
@@ -62,7 +63,9 @@ margin_left = -100.0
 margin_top = -200.0
 margin_right = 100.0
 margin_bottom = -100.0
-custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.878431, 0.796078, 0.611765, 1 )
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
