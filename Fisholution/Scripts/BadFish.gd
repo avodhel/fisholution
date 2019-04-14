@@ -10,8 +10,6 @@ func _ready():
 	var rand_vector = Vector2(rand_scale, rand_scale)
 	$Sprite.scale = rand_vector
 #	$CollisionShape2D.scale = rand_vector
-	if $mouthColl != null:
-		$mouthColl.scale = rand_vector
 	$bodyColl.scale = rand_vector
 	sprite_scale = $Sprite.scale
 

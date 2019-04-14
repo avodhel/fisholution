@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/BadFish2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BadFish3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/parallaxBG.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/parallaxBG.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sounds/gameover.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=9]
 
@@ -20,13 +20,18 @@ script = ExtResource( 1 )
 BadFishes = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 
 [node name="Fish" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 240, 450 )
 scale = Vector2( 1, 1 )
 
-[node name="Camera2D" type="Camera2D" parent="Fish"]
+[node name="FishCam" type="Camera2D" parent="Fish"]
 position = Vector2( 0.381012, -44.4285 )
 current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_smoothed = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 
 [node name="BadFishPath" type="Path2D" parent="Fish"]
 editor/display_folded = true
@@ -40,7 +45,9 @@ position = Vector2( -6.48004, -2.05524 )
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 240, 450 )
 
-[node name="parallaxBG" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="parallaxBG" parent="." instance=ExtResource( 7 )]
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -51,8 +58,6 @@ wait_time = 0.5
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource( 7 )]
-
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
@@ -61,8 +66,8 @@ stream = ExtResource( 9 )
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
 [connection signal="xp_gained" from="Fish" to="HUD" method="_on_Fish_xp_gained"]
+[connection signal="fisholution_up" from="HUD" to="Fish" method="_on_HUD_fisholution_up"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
-[connection signal="fisholution_up" from="HUD" to="Fish" method="_on_HUD_fisholution_up"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]

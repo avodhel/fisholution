@@ -35,9 +35,9 @@ align = 1
 valign = 1
 
 [node name="FisholutionBar" parent="." instance=ExtResource( 3 )]
-margin_left = 286.573
+margin_left = 200.977
 margin_top = 37.9544
-margin_right = 436.573
+margin_right = 350.977
 margin_bottom = 58.9544
 
 [node name="MessageLabel" type="Label" parent="."]

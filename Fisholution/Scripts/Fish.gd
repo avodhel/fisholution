@@ -4,6 +4,7 @@ signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
 
 export (int) var speed = 200
+
 var velocity = Vector2()
 var screensize
 #var fish_scale
@@ -57,5 +58,5 @@ func start(pos):
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	scale += Vector2(0.5, 0.5)
-	$Camera2D.zoom += Vector2(0.1, 0.1)
-	print($Camera2D.zoom)
+	$FishCam.zoom += Vector2(0.1, 0.1)
+	print($FishCam.zoom)

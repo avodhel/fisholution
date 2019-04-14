@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Fish.gd" type="Script" id=1]
-[ext_resource path="res://Textures/fisholution.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Fish.png" type="Texture" id=2]
 [ext_resource path="res://Textures/bubble.png" type="Texture" id=3]
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -20,7 +19,7 @@ tracks/0/keys = {
 "values": [ 0, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../mouthColl:shape:a")
+tracks/1/path = NodePath("../bodyColl:shape:radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -29,10 +28,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.00105, 15.7068 ), Vector2( -4.00105, 15.7068 ) ]
+"values": [ 5.05542, 5.05542 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../mouthColl:shape:b")
+tracks/2/path = NodePath("../bodyColl:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -41,51 +40,15 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 5.62145, 15.7068 ), Vector2( 5.62145, 15.7068 ) ]
+"values": [ 17.3427, 17.3427 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../bodyColl:shape:radius")
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 5.05542, 5.05542 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../bodyColl:shape:height")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 17.3427, 17.3427 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("../mouthColl:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../bodyColl:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -107,7 +70,7 @@ tracks/0/keys = {
 "values": [ 3, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../mouthColl:shape:a")
+tracks/1/path = NodePath("../bodyColl:shape:radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -116,10 +79,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.00105, 15.7068 ), Vector2( -4.00105, 15.7068 ) ]
+"values": [ 5.05542, 5.05542 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../mouthColl:shape:b")
+tracks/2/path = NodePath("../bodyColl:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -128,51 +91,15 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 5.62145, 15.7068 ), Vector2( 5.62145, 15.7068 ) ]
+"values": [ 17.3427, 17.3427 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../mouthColl:rotation_degrees")
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 90.0, 90.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../bodyColl:shape:radius")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 5.05542, 5.05542 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("../bodyColl:shape:height")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 17.3427, 17.3427 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../bodyColl:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -194,7 +121,7 @@ tracks/0/keys = {
 "values": [ 6, 8 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../mouthColl:shape:a")
+tracks/1/path = NodePath("../bodyColl:shape:radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -203,10 +130,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.85898, -15.81 ), Vector2( -4.85898, -15.81 ) ]
+"values": [ 5.05542, 5.05542 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../mouthColl:shape:b")
+tracks/2/path = NodePath("../bodyColl:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -215,51 +142,15 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 5.05542, -15.8022 ), Vector2( 5.05542, -15.8022 ) ]
+"values": [ 17.3427, 17.3427 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../mouthColl:rotation_degrees")
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 90.0, 90.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../bodyColl:shape:radius")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 5.05542, 5.05542 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("../bodyColl:shape:height")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 17.3427, 17.3427 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../bodyColl:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -281,7 +172,7 @@ tracks/0/keys = {
 "values": [ 9, 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../mouthColl:shape:a")
+tracks/1/path = NodePath("../bodyColl:shape:radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -290,10 +181,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2.68031, -15.8022 ), Vector2( -2.68031, -15.8022 ) ]
+"values": [ 5.05542, 5.05542 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../mouthColl:shape:b")
+tracks/2/path = NodePath("../bodyColl:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -302,10 +193,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 5.05542, -15.8022 ), Vector2( 5.05542, -15.8022 ) ]
+"values": [ 17.3427, 17.3427 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../bodyColl:shape:radius")
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -314,52 +205,12 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 5.05542, 5.05542 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../bodyColl:shape:height")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 17.3427, 17.3427 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("../mouthColl:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
 "values": [ 0.0, 0.0 ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("../bodyColl:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-
-[sub_resource type="SegmentShape2D" id=5]
-a = Vector2( -2.68031, -15.8022 )
-b = Vector2( 5.05542, -15.8022 )
 
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 5.05542
-height = 17.3427
+height = 13.6631
 
 [sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
@@ -373,7 +224,7 @@ editor/display_folded = true
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 11
+frame = 9
 region_enabled = true
 region_rect = Rect2( 0, 0, 96.75, 128 )
 
@@ -383,10 +234,8 @@ anims/left = SubResource( 2 )
 anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
 
-[node name="mouthColl" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
-
 [node name="bodyColl" type="CollisionShape2D" parent="."]
+position = Vector2( -0.179241, -1.07545 )
 shape = SubResource( 6 )
 
 [node name="Bubble" type="CPUParticles2D" parent="."]
