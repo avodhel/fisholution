@@ -5,6 +5,8 @@ signal xp_gained # when fish eat little fish
 
 export (int) var speed = 200
 
+onready var nom_sound = $Nom
+
 var velocity = Vector2()
 var screensize
 #var fish_scale
@@ -50,6 +52,7 @@ func _on_Fish_body_entered(body): #when something hit fish's collision this func
 	else:
 		body.hide()
 		emit_signal("xp_gained")
+		nom_sound.play()
 
 func start(pos):
 	position = pos

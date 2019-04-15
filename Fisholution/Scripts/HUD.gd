@@ -9,7 +9,7 @@ func show_message(text):
 	$MessageTimer.start()
 
 func game_over():
-	show_message("Game Over")
+	show_message("Fisholution Over")
 	yield($MessageTimer, "timeout") # show message until timeout signal appears (wait time)
 	$StartButton.show()
 	$MessageLabel.text = "Fisholution"

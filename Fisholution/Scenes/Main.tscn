@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/BadFish1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/BadFish2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/BadFish3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/bad_fishes/BadFish1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/bad_fishes/BadFish2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/bad_fishes/BadFish3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/parallaxBG.tscn" type="PackedScene" id=7]
@@ -26,7 +26,6 @@ scale = Vector2( 1, 1 )
 [node name="FishCam" type="Camera2D" parent="Fish"]
 position = Vector2( 0.381012, -44.4285 )
 current = true
-zoom = Vector2( 0.7, 0.7 )
 limit_smoothed = true
 drag_margin_left = 0.1
 drag_margin_top = 0.1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Fish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Fish.png" type="Texture" id=2]
 [ext_resource path="res://Textures/bubble.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/nom.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -208,11 +209,11 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 5.05542
 height = 13.6631
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=6]
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
@@ -236,7 +237,7 @@ anims/up = SubResource( 4 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
 position = Vector2( -0.179241, -1.07545 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Bubble" type="CPUParticles2D" parent="."]
 show_behind_parent = true
@@ -248,6 +249,9 @@ texture = ExtResource( 3 )
 gravity = Vector2( 0, 0 )
 initial_velocity = 0.0
 scale_amount = 0.03
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 6 )
+
+[node name="Nom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_Fish_body_entered"]
