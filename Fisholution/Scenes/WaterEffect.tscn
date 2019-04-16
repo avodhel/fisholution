@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Shaders/WaterEffect.shader" type="Shader" id=1]
+[ext_resource path="res://Textures/icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Water.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/blue_tint = Color( 0, 0.784314, 1, 1 )
+shader_param/sprite_scale = Vector2( 0.3, 3 )
+shader_param/scale_x = 0.53
+
+[node name="WaterEffect" type="CanvasLayer"]
+layer = 3
+
+[node name="Water" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 244.353, 353.581 )
+scale = Vector2( 9.6297, 13.6071 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
