@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,10 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 55
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -46,11 +50,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = -150.0
+margin_top = -225.973
 margin_right = 200.0
-margin_bottom = 27.0
+margin_bottom = -48.9728
 custom_fonts/font = ExtResource( 4 )
 text = "Fisholution"
+align = 1
+valign = 1
+
+[node name="HighscoreLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -67.1369
+margin_right = 200.0
+margin_bottom = 42.8631
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.717647, 0.294118, 0.878431, 1 )
+text = "Highscore: 546"
 align = 1
 valign = 1
 

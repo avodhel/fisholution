@@ -19,6 +19,10 @@ config/name="Fisholution"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Textures/icon.png"
 
+[autoload]
+
+PlayerData="*res://Scripts/PlayerData.gd"
+
 [display]
 
 window/size/width=480

@@ -8,6 +8,7 @@ onready var start_position = $StartPosition
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/ScoreLabel
+onready var hud_hsl = $HUD/HighscoreLabel
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var badfish_timer = $BadFishTimer
@@ -36,6 +37,7 @@ func game_over():
 	hud.game_over()
 	gameover_sound.play()
 	music.stop()
+	$"/root/PlayerData".save_highscore(score) #save highscore
 
 func _on_StartTimer_timeout():
 	badfish_timer.start()

@@ -5,7 +5,6 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "right"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -13,13 +12,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 2 ]
+"values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 6.39224
 height = 14.788
 
@@ -34,7 +33,6 @@ max_speed = 250
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
-frame = 2
 region_enabled = true
 region_rect = Rect2( -0.25, 67.125, 98.875, 26.125 )
 
@@ -45,7 +43,7 @@ anims/right = SubResource( 1 )
 position = Vector2( -0.0345416, -0.166082 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
