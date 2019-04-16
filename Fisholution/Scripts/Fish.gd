@@ -5,46 +5,43 @@ signal xp_gained # when fish eat little fish
 
 export (int) var speed = 200
 
+onready var animation = $Sprite/AnimationPlayer
+onready var bubble = $Bubble
 onready var nom_sound = $Nom
+onready var fish_cam = $FishCam
 
 var velocity = Vector2()
 var screensize
-#var fish_scale
 
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
-#	fish_scale = $Sprite.scale
 
 func _process(delta):
 	velocity = Vector2()
 
 	if Input.is_action_pressed("ui_right"):
         velocity.x += 1
-        $Sprite/AnimationPlayer.play("right")
+        animation.play("right")
 	if Input.is_action_pressed("ui_left"):
         velocity.x -= 1
-        $Sprite/AnimationPlayer.play("left")
+        animation.play("left")
 	if Input.is_action_pressed("ui_down"):
         velocity.y += 1
-        $Sprite/AnimationPlayer.play("down")
+        animation.play("down")
 	if Input.is_action_pressed("ui_up"):
         velocity.y -= 1
-        $Sprite/AnimationPlayer.play("up")
+        animation.play("up")
 
 	if velocity.length() > 0:
-        $Bubble.emitting = true
+        bubble.emitting = true
         velocity = velocity.normalized() * speed
 	else:
-        $Bubble.emitting = false
+        bubble.emitting = false
         
 	position += velocity * delta
-#	position.x = clamp(position.x, 0, screensize.x)
-#	position.y = clamp(position.y, 0, screensize.y)
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-#	print(body.collider.name)
-
 	if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if badfish is bigger than our fish
 		hide()
 		emit_signal("hit") #game will know fish died
@@ -61,5 +58,4 @@ func start(pos):
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	scale += Vector2(0.5, 0.5)
-	$FishCam.zoom += Vector2(0.1, 0.1)
-	print($FishCam.zoom)
+	fish_cam.zoom += Vector2(0.1, 0.1)

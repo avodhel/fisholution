@@ -1,6 +1,19 @@
 extends Node
 
 export (Array, PackedScene) var BadFishes
+
+onready var fish = $Fish
+onready var fish_bfp_bfsl = $Fish/BadFishPath/BFSpawnLocation
+onready var start_position = $StartPosition
+onready var hud = $HUD
+onready var hud_fb = $HUD/FisholutionBar
+onready var hud_sl = $HUD/ScoreLabel
+onready var start_timer = $StartTimer
+onready var score_timer =$ScoreTimer
+onready var badfish_timer = $BadFishTimer
+onready var gameover_sound = $GameOverSound
+onready var music = $Music
+
 var score
 
 func _ready():
@@ -8,41 +21,41 @@ func _ready():
 
 func new_game():
 	score = 0
-	$Fish.start($StartPosition.position)
-	$Fish.scale = Vector2(2, 2)
-	$StartTimer.start()
-	$HUD.show_message("Get Ready")
-	$HUD.update_score(score)
-	$HUD/FisholutionBar.show()
-	$Music.play()
-	$HUD/FisholutionBar.reset_fisholution()
+	fish.start(start_position.position)
+	fish.scale = Vector2(2, 2)
+	start_timer.start()
+	hud.show_message("Get Ready")
+	hud.update_score(score)
+	hud_fb.show()
+	music.play()
+	hud_fb.reset_fisholution()
 
 func game_over():
-	$ScoreTimer.stop()
-	$BadFishTimer.stop()
-	$HUD.game_over()
-	$GameOverSound.play()
-	$Music.stop()
+	score_timer.stop()
+	badfish_timer.stop()
+	hud.game_over()
+	gameover_sound.play()
+	music.stop()
 
 func _on_StartTimer_timeout():
-	$BadFishTimer.start()
-	$ScoreTimer.start()
-	$HUD.update_score(score)
+	badfish_timer.start()
+	score_timer.start()
+	hud.update_score(score)
 
 func _on_ScoreTimer_timeout():
 	score += 1
-	$HUD/ScoreLabel.text = str(score) #score problem fixed with this line
+	hud_sl.text = str(score) #score problem fixed with this line
 
 func _on_BadFishTimer_timeout():
 	# Choose a random location on Path2D.
-    $Fish/BadFishPath/BFSpawnLocation.set_offset(randi())
+    fish_bfp_bfsl.set_offset(randi())
     # Create a BadFish instance and add it to the scene.
     var badfish = BadFishes[randi() % BadFishes.size()].instance()
     add_child(badfish)
     # Set the badfish's direction perpendicular to the path direction.
-    var direction = $Fish/BadFishPath/BFSpawnLocation.rotation + PI / 2
+    var direction = fish_bfp_bfsl.rotation + PI / 2
     # Set the badfish's position to a random location.
-    badfish.position = $Fish/BadFishPath/BFSpawnLocation.global_position
+    badfish.position = fish_bfp_bfsl.global_position
     # Add some randomness to the direction.
     direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
     badfish.rotation = direction

@@ -3,19 +3,22 @@ extends RigidBody2D
 export (int) var min_speed
 export (int) var max_speed
 
+onready var sprite = $Sprite
+onready var body_coll = $bodyColl
+onready var animation = $Sprite/AnimationPlayer
+
 var sprite_scale
 
 func _ready():
 	var rand_scale = rand_range(0.5, 5)
 	var rand_vector = Vector2(rand_scale, rand_scale)
-	$Sprite.scale = rand_vector
-#	$CollisionShape2D.scale = rand_vector
-	$bodyColl.scale = rand_vector
-	sprite_scale = $Sprite.scale
+	sprite.scale = rand_vector
+	body_coll.scale = rand_vector
+	sprite_scale = sprite.scale
 
 func _process(delta):
-	$Sprite/AnimationPlayer.play("right")
+	animation.play("right")
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free() # if bad fish goes off the screen delete bad fish
+	call_deferred('free')
 
