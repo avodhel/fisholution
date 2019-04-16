@@ -10,5 +10,4 @@ func _ready():
 	sprite.modulate = Color(rand_range(0,1), rand_range(0,1), rand_range(0,1)) #random color
 
 func _process(delta):
-#	animation.play("idle")
-	pass
+	animation.play("idle")
