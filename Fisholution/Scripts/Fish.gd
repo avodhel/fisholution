@@ -59,5 +59,5 @@ func start(pos):
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	sprite.region_rect.position.y += 128 # fish evolution (changing text region's position)
-#	scale += Vector2(0.5, 0.5)
+	scale += Vector2(0.05, 0.05)
 #	fish_cam.zoom += Vector2(0.1, 0.1)

@@ -10,6 +10,7 @@ func _ready():
 	fisholution_level_label.text = str(level)
 
 func fisholution_process(increase_xp):
+	print(increase_xp)
 	if value < max_value:
 		value += increase_xp
 	else:

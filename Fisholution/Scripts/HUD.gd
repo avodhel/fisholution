@@ -11,6 +11,7 @@ onready var start_button = $StartButton
 onready var message_timer = $MessageTimer
 
 var highscore_value
+var xp = 10
 
 func _ready():
 	highscore_value = str($"/root/PlayerData".load_highscore())
@@ -44,7 +45,8 @@ func _on_StartButton_pressed():
 	fisholution_bar.show()
 
 func _on_Fish_xp_gained():
-	fisholution_bar.fisholution_process(30)
+	var increase_xp = fisholution_bar.max_value / (fisholution_bar.level * xp) #reduce xp amount after every fisholution
+	fisholution_bar.fisholution_process(increase_xp)
 
 func _on_FisholutionBar_fisholution_up():
 	emit_signal("fisholution_up")
