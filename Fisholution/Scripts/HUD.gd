@@ -22,7 +22,7 @@ func show_message(text):
 	message_timer.start()
 
 func game_over():
-	show_message("Fisholution Over")
+	show_message("Fisholution \nOver")
 	yield(message_timer, "timeout") # show message until timeout signal appears (wait time)
 	start_button.show()
 	title_label.text = "Fisholution"
@@ -44,7 +44,7 @@ func _on_StartButton_pressed():
 	fisholution_bar.show()
 
 func _on_Fish_xp_gained():
-	fisholution_bar.fisholution_process(10)
+	fisholution_bar.fisholution_process(30)
 
 func _on_FisholutionBar_fisholution_up():
 	emit_signal("fisholution_up")

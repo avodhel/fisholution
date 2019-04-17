@@ -5,6 +5,7 @@ signal xp_gained # when fish eat little fish
 
 export (int) var speed = 200
 
+onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
 onready var bubble = $Bubble
 onready var nom_sound = $Nom
@@ -57,5 +58,6 @@ func start(pos):
 	monitoring = true
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
-	scale += Vector2(0.5, 0.5)
-	fish_cam.zoom += Vector2(0.1, 0.1)
+	sprite.region_rect.position.y += 128 # fish evolution (changing text region's position)
+#	scale += Vector2(0.5, 0.5)
+#	fish_cam.zoom += Vector2(0.1, 0.1)
