@@ -14,7 +14,7 @@ func _ready():
 
 func _spawn_sea_creatures():
 	randomize()
-	for counter in range(rand_range(5, 65)):
+	for counter in range(rand_range(25, 65)):
 		var position_x = rand_range(screensize_x - (screensize_x - 1), screensize_x)
 		var position_y = rand_range(screensize_y - (screensize_y - 1), screensize_y)
 		var sea_creature = sea_creatures[randi() % sea_creatures.size()].instance()

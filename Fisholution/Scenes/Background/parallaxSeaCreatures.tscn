@@ -1,9 +1,18 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ParallaxSeaCreatures.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/sea_creatures/SeaCreature1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/sea_creatures/SeaCreature2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/sea_creatures/SeaCreature3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed3.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+
+
+
 
 [node name="parallaxSeaCreatures" type="Node"]
 
