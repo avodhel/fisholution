@@ -22,7 +22,10 @@ tracks/0/keys = {
 radius = 6.39224
 height = 14.788
 
-[node name="BadFish1" type="RigidBody2D"]
+[node name="Octopus1" type="RigidBody2D" groups=[
+"octopus",
+"enemy",
+]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 1 )
@@ -34,7 +37,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
 region_enabled = true
-region_rect = Rect2( -0.25, 67.125, 98.875, 26.125 )
+region_rect = Rect2( 0, 64, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 1 )

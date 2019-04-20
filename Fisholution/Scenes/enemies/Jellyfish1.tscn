@@ -20,11 +20,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 11.179
-height = 4.70966
+radius = 5.85151
+height = 10.8076
 
-[node name="BadFish2" type="RigidBody2D" groups=[
-"badfish",
+[node name="JellyFish1" type="RigidBody2D" groups=[
+"jellyfish",
 "enemy",
 ]]
 collision_mask = 0
@@ -39,14 +39,13 @@ texture = ExtResource( 2 )
 hframes = 3
 frame = 2
 region_enabled = true
-region_rect = Rect2( 0, 32, 96, 32 )
+region_rect = Rect2( 0, 96, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( -0.931453, -0.166082 )
-rotation = 1.5708
+position = Vector2( 16.2378, 0.835291 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 

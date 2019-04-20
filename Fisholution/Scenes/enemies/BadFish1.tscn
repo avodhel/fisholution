@@ -5,6 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "right"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -20,7 +21,10 @@ tracks/0/keys = {
 
 [sub_resource type="CircleShape2D" id=2]
 
-[node name="BadFish1" type="RigidBody2D"]
+[node name="BadFish1" type="RigidBody2D" groups=[
+"badfish",
+"enemy",
+]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 1 )
@@ -33,7 +37,7 @@ texture = ExtResource( 2 )
 hframes = 3
 frame = 2
 region_enabled = true
-region_rect = Rect2( -2.75, -0.5, 99.5, 32.125 )
+region_rect = Rect2( 0, 0, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 1 )
