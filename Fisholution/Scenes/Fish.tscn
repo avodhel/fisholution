@@ -170,6 +170,7 @@ colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
 scale = Vector2( 2, 2 )
+z_index = 1
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

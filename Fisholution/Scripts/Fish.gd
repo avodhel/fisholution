@@ -43,14 +43,21 @@ func _process(delta):
 	position += velocity * delta
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-	if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if badfish is bigger than our fish
-		hide()
-		emit_signal("hit") #game will know fish died
-		call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
-	else:
-		body.hide()
-		emit_signal("xp_gained")
-		nom_sound.play()
+	if body.is_in_group("badfish"):
+		if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if badfish is bigger than our fish
+			_die() #our fish died
+		else:
+			body.hide()
+			emit_signal("xp_gained")
+			nom_sound.play()
+	elif body.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
+		if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if enemy is bigger than our fish
+			_die() #our fish died
+
+func _die():
+	hide()
+	emit_signal("hit") #game will know fish died
+	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
 
 func start(pos):
 	position = pos

@@ -24,6 +24,7 @@ height = 9.22709
 
 [node name="Turtle1" type="RigidBody2D" groups=[
 "turtle",
+"not_fish",
 "enemy",
 ]]
 collision_mask = 0

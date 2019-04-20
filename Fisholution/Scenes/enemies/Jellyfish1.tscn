@@ -24,6 +24,7 @@ radius = 5.85151
 height = 10.8076
 
 [node name="JellyFish1" type="RigidBody2D" groups=[
+"not_fish",
 "jellyfish",
 "enemy",
 ]]
