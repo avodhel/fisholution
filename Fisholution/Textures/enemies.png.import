@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bad_fishes.png-261443a372f7968747cf41ab0ecaa613.stex"
+path="res://.import/enemies.png-6be7fd441cdfeb02313c75a30d86b0b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/bad_fishes.png"
-dest_files=[ "res://.import/bad_fishes.png-261443a372f7968747cf41ab0ecaa613.stex" ]
+source_file="res://Textures/enemies.png"
+dest_files=[ "res://.import/enemies.png-6be7fd441cdfeb02313c75a30d86b0b2.stex" ]
 
 [params]
 
