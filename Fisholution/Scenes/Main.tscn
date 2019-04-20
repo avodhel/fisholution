@@ -3,8 +3,8 @@
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/enemies/BadFish1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/enemies/BadFish2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/enemies/Octopus1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/enemies/Jellyfish1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/enemies/Jellyfish1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/enemies/Octopus1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/enemies/Turtle1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Background/WaterEffect.tscn" type="PackedScene" id=8]
@@ -21,7 +21,7 @@ _data = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-BadFishes = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+Enemies = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 
 [node name="Fish" parent="." instance=ExtResource( 7 )]
 position = Vector2( 240, 450 )
@@ -38,13 +38,12 @@ drag_margin_bottom = 0.1
 
 [node name="WaterEffect" parent="Fish" instance=ExtResource( 8 )]
 
-[node name="BadFishPath" type="Path2D" parent="Fish"]
-editor/display_folded = true
+[node name="EnemyPath" type="Path2D" parent="Fish"]
 position = Vector2( -120, -225 )
 scale = Vector2( 0.5, 0.5 )
 curve = SubResource( 1 )
 
-[node name="BFSpawnLocation" type="PathFollow2D" parent="Fish/BadFishPath"]
+[node name="EnemySpawnLocation" type="PathFollow2D" parent="Fish/EnemyPath"]
 position = Vector2( -6.48004, -2.05524 )
 
 [node name="StartPosition" type="Position2D" parent="."]
@@ -60,7 +59,7 @@ position = Vector2( 240, 450 )
 wait_time = 2.0
 one_shot = true
 
-[node name="BadFishTimer" type="Timer" parent="."]
+[node name="EnemyTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="ScoreTimer" type="Timer" parent="."]
@@ -76,5 +75,5 @@ stream = ExtResource( 13 )
 [connection signal="fisholution_up" from="HUD" to="Fish" method="_on_HUD_fisholution_up"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-[connection signal="timeout" from="BadFishTimer" to="." method="_on_BadFishTimer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
