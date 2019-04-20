@@ -9,6 +9,7 @@ onready var title_label = $TitleLabel
 onready var highscore_label = $HighscoreLabel
 onready var start_button = $StartButton
 onready var message_timer = $MessageTimer
+onready var blur = $Blur
 
 var highscore_value
 var xp = 10
@@ -31,6 +32,7 @@ func game_over():
 	highscore_value = str($"/root/PlayerData".load_highscore()) # update high score
 	highscore_label.text = "Highscore: " + highscore_value # assign high score to text
 	highscore_label.show() # show high score
+	blur.show()
 
 func update_score(score):
 	score_label.text = str(score)
@@ -43,6 +45,7 @@ func _on_StartButton_pressed():
 	start_button.hide()
 	emit_signal("start_game")
 	fisholution_bar.show()
+	blur.hide()
 
 func _on_Fish_xp_gained():
 	var increase_xp = fisholution_bar.max_value / (fisholution_bar.level * xp) #reduce xp amount after every fisholution

@@ -49,21 +49,27 @@ func _on_ScoreTimer_timeout():
 	hud_sl.text = str(score) #score problem fixed with this line
 
 func _on_EnemyTimer_timeout():
-	# Choose a random location on Path2D.
-    enemy_spawn_location.set_offset(randi())
+    # Choose a random location on Path2D.
+	enemy_spawn_location.set_offset(randi())
     # Create a enemy instance and add it to the scene.
-    var enemy = Enemies[randi() % Enemies.size()].instance()
-    add_child(enemy)
+	var enemy = Enemies[randi() % Enemies.size()].instance()
+	if enemy.is_in_group("not_fish"):
+		if rand_range(0, 100) > 65:
+			add_child(enemy)
+		else:
+			return
+	else:
+		add_child(enemy)
     # Set the enemy's direction perpendicular to the path direction.
-    var direction = enemy_spawn_location.rotation + PI / 2
+	var direction = enemy_spawn_location.rotation + PI / 2
     # Set the enemy's position to a random location.
-    enemy.position = enemy_spawn_location.global_position
+	enemy.position = enemy_spawn_location.global_position
     # Add some randomness to the direction.
-    direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
-    enemy.rotation = direction
+	direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
+	enemy.rotation = direction
     # Set the velocity (speed & direction).
-    enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
-    enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
+	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
+	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
     # [DemoFish]Set the velocity (speed & direction).
 #    var badfishRB = badfish.find_node("RigidBody2D")
 #    badfishRB.linear_velocity = Vector2(rand_range(badfish.min_speed, badfish.max_speed), 0)
