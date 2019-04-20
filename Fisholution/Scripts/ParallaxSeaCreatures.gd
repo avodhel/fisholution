@@ -25,4 +25,6 @@ func _spawn_sea_creatures():
 				continue
 		elif sea_creature.is_in_group("common_sea_weed"):
 			add_child(sea_creature)
+		else:
+			add_child(sea_creature)
 		sea_creature.position = Vector2(position_x, position_y)
