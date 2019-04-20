@@ -1,18 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/ParallaxSeaCreatures.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed3.tscn" type="PackedScene" id=4]
-
-
-
-
-
-
-
-
-
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed6.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed7.tscn" type="PackedScene" id=8]
 
 [node name="parallaxSeaCreatures" type="Node"]
 
@@ -21,5 +16,5 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 480, 720 )
 script = ExtResource( 1 )
-sea_creatures = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+sea_creatures = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
 
