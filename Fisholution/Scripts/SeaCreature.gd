@@ -10,7 +10,7 @@ func _ready():
 		sprite.scale = rand_vector
 		sprite.modulate = Color(rand_range(0,1), rand_range(0,1), rand_range(0,1)) #random color
 	elif is_in_group("rare_sea_weed"):
-		var rand_scale = rand_range(0.6, 1.5)
+		var rand_scale = rand_range(0.8, 1.5)
 		var rand_vector = Vector2(rand_scale, rand_scale)
 		sprite.scale = rand_vector
 
