@@ -16,22 +16,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 18, 19, 20 ]
+"values": [ 0, 1, 2 ]
 }
 
 [node name="SeaWeed7" type="Node2D" groups=[
-"sea_weed",
 "rare_sea_weed",
+"sea_weed",
 ]]
 z_index = -4
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 7
 hframes = 3
-frame = 20
-region_rect = Rect2( 0, 64, 96, 32 )
+frame = 2
+region_enabled = true
+region_rect = Rect2( 0, 192, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/idle = SubResource( 1 )
