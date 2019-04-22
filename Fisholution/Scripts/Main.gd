@@ -55,13 +55,14 @@ func _on_EnemyTimer_timeout():
 	enemy_spawn_location.set_offset(randi())
     # Create a enemy instance and add it to the scene.
 	var enemy = Enemies[randi() % Enemies.size()].instance()
-	if enemy.is_in_group("not_fish"):
-		if rand_range(0, 100) > 65:
-			add_child(enemy)
-		else:
-			return
-	else:
-		add_child(enemy)
+	add_child(enemy)
+#	if enemy.is_in_group("not_fish"):
+#		if rand_range(0, 100) > 65:
+#			add_child(enemy)
+#		else:
+#			return
+#	else:
+#		add_child(enemy)
     # Set the enemy's direction perpendicular to the path direction.
 	var direction = enemy_spawn_location.rotation + PI / 2
     # Set the enemy's position to a random location.

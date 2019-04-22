@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
+[ext_resource path="res://Textures/enemies_fish.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "right"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.78279
+height = 16.3277
+
+[node name="BadFish10" type="RigidBody2D" groups=[
+"badfish",
+"enemy",
+]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 1 )
+min_speed = 150
+max_speed = 250
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+hframes = 3
+frame = 2
+region_enabled = true
+region_rect = Rect2( 0, 288, 96, 32 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/right = SubResource( 1 )
+
+[node name="bodyColl" type="CollisionShape2D" parent="."]
+position = Vector2( 0.835506, -1.2068 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

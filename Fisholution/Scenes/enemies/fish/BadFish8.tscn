@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
-[ext_resource path="res://Textures/enemies.png" type="Texture" id=2]
+[ext_resource path="res://Textures/enemies_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "right"
@@ -20,11 +20,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-height = 9.22709
+radius = 8.78279
 
-[node name="Turtle1" type="RigidBody2D" groups=[
-"turtle",
-"not_fish",
+[node name="BadFish8" type="RigidBody2D" groups=[
+"badfish",
 "enemy",
 ]]
 collision_mask = 0
@@ -37,17 +36,17 @@ max_speed = 250
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
-frame = 1
+frame = 2
 region_enabled = true
-region_rect = Rect2( 0, 128, 96, 32 )
+region_rect = Rect2( 0, 224, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( 0.215801, 0.0842613 )
+position = Vector2( 0.835506, -1.2068 )
 rotation = 1.5708
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

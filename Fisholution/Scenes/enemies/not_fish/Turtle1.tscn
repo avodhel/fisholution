@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
-[ext_resource path="res://Textures/enemies.png" type="Texture" id=2]
+[ext_resource path="res://Textures/enemies_not_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "right"
@@ -20,12 +20,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 5.85151
-height = 10.8076
+height = 9.22709
 
-[node name="JellyFish1" type="RigidBody2D" groups=[
+[node name="Turtle1" type="RigidBody2D" groups=[
+"turtle",
 "not_fish",
-"jellyfish",
 "enemy",
 ]]
 collision_mask = 0
@@ -40,13 +39,14 @@ texture = ExtResource( 2 )
 hframes = 3
 frame = 2
 region_enabled = true
-region_rect = Rect2( 0, 96, 96, 32 )
+region_rect = Rect2( 0, 64, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( 16.2378, 0.835291 )
+position = Vector2( 0.215801, 0.0842613 )
+rotation = 1.5708
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 
