@@ -25,7 +25,6 @@ Enemies = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5
 
 [node name="Fish" parent="." instance=ExtResource( 7 )]
 position = Vector2( 240, 450 )
-scale = Vector2( 1, 1 )
 
 [node name="FishCam" type="Camera2D" parent="Fish"]
 position = Vector2( 0.381012, -44.4285 )

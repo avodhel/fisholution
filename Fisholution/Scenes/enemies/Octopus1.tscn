@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/enemies.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "right"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -23,8 +23,8 @@ radius = 6.39224
 height = 14.788
 
 [node name="Octopus1" type="RigidBody2D" groups=[
-"not_fish",
 "octopus",
+"not_fish",
 "enemy",
 ]]
 collision_mask = 0
@@ -41,7 +41,7 @@ region_enabled = true
 region_rect = Rect2( 0, 64, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/right = SubResource( 3 )
+anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0345416, -0.166082 )

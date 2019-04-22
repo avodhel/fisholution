@@ -16,6 +16,7 @@ onready var gameover_sound = $GameOverSound
 onready var music = $Music
 
 var score
+var rand_scale
 
 func _ready():
 	randomize()
@@ -23,7 +24,8 @@ func _ready():
 func new_game():
 	score = 0
 	fish.start(start_position.position)
-	fish.scale = Vector2(2, 2)
+	rand_scale = rand_range(1.5, 2)
+	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
 	start_timer.start()
 	hud.show_message("Get Ready")
 	hud.update_score(score)

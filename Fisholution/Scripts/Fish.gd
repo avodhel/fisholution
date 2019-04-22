@@ -13,6 +13,7 @@ onready var fish_cam = $FishCam
 
 var velocity = Vector2()
 var screensize
+var rand_gain_scale
 
 func _ready():
 	hide() # invisible fish when the game first start
@@ -43,15 +44,19 @@ func _process(delta):
 	position += velocity * delta
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-	if body.is_in_group("badfish"):
-		if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if badfish is bigger than our fish
+	if body.is_in_group("badfish"): # if enemy is a fish
+		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
 			_die() #our fish died
-		else:
+		elif (body.sprite_scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
 			body.hide()
+			body.queue_free()
 			emit_signal("xp_gained")
 			nom_sound.play()
+		else:
+			print(scale)
+			print(body.sprite.scale)
 	elif body.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
-		if body.sprite_scale >= (scale + Vector2(0.3, 0.3)): #if enemy is bigger than our fish
+		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
 			_die() #our fish died
 
 func _die():
@@ -66,5 +71,7 @@ func start(pos):
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	sprite.region_rect.position.y += 128 # fish evolution (changing text region's position)
-	scale += Vector2(0.05, 0.05)
+	if scale <= Vector2(2.6, 2.6):
+		rand_gain_scale = rand_range(0.04, 0.1)
+		scale += Vector2(rand_gain_scale, rand_gain_scale) # our fish grows up
 #	fish_cam.zoom += Vector2(0.1, 0.1)

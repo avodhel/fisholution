@@ -22,8 +22,8 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="BadFish1" type="RigidBody2D" groups=[
-"badfish",
 "enemy",
+"badfish",
 ]]
 collision_mask = 0
 gravity_scale = 0.0
