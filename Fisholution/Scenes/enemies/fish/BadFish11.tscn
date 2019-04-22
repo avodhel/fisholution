@@ -20,8 +20,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 8.78279
-height = 16.3277
+radius = 8.85295
+height = 9.54886
 
 [node name="BadFish11" type="RigidBody2D" groups=[
 "badfish",
@@ -34,7 +34,6 @@ min_speed = 150
 max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 2
@@ -45,9 +44,7 @@ region_rect = Rect2( 0, 320, 96, 32 )
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( 3.29435, 0.0226272 )
 rotation = 1.5708
-scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

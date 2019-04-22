@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/enemies_fish.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 resource_name = "right"
 length = 1.2
 tracks/0/type = "value"
@@ -20,7 +20,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 11.179
+radius = 10.3034
 height = 4.70966
 
 [node name="BadFish3" type="RigidBody2D" groups=[
@@ -34,7 +34,6 @@ min_speed = 150
 max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 2
@@ -42,12 +41,11 @@ region_enabled = true
 region_rect = Rect2( 0, 64, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/right = SubResource( 1 )
+anims/right = SubResource( 3 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( -0.931453, -0.166082 )
+position = Vector2( 1, 0 )
 rotation = 1.5708
-scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
