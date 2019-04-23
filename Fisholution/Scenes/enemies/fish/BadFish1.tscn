@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/BadFish.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/enemies_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -24,8 +24,8 @@ radius = 7.72738
 height = 7.63391
 
 [node name="BadFish1" type="RigidBody2D" groups=[
-"badfish",
 "enemy",
+"badfish",
 ]]
 collision_mask = 0
 gravity_scale = 0.0

@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/SeaCreature.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/SeaObject.gd" type="Script" id=1]
 [ext_resource path="res://Textures/sea_rocks.png" type="Texture" id=2]
+
+
 
 [node name="Rocks" type="Node2D" groups=[
 "sea_rock",
