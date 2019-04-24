@@ -38,7 +38,7 @@ func _rand_scale(min_scale, max_scale):
 		rand_scale = rand_range(min_scale, max_scale)
 		rand_vector = Vector2(rand_scale, rand_scale)
 		return rand_vector
-	
+
 func _play_anim():
 	if animation != null:
 		animation.play("idle")
