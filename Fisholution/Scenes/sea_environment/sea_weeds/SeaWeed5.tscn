@@ -3,8 +3,6 @@
 [ext_resource path="res://Scripts/SeaObject.gd" type="Script" id=1]
 [ext_resource path="res://Textures/sea_weeds.png" type="Texture" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
 length = 2.1
@@ -23,7 +21,7 @@ tracks/0/keys = {
 
 [node name="SeaWeed5" type="Node2D" groups=[
 "sea_weed",
-"common_sea_weed",
+"common_sea_object",
 ]]
 z_index = -3
 script = ExtResource( 1 )

@@ -18,12 +18,12 @@ func _spawn_sea_objects():
 		var position_x = rand_range(screensize_x - (screensize_x - 1), screensize_x)
 		var position_y = rand_range(screensize_y - (screensize_y - 1), screensize_y)
 		var sea_object = sea_objects[randi() % sea_objects.size()].instance()
-		if sea_object.is_in_group("rare_sea_weed"):
+		if sea_object.is_in_group("rare_sea_object"):
 			if rand_range(0, 100) > 80:
 				add_child(sea_object)
 			else:
 				continue
-		elif sea_object.is_in_group("common_sea_weed"):
+		elif sea_object.is_in_group("common_sea_object"):
 			add_child(sea_object)
 		else:
 			add_child(sea_object)

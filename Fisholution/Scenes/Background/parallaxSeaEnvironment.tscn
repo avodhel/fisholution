@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/ParallaxSeaEnvironment.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed1.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/sea_environment/sea_weeds/SeaWeed8.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/sea_environment/sea_shells/Shells.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/sea_environment/sea_rocks/Rocks.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/sea_environment/sand_creatures/Starfish1.tscn" type="PackedScene" id=12]
 
 [node name="parallaxSeaCreatures" type="Node"]
 
@@ -19,5 +20,5 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 480, 720 )
 script = ExtResource( 1 )
-sea_objects = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
+sea_objects = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ]
 
