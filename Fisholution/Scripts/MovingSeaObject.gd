@@ -11,15 +11,24 @@ onready var sprite = $PathFollow2D/Sprite
 onready var anim = $PathFollow2D/Sprite/AnimationPlayer
 
 func _ready():
+	_chose_object()
 	randomize()
 	direction = 1 if rand_range(0,100) > 50 else -1
 	path_follow.unit_offset = rand_range(0, 1) #rand location on path
-	_rand_scale(0.7, 1.2)
-	sprite.scale = rand_vector
 	
 func _process(delta):
 	_move_on_path(delta)
 	anim.play("idle")
+	
+func _chose_object():
+	if is_in_group("crab"):
+		speed = rand_range(15, 25)
+		_rand_scale(0.9, 1.5)
+		sprite.scale = rand_vector
+	elif is_in_group("sea_snail"):
+		speed = rand_range(5,15)
+		_rand_scale(0.6, 1.1)
+		sprite.scale = rand_vector
 	
 func _move_on_path(delta):
 	if is_in_group("sea_snail"):
