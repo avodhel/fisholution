@@ -1,11 +1,16 @@
 extends ParallaxLayer
 
-export (Array, PackedScene) var sea_objects
+export (Array, PackedScene) var sea_rocks
+export (Array, PackedScene) var sea_shells
+export (Array, PackedScene) var sea_weeds
+export (Array, PackedScene) var sand_creatures
 
+var sea_objects = []
 var screensize_x
 var screensize_y
 
 func _ready():
+	sea_objects = sea_rocks + sea_shells + sea_weeds + sand_creatures
 	screensize_x = get_viewport_rect().size.x
 	screensize_y = get_viewport_rect().size.y
 	motion_mirroring.x = screensize_x
@@ -19,7 +24,7 @@ func _spawn_sea_objects():
 		var position_y = rand_range(screensize_y - (screensize_y - 1), screensize_y)
 		var sea_object = sea_objects[randi() % sea_objects.size()].instance()
 		if sea_object.is_in_group("rare_sea_object"):
-			if rand_range(0, 100) > 80:
+			if rand_range(0, 100) > 80: 
 				add_child(sea_object)
 			else:
 				continue

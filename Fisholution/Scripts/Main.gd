@@ -1,6 +1,7 @@
 extends Node
 
-export (Array, PackedScene) var Enemies
+export (Array, PackedScene) var enemy_fishes
+export (Array, PackedScene) var enemy_not_fishes
 
 onready var fish = $Fish
 onready var enemy_spawn_location = $Fish/EnemyPath/EnemySpawnLocation
@@ -15,10 +16,12 @@ onready var enemy_timer = $EnemyTimer
 onready var gameover_sound = $GameOverSound
 onready var music = $Music
 
+var Enemies = []
 var score
 var rand_scale
 
 func _ready():
+	Enemies = enemy_fishes + enemy_not_fishes
 	randomize()
 
 func new_game():
