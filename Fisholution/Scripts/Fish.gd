@@ -18,8 +18,15 @@ var rand_gain_scale
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
-
+	
 func _process(delta):
+	_pc_control(delta)
+#	_mobile_control(delta)
+
+#func _mobile_control(delta):
+#	pass
+
+func _pc_control(delta):
 	velocity = Vector2()
 
 	if Input.is_action_pressed("ui_right"):
