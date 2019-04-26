@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sea_rocks.png-7346a7180ae9df3bef659ee4cd577bb9.stex"
+path="res://.import/sea_weeds.png-b93ce4b63ca72dd6eb7ab5b300caf4ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/sea_rocks.png"
-dest_files=[ "res://.import/sea_rocks.png-7346a7180ae9df3bef659ee4cd577bb9.stex" ]
+source_file="res://Textures/game/sea_weeds.png"
+dest_files=[ "res://.import/sea_weeds.png-b93ce4b63ca72dd6eb7ab5b300caf4ad.stex" ]
 
 [params]
 

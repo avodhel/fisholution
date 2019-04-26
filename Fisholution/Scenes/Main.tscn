@@ -80,6 +80,7 @@ stream = ExtResource( 23 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
+stream_paused = true
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
 [connection signal="xp_gained" from="Fish" to="HUD" method="_on_Fish_xp_gained"]

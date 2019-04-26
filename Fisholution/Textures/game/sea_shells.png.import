@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemies_not_fish.png-16b8dc5e8a46ed4bf901b6458d56c1c7.stex"
+path="res://.import/sea_shells.png-fbd0da3cdb585d856a9baa645364fc8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/enemies_not_fish.png"
-dest_files=[ "res://.import/enemies_not_fish.png-16b8dc5e8a46ed4bf901b6458d56c1c7.stex" ]
+source_file="res://Textures/game/sea_shells.png"
+dest_files=[ "res://.import/sea_shells.png-fbd0da3cdb585d856a9baa645364fc8d.stex" ]
 
 [params]
 

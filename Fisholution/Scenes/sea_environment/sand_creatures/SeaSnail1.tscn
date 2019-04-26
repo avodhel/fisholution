@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/MovingSeaObject.gd" type="Script" id=1]
-[ext_resource path="res://Textures/sand_creatures.png" type="Texture" id=2]
+[ext_resource path="res://Textures/game/sand_creatures.png" type="Texture" id=2]
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {

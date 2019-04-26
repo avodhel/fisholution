@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sand.jpg-319e666b7acdadfb56c9b3c8d4664155.stex"
+path="res://.import/enemies_not_fish.png-bc1db743123c95424914d4f6e356d8bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/sand.jpg"
-dest_files=[ "res://.import/sand.jpg-319e666b7acdadfb56c9b3c8d4664155.stex" ]
+source_file="res://Textures/game/enemies_not_fish.png"
+dest_files=[ "res://.import/enemies_not_fish.png-bc1db743123c95424914d4f6e356d8bf.stex" ]
 
 [params]
 

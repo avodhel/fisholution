@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bubble.png-463e87167fcb91d2c6814e159d6273ac.stex"
+path="res://.import/Fish.png-22e9a0d3da8aa3d881bd9066ad1a92e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/bubble.png"
-dest_files=[ "res://.import/bubble.png-463e87167fcb91d2c6814e159d6273ac.stex" ]
+source_file="res://Textures/game/Fish.png"
+dest_files=[ "res://.import/Fish.png-22e9a0d3da8aa3d881bd9066ad1a92e4.stex" ]
 
 [params]
 
@@ -31,4 +31,4 @@ process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=0.001
+svg/scale=1.0
