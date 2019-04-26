@@ -41,6 +41,7 @@ position = Vector2( 240, 450 )
 [node name="FishCam" type="Camera2D" parent="Fish"]
 position = Vector2( 0.381012, -44.4285 )
 current = true
+zoom = Vector2( 0.7, 0.7 )
 limit_smoothed = true
 drag_margin_left = 0.1
 drag_margin_top = 0.1
@@ -80,7 +81,6 @@ stream = ExtResource( 23 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
-stream_paused = true
 
 [connection signal="hit" from="Fish" to="." method="game_over"]
 [connection signal="xp_gained" from="Fish" to="HUD" method="_on_Fish_xp_gained"]
