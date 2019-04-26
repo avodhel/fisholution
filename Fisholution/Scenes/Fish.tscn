@@ -169,7 +169,6 @@ height = 12.5876
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
-position = Vector2( 233.875, 373.889 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 

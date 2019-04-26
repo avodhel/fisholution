@@ -36,10 +36,10 @@ enemy_fishes = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResour
 enemy_not_fishes = [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ]
 
 [node name="Fish" parent="." instance=ExtResource( 18 )]
-position = Vector2( 240, 400 )
+position = Vector2( 240, 360 )
 
 [node name="FishCam" type="Camera2D" parent="Fish"]
-position = Vector2( 0.381012, -19.4285 )
+position = Vector2( 0.381012, 0.571503 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 limit_smoothed = true
@@ -52,7 +52,7 @@ drag_margin_bottom = 0.1
 
 [node name="EnemyPath" type="Path2D" parent="Fish"]
 editor/display_folded = true
-position = Vector2( -120, -200 )
+position = Vector2( -120, -180 )
 scale = Vector2( 0.5, 0.5 )
 curve = SubResource( 1 )
 
@@ -60,7 +60,7 @@ curve = SubResource( 1 )
 position = Vector2( -6.48004, -2.05524 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 240, 400 )
+position = Vector2( 240, 360 )
 
 [node name="HUD" parent="." instance=ExtResource( 20 )]
 
