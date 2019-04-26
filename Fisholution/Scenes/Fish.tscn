@@ -5,8 +5,6 @@
 [ext_resource path="res://Textures/ui/bubble.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/nom.wav" type="AudioStream" id=4]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "down"
 tracks/0/type = "value"
@@ -171,6 +169,7 @@ height = 12.5876
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
+position = Vector2( 233.875, 373.889 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
