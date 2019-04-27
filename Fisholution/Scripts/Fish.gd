@@ -15,36 +15,113 @@ var velocity = Vector2()
 var screensize
 var rand_gain_scale
 var center
+var up_center
+var down_center
+var left_center
+var right_center
+var distance_x
+var distance_y
 
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
-	
 	center = get_viewport_rect().size / 2 #center of the screen
-	
-	
+	up_center = center / Vector2(1, 2)
+	down_center = center + Vector2(0, up_center.y)
+	left_center = center / Vector2(2, 1)
+	right_center = center + Vector2(left_center.x, 0)
+
 func _process(delta):
 	_pc_control()
-#	_mobile_control()
 	_move(delta)
 
 func _input(event):
-	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
+	_mobile_control(event)
 
-		if event.position.x < center.x: #if player is on the left side of the screen
+func _mobile_control(event):
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
+		if event.position.x > 120 and event.position.x < 360 and event.position.y < up_center.y : #up
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			animation.play("up")
+		if event.position.x > 120 and event.position.x < 360 and event.position.y > down_center.y : #down
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			animation.play("down")
+		if event.position.x < left_center.x and  event.position.y > 180 and event.position.y < 540 : # left
 			velocity = Vector2(0, 0)
 			velocity.x -= 1
 			animation.play("left")
-		if event.position.x > center.x:
+		if event.position.x > right_center.x and  event.position.y > 180 and event.position.y < 540: # right
 			velocity = Vector2(0, 0)
 			velocity.x += 1
 			animation.play("right")
-
-#func _mobile_control():
-#	pass
+		if event.position.x < 120 and event.position.y < 180: #up-left
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			velocity.x -= 1
+			animation.play("up")
+		if event.position.x > 360 and event.position.y < 180: #up-right
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			velocity.x += 1
+			animation.play("up")
+		if event.position.x < 120 and event.position.y > 540: #down-left
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			velocity.x -= 1
+			animation.play("down")
+		if event.position.x > 360 and event.position.y > 540: #down-right
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			velocity.x += 1
+			animation.play("down")
+		if event.position.x > 120 and event.position.x < 240 and event.position.y > 180 and event.position.y < 360: #up or left?
+			distance_y = event.position.y - up_center.y
+			distance_x = event.position.x - left_center.x
+			if distance_x < distance_y: # left
+				velocity = Vector2(0, 0)
+				velocity.x -= 1
+				animation.play("left")
+			else: # up
+				velocity = Vector2(0, 0)
+				velocity.y -= 1
+				animation.play("up")
+		if event.position.x > 240 and event.position.x < 360 and event.position.y > 180 and event.position.y < 360: #up or right?
+			distance_y = event.position.y - up_center.y
+			distance_x = right_center.x - event.position.x
+			if distance_x < distance_y: # right
+				velocity = Vector2(0, 0)
+				velocity.x += 1
+				animation.play("right")
+			else: # up
+				velocity = Vector2(0, 0)
+				velocity.y -= 1
+				animation.play("up")
+		if event.position.x > 120 and event.position.x < 240 and event.position.y > 360 and event.position.y < 540: #down or left?
+			distance_y = down_center.y - event.position.y
+			distance_x = event.position.x - left_center.x
+			if distance_x < distance_y: # left
+				velocity = Vector2(0, 0)
+				velocity.x -= 1
+				animation.play("left")
+			else: # down
+				velocity = Vector2(0, 0)
+				velocity.y += 1
+				animation.play("down")
+		if event.position.x > 240 and event.position.x < 360 and event.position.y > 360 and event.position.y < 540: #down or right?
+			distance_y = down_center.y - event.position.y
+			distance_x = right_center.x - event.position.x
+			if distance_x < distance_y: # right
+				velocity = Vector2(0, 0)
+				velocity.x += 1
+				animation.play("right")
+			else: # down
+				velocity = Vector2(0, 0)
+				velocity.y += 1
+				animation.play("down")
 
 func _pc_control():
-
 	if Input.is_action_pressed("ui_right"):
 		velocity = Vector2(0, 0)
 		velocity.x += 1

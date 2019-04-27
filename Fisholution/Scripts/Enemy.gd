@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 export (float) var min_scale = 0.5
-export (float) var max_scale = 2
+export (float) var max_scale = 4.5
 export (int) var min_speed
 export (int) var max_speed
 
