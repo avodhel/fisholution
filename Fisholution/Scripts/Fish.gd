@@ -14,14 +14,31 @@ onready var fish_cam = $FishCam
 var velocity = Vector2()
 var screensize
 var rand_gain_scale
+var center
 
 func _ready():
 	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
 	
+	center = get_viewport_rect().size / 2 #center of the screen
+	
+	
 func _process(delta):
 	_pc_control()
 #	_mobile_control()
+	_move(delta)
+
+func _input(event):
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
+
+		if event.position.x < center.x: #if player is on the left side of the screen
+			velocity = Vector2(0, 0)
+			velocity.x -= 1
+			animation.play("left")
+		if event.position.x > center.x:
+			velocity = Vector2(0, 0)
+			velocity.x += 1
+			animation.play("right")
 
 #func _mobile_control():
 #	pass
@@ -51,10 +68,8 @@ func _pc_control():
 	else:
 		bubble.emitting = false
 
-	_move()
-
-func _move():
-	position += (velocity * 0.1 ).normalized() * 3
+func _move(delta):
+	position += (velocity * delta ).normalized() * 3
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
