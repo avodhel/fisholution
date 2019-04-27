@@ -51,7 +51,6 @@ drag_margin_bottom = 0.1
 [node name="WaterEffect" parent="Fish" instance=ExtResource( 19 )]
 
 [node name="EnemyPath" type="Path2D" parent="Fish"]
-editor/display_folded = true
 position = Vector2( -120, -180 )
 scale = Vector2( 0.5, 0.5 )
 curve = SubResource( 1 )

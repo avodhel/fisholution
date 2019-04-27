@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+export (float) var min_scale = 0.5
+export (float) var max_scale = 2
 export (int) var min_speed
 export (int) var max_speed
 
@@ -12,7 +14,7 @@ var rand_vector
 var sprite_scale
 
 func _ready():
-	rand_scale = rand_range(0.5, 4.5)
+	rand_scale = rand_range(min_scale, max_scale)
 	rand_vector = Vector2(rand_scale, rand_scale)
 	sprite.scale = rand_vector
 	body_coll.scale = rand_vector

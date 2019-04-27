@@ -3,7 +3,7 @@ extends Area2D
 signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
 
-export (int) var speed = 200
+#export (int) var speed = 200
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
@@ -20,35 +20,41 @@ func _ready():
 	screensize = get_viewport_rect().size
 	
 func _process(delta):
-	_pc_control(delta)
-#	_mobile_control(delta)
+	_pc_control()
+#	_mobile_control()
 
-#func _mobile_control(delta):
+#func _mobile_control():
 #	pass
 
-func _pc_control(delta):
-	velocity = Vector2()
+func _pc_control():
 
 	if Input.is_action_pressed("ui_right"):
-        velocity.x += 1
-        animation.play("right")
+		velocity = Vector2(0, 0)
+		velocity.x += 1
+		animation.play("right")
 	if Input.is_action_pressed("ui_left"):
-        velocity.x -= 1
-        animation.play("left")
+		velocity = Vector2(0, 0)
+		velocity.x -= 1
+		animation.play("left")
 	if Input.is_action_pressed("ui_down"):
-        velocity.y += 1
-        animation.play("down")
+		velocity = Vector2(0, 0)
+		velocity.y += 1
+		animation.play("down")
 	if Input.is_action_pressed("ui_up"):
-        velocity.y -= 1
-        animation.play("up")
+		velocity = Vector2(0, 0)
+		velocity.y -= 1
+		animation.play("up")
 
 	if velocity.length() > 0:
-        bubble.emitting = true
-        velocity = velocity.normalized() * speed
+		bubble.emitting = true
+#		velocity = velocity.normalized() * speed
 	else:
-        bubble.emitting = false
-        
-	position += velocity * delta
+		bubble.emitting = false
+
+	_move()
+
+func _move():
+	position += (velocity * 0.1 ).normalized() * 3
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish

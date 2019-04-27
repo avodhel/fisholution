@@ -7,6 +7,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -46,6 +47,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "left"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -85,6 +87,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "right"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -124,6 +127,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "up"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
