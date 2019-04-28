@@ -29,12 +29,13 @@ func new_game():
 	fish.start(start_position.position)
 	rand_scale = rand_range(1.5, 2)
 	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
+	fish.stop(false) # move fish
 	start_timer.start()
 	hud.show_message("Get Ready")
 	hud.update_score(score)
 	hud_fb.show()
-	music.play()
 	hud_fb.reset_fisholution()
+	music.play()
 
 func game_over():
 	score_timer.stop()
@@ -43,6 +44,7 @@ func game_over():
 	gameover_sound.play()
 	music.stop()
 	$"/root/PlayerData".save_highscore(score) #save highscore
+	fish.stop(true) # stop fish
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()

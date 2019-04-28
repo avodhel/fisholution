@@ -24,6 +24,7 @@ modulate = Color( 1, 1, 1, 0.341176 )
 show_behind_parent = true
 margin_right = 483.0
 margin_bottom = 720.0
+color = Color( 0, 0.552941, 0.745098, 1 )
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_left = 0.5

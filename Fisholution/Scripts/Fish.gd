@@ -3,7 +3,7 @@ extends Area2D
 signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
 
-#export (int) var speed = 200
+export (float) var speed = 3
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
@@ -166,7 +166,13 @@ func _pc_control():
 		bubble.emitting = false
 
 func _move(delta):
-	position += (velocity * delta ).normalized() * 3
+	position += (velocity * delta ).normalized() * speed
+	
+func stop(condition): # stop fish when game over and move fish again when game restart
+	if condition:
+		speed = 0
+	else:
+		speed = 3
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
@@ -186,7 +192,7 @@ func _on_Fish_body_entered(body): #when something hit fish's collision this func
 
 func _die():
 	hide()
-	emit_signal("hit") #game will know fish died
+	emit_signal("hit") #game will know fish died :(
 	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
 
 func start(pos):
