@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Fish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/Fish.png" type="Texture" id=2]
@@ -44,6 +44,122 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -0.716969, 0.896214 ), Vector2( -0.716969, 0.896214 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "down-left"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../bodyColl:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../bodyColl:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.54045, 0.220066 ), Vector2( -1.54045, 0.220066 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "down-right"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -45.0, -45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../bodyColl:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -45.0, -45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../bodyColl:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.22007, 2.05464 ), Vector2( -0.22007, 2.05464 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "left"
@@ -83,6 +199,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1.61319, 0 ), Vector2( -1.61319, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -124,6 +252,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0.537731, 0 ), Vector2( 0.537731, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "up"
@@ -164,12 +304,128 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -0.716969, -1.07546 ), Vector2( -0.716969, -1.07546 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="Animation" id=5]
+resource_name = "up-left"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -45.0, -45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../bodyColl:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.76051, 0 ), Vector2( -1.76051, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../bodyColl:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -45.0, -45.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "up-right"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../bodyColl:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../bodyColl:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.220066, -1.98058 ), Vector2( -0.220066, -1.98058 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 5.05542
 height = 12.5876
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=8]
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
@@ -180,19 +436,24 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 11
+frame = 6
 region_enabled = true
 region_rect = Rect2( 0, 0, 96.75, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/down = SubResource( 1 )
+anims/down-left = SubResource( 9 )
+anims/down-right = SubResource( 10 )
 anims/left = SubResource( 2 )
 anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
+anims/up-left = SubResource( 5 )
+anims/up-right = SubResource( 6 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-position = Vector2( -0.716969, -1.07546 )
-shape = SubResource( 5 )
+position = Vector2( 0.537731, 0 )
+rotation = 1.5708
+shape = SubResource( 7 )
 
 [node name="Bubble" type="CPUParticles2D" parent="."]
 show_behind_parent = true
@@ -204,7 +465,7 @@ texture = ExtResource( 3 )
 gravity = Vector2( 0, 0 )
 initial_velocity = 0.0
 scale_amount = 0.03
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 8 )
 
 [node name="Nom" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )

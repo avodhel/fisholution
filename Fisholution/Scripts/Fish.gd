@@ -60,22 +60,22 @@ func _mobile_control(event):
 			velocity = Vector2(0, 0)
 			velocity.y -= 1
 			velocity.x -= 1
-			animation.play("up")
+			animation.play("up-left")
 		if event.position.x > 360 and event.position.y < 180: #up-right
 			velocity = Vector2(0, 0)
 			velocity.y -= 1
 			velocity.x += 1
-			animation.play("up")
+			animation.play("up-right")
 		if event.position.x < 120 and event.position.y > 540: #down-left
 			velocity = Vector2(0, 0)
 			velocity.y += 1
 			velocity.x -= 1
-			animation.play("down")
+			animation.play("down-left")
 		if event.position.x > 360 and event.position.y > 540: #down-right
 			velocity = Vector2(0, 0)
 			velocity.y += 1
 			velocity.x += 1
-			animation.play("down")
+			animation.play("down-right")
 		if event.position.x > 120 and event.position.x < 240 and event.position.y > 180 and event.position.y < 360: #up or left?
 			distance_y = event.position.y - up_center.y
 			distance_x = event.position.x - left_center.x
@@ -122,22 +122,42 @@ func _mobile_control(event):
 				animation.play("down")
 
 func _pc_control():
-	if Input.is_action_pressed("ui_right"):
-		velocity = Vector2(0, 0)
-		velocity.x += 1
-		animation.play("right")
-	if Input.is_action_pressed("ui_left"):
-		velocity = Vector2(0, 0)
-		velocity.x -= 1
-		animation.play("left")
-	if Input.is_action_pressed("ui_down"):
-		velocity = Vector2(0, 0)
-		velocity.y += 1
-		animation.play("down")
 	if Input.is_action_pressed("ui_up"):
 		velocity = Vector2(0, 0)
 		velocity.y -= 1
 		animation.play("up")
+	if Input.is_action_pressed("ui_down"):
+		velocity = Vector2(0, 0)
+		velocity.y += 1
+		animation.play("down")
+	if Input.is_action_pressed("ui_left"):
+		velocity = Vector2(0, 0)
+		velocity.x -= 1
+		animation.play("left")
+	if Input.is_action_pressed("ui_right"):
+		velocity = Vector2(0, 0)
+		velocity.x += 1
+		animation.play("right")
+	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left") :
+		velocity = Vector2(0, 0)
+		velocity.y -= 1
+		velocity.x -= 1
+		animation.play("up-left")
+	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right") :
+		velocity = Vector2(0, 0)
+		velocity.y -= 1
+		velocity.x += 1
+		animation.play("up-right")
+	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left") :
+		velocity = Vector2(0, 0)
+		velocity.y += 1
+		velocity.x -= 1
+		animation.play("down-left")
+	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right") :
+		velocity = Vector2(0, 0)
+		velocity.y += 1
+		velocity.x += 1
+		animation.play("down-right")
 
 	if velocity.length() > 0:
 		bubble.emitting = true
