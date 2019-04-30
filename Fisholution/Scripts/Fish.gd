@@ -21,6 +21,7 @@ var left_center
 var right_center
 var distance_x
 var distance_y
+var current_speed
 
 func _ready():
 	hide() # invisible fish when the game first start
@@ -30,6 +31,7 @@ func _ready():
 	down_center = center + Vector2(0, up_center.y)
 	left_center = center / Vector2(2, 1)
 	right_center = center + Vector2(left_center.x, 0)
+	current_speed = speed
 
 func _process(delta):
 	_pc_control()
@@ -172,7 +174,7 @@ func stop(condition): # stop fish when game over and move fish again when game r
 	if condition:
 		speed = 0
 	else:
-		speed = 3
+		speed = current_speed
 
 func _on_Fish_body_entered(body): #when something hit fish's collision this func works
 	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
