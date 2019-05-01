@@ -16,9 +16,9 @@ func _on_ObjectTimer_timeout():
 	demo_object.position = demo_spawn_loc.global_position
 	if demo_object.is_in_group("blue"):
 		demoChart.increase_or_reduce("demo1", "inc")
-	if demo_object.is_in_group("green"):
+	elif demo_object.is_in_group("green"):
 		demoChart.increase_or_reduce("demo2", "inc")
-	if demo_object.is_in_group("purple"):
+	elif demo_object.is_in_group("purple"):
 		demoChart.increase_or_reduce("demo3", "inc")
 		
 	demo_object.connect("object_died", self, "_on_object_died")

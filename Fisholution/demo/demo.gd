@@ -30,7 +30,6 @@ func _on_demo_area_entered(area):
 	if area.scale > scale:
 #		hide()
 #		coll.disabled = true
-		call_deferred("free")
 
 		if self.is_in_group("demo1"):
 			emit_signal("object_died", "demo1")
@@ -38,3 +37,5 @@ func _on_demo_area_entered(area):
 			emit_signal("object_died", "demo2")
 		elif self.is_in_group("demo3"):
 			emit_signal("object_died", "demo3")
+		
+		call_deferred("free")
