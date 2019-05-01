@@ -57,7 +57,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 resource_name = "down-left"
 loop = true
 tracks/0/type = "value"
@@ -109,7 +109,7 @@ tracks/3/keys = {
 "values": [ Vector2( -1.54045, 0.220066 ), Vector2( -1.54045, 0.220066 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "down-right"
 loop = true
 tracks/0/type = "value"
@@ -161,8 +161,7 @@ tracks/3/keys = {
 "values": [ Vector2( -0.22007, 2.05464 ), Vector2( -0.22007, 2.05464 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "left"
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -213,8 +212,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "right"
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -265,8 +263,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "up"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -317,8 +314,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "up-left"
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -369,8 +365,7 @@ tracks/3/keys = {
 "values": [ -45.0, -45.0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "up-right"
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -421,11 +416,11 @@ tracks/3/keys = {
 "values": [ Vector2( -0.220066, -1.98058 ), Vector2( -0.220066, -1.98058 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 5.05542
 height = 12.5876
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=10]
 colors = PoolColorArray( 1, 1, 1, 0.909804, 1, 1, 1, 0 )
 
 [node name="Fish" type="Area2D"]
@@ -442,18 +437,18 @@ region_rect = Rect2( 0, 0, 96.75, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/down = SubResource( 1 )
-anims/down-left = SubResource( 9 )
-anims/down-right = SubResource( 10 )
-anims/left = SubResource( 2 )
-anims/right = SubResource( 3 )
-anims/up = SubResource( 4 )
-anims/up-left = SubResource( 5 )
-anims/up-right = SubResource( 6 )
+anims/down-left = SubResource( 2 )
+anims/down-right = SubResource( 3 )
+anims/left = SubResource( 4 )
+anims/right = SubResource( 5 )
+anims/up = SubResource( 6 )
+anims/up-left = SubResource( 7 )
+anims/up-right = SubResource( 8 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
 position = Vector2( 0.537731, 0 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="Bubble" type="CPUParticles2D" parent="."]
 show_behind_parent = true
@@ -465,7 +460,7 @@ texture = ExtResource( 3 )
 gravity = Vector2( 0, 0 )
 initial_velocity = 0.0
 scale_amount = 0.03
-color_ramp = SubResource( 8 )
+color_ramp = SubResource( 10 )
 
 [node name="Nom" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
