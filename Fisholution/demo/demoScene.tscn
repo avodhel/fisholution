@@ -30,7 +30,7 @@ position = Vector2( -0.872406, -0.187607 )
 rotation = -0.00423726
 
 [node name="ObjectTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.5
 autostart = true
 
 [connection signal="timeout" from="ObjectTimer" to="." method="_on_ObjectTimer_timeout"]

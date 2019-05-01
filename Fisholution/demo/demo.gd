@@ -1,7 +1,11 @@
 extends Area2D
 
+signal object_died(whichobject)
+
 export (float) var min_scale = 0.5
 export (float) var max_scale = 2.5
+
+onready var coll = $CollisionShape2D
 
 var velocity = Vector2()
 var direction 
@@ -17,13 +21,20 @@ func _ready():
 
 func _process(delta):
 	velocity.y -= 1
-	position += ((velocity * delta).normalized() * 1).rotated(direction)
+	position += ((velocity * delta).normalized() * 0.5).rotated(direction)
 
 #func _on_demo_body_entered(body):
 #	print(body.name)
 
 func _on_demo_area_entered(area):
 	if area.scale > scale:
+#		hide()
+#		coll.disabled = true
 		call_deferred("free")
-	elif area.scale < scale:
-		area.call_deferred("free")
+
+		if self.is_in_group("demo1"):
+			emit_signal("object_died", "demo1")
+		elif self.is_in_group("demo2"):
+			emit_signal("object_died", "demo2")
+		elif self.is_in_group("demo3"):
+			emit_signal("object_died", "demo3")

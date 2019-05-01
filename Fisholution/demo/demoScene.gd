@@ -20,3 +20,13 @@ func _on_ObjectTimer_timeout():
 		demoChart.increase_or_reduce("demo2", "inc")
 	if demo_object.is_in_group("purple"):
 		demoChart.increase_or_reduce("demo3", "inc")
+		
+	demo_object.connect("object_died", self, "_on_object_died")
+	
+func _on_object_died(whichobject):
+	if whichobject == "demo1":
+		demoChart.increase_or_reduce(whichobject, "red")
+	elif whichobject == "demo2":
+		demoChart.increase_or_reduce(whichobject, "red")
+	elif whichobject == "demo3":
+		demoChart.increase_or_reduce(whichobject, "red")
