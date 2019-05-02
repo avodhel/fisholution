@@ -2,7 +2,7 @@ extends Node2D
 
 export (Array, PackedScene) var demo_objects
 
-onready var demo_spawn_loc = $Path2D/PathFollow2D
+onready var demo_spawn_loc = $MyDemoObject/Path2D/PathFollow2D
 onready var object_timer = $ObjectTimer
 onready var demoChart = $demoHud/demoChart
 
