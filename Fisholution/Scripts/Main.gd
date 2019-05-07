@@ -36,6 +36,7 @@ func new_game():
 	hud.update_score(score)
 	hud_fb.show()
 	hud_fb.reset_fisholution()
+	hud_ft.reset_table()
 	music.play()
 
 func game_over():
@@ -69,7 +70,8 @@ func _on_EnemyTimer_timeout():
 #			return
 #	else:
 #		add_child(enemy)
-	hud_ft.increase_or_reduce(enemy, "inc")
+	if !enemy.is_in_group("not_fish"):
+		hud_ft.increase_or_reduce(enemy, "inc")
     # Set the enemy's direction perpendicular to the path direction.
 	var direction = enemy_spawn_location.rotation + PI / 2
     # Set the enemy's position to a random location.
