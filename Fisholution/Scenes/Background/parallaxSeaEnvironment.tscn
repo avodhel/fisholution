@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/sea_environment/sand_creatures/Crab1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/sea_environment/sand_creatures/SeaSnail1.tscn" type="PackedScene" id=14]
 
-[node name="parallaxSeaCreatures" type="Node"]
+[node name="parallaxSeaEnvironment" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

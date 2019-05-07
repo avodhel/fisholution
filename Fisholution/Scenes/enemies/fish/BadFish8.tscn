@@ -3,8 +3,6 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "right"
 length = 1.2
@@ -26,6 +24,8 @@ radius = 8.78279
 height = 9.05758
 
 [node name="BadFish8" type="RigidBody2D" groups=[
+"fish8",
+"cyan_green",
 "badfish",
 "enemy",
 ]]

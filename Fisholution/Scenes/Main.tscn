@@ -66,7 +66,7 @@ position = Vector2( 240, 360 )
 
 [node name="parallaxBG" parent="." instance=ExtResource( 21 )]
 
-[node name="parallaxSeaCreatures" parent="." instance=ExtResource( 22 )]
+[node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 22 )]
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0

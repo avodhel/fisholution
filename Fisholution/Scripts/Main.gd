@@ -10,6 +10,7 @@ onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/ScoreLabel
 onready var hud_hsl = $HUD/HighscoreLabel
+onready var hud_ft = $HUD/FishTable
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
@@ -68,6 +69,7 @@ func _on_EnemyTimer_timeout():
 #			return
 #	else:
 #		add_child(enemy)
+	hud_ft.increase_or_reduce(enemy, "inc")
     # Set the enemy's direction perpendicular to the path direction.
 	var direction = enemy_spawn_location.rotation + PI / 2
     # Set the enemy's position to a random location.
@@ -78,7 +80,3 @@ func _on_EnemyTimer_timeout():
     # Set the velocity (speed & direction).
 	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
 	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
-    # [DemoFish]Set the velocity (speed & direction).
-#    var badfishRB = badfish.find_node("RigidBody2D")
-#    badfishRB.linear_velocity = Vector2(rand_range(badfish.min_speed, badfish.max_speed), 0)
-#    badfishRB.linear_velocity = badfishRB.linear_velocity.rotated(direction)

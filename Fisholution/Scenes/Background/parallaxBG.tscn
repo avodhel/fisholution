@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Textures/game/sand.jpg" type="Texture" id=1]
 
-
 [node name="parallaxBG" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true

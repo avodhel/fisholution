@@ -3,9 +3,7 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=2]
 
-
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "right"
 length = 1.2
 tracks/0/type = "value"
@@ -28,6 +26,8 @@ height = 4.70966
 [node name="BadFish3" type="RigidBody2D" groups=[
 "badfish",
 "enemy",
+"fish3",
+"yellow_blue",
 ]]
 collision_mask = 0
 gravity_scale = 0.0
@@ -43,7 +43,7 @@ region_enabled = true
 region_rect = Rect2( 0, 64, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/right = SubResource( 3 )
+anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 0 )

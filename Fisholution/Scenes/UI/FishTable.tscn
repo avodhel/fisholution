@@ -3,7 +3,6 @@
 [ext_resource path="res://demo/FishTable.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.831373, 0.309804, 0.835294, 1 )
 
@@ -14,76 +13,76 @@ bg_color = Color( 0.305882, 0.858824, 0.839216, 1 )
 size = 45
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.156863, 0.337255, 0.537255, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.470588, 0.772549, 0.219608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.768627, 0.745098, 0.0784314, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.0470588, 0.223529, 0.419608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.890196, 0.552941, 0.894118, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.25098, 0.0666667, 0.164706, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.894118, 0.764706, 0.380392, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.721569, 0.411765, 0.0705882, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.882353, 0.607843, 0.298039, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.227451, 0.345098, 0.113725, 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.870588, 0.870588, 0.870588, 1 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.737255, 0.454902, 0.454902, 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.0352941, 0.329412, 0.227451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.329412, 0.921569, 0.72549, 1 )
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.847059, 0.435294, 0.435294, 1 )
 
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0.262745, 0.529412, 0.827451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.741176, 0.627451, 0.447059, 1 )
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.839216, 0.113725, 0.113725, 1 )
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=22]
 bg_color = Color( 0.0745098, 0.713726, 0.486275, 1 )
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0.701961, 0.780392, 0.262745, 1 )
 
-[sub_resource type="StyleBoxFlat" id=25]
+[sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.0156863, 0.0784314, 0.145098, 1 )
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.454902, 0.654902, 0.87451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0.521569, 0.301961, 0.0588235, 1 )
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0.941176, 0.654902, 0.333333, 1 )
 
 [node name="FishTable" type="Node2D"]
@@ -119,8 +118,8 @@ margin_left = 30.0
 margin_top = 32.3327
 margin_right = 90.0
 margin_bottom = 62.3327
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 6 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 max_value = 25.0
 value = 12.0
 percent_visible = false
@@ -136,19 +135,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "12"
 valign = 1
 
-[node name="Fish2_Progress2" type="ProgressBar" parent="."]
+[node name="Fish3_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 62.3327
 margin_right = 90.0
 margin_bottom = 92.3327
-custom_styles/fg = SubResource( 15 )
-custom_styles/bg = SubResource( 16 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
 max_value = 25.0
 value = 4.0
 percent_visible = false
 
-[node name="Fish2_label" type="Label" parent="Fish2_Progress2"]
+[node name="Fish3_label" type="Label" parent="Fish3_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -159,19 +158,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "4"
 valign = 1
 
-[node name="Fish3_Progress" type="ProgressBar" parent="."]
+[node name="Fish4_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 92.3327
 margin_right = 90.0
 margin_bottom = 122.333
-custom_styles/fg = SubResource( 7 )
-custom_styles/bg = SubResource( 8 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
 max_value = 25.0
 value = 22.0
 percent_visible = false
 
-[node name="Fish3_label" type="Label" parent="Fish3_Progress"]
+[node name="Fish4_label" type="Label" parent="Fish4_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -182,19 +181,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "22"
 valign = 1
 
-[node name="Fish4_Progress" type="ProgressBar" parent="."]
+[node name="Fish5_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 122.333
 margin_right = 90.0
 margin_bottom = 152.333
-custom_styles/fg = SubResource( 9 )
-custom_styles/bg = SubResource( 10 )
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
 max_value = 25.0
 value = 14.0
 percent_visible = false
 
-[node name="Fish4_label" type="Label" parent="Fish4_Progress"]
+[node name="Fish5_label" type="Label" parent="Fish5_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -205,19 +204,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "14"
 valign = 1
 
-[node name="Fish5_Progress" type="ProgressBar" parent="."]
+[node name="Fish6_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 152.333
 margin_right = 90.0
 margin_bottom = 182.333
-custom_styles/fg = SubResource( 11 )
-custom_styles/bg = SubResource( 12 )
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
 max_value = 25.0
 value = 3.0
 percent_visible = false
 
-[node name="Fish5_label" type="Label" parent="Fish5_Progress"]
+[node name="Fish6_label" type="Label" parent="Fish6_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -228,19 +227,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "3"
 valign = 1
 
-[node name="Fish6_Progress" type="ProgressBar" parent="."]
+[node name="Fish7_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 182.333
 margin_right = 90.0
 margin_bottom = 212.333
-custom_styles/fg = SubResource( 13 )
-custom_styles/bg = SubResource( 14 )
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
 max_value = 25.0
 value = 10.0
 percent_visible = false
 
-[node name="Fish6_label" type="Label" parent="Fish6_Progress"]
+[node name="Fish7_label" type="Label" parent="Fish7_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -251,39 +250,16 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "10"
 valign = 1
 
-[node name="Fish7_Progress" type="ProgressBar" parent="."]
+[node name="Fish8_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 212.333
 margin_right = 90.0
 margin_bottom = 242.333
-custom_styles/fg = SubResource( 17 )
-custom_styles/bg = SubResource( 18 )
+custom_styles/fg = SubResource( 16 )
+custom_styles/bg = SubResource( 17 )
 max_value = 25.0
 value = 15.0
-percent_visible = false
-
-[node name="Fish7_label" type="Label" parent="Fish7_Progress"]
-margin_left = 4.0
-margin_top = -7.0
-margin_right = 49.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "15"
-valign = 1
-
-[node name="Fish8_Progress" type="ProgressBar" parent="."]
-editor/display_folded = true
-margin_left = 30.0
-margin_top = 242.333
-margin_right = 90.0
-margin_bottom = 272.333
-custom_styles/fg = SubResource( 19 )
-custom_styles/bg = SubResource( 20 )
-max_value = 25.0
-value = 17.0
 percent_visible = false
 
 [node name="Fish8_label" type="Label" parent="Fish8_Progress"]
@@ -294,19 +270,19 @@ margin_bottom = 39.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "17"
+text = "15"
 valign = 1
 
 [node name="Fish9_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
-margin_top = 272.333
+margin_top = 242.333
 margin_right = 90.0
-margin_bottom = 302.333
-custom_styles/fg = SubResource( 21 )
-custom_styles/bg = SubResource( 22 )
+margin_bottom = 272.333
+custom_styles/fg = SubResource( 18 )
+custom_styles/bg = SubResource( 19 )
 max_value = 25.0
-value = 12.0
+value = 17.0
 percent_visible = false
 
 [node name="Fish9_label" type="Label" parent="Fish9_Progress"]
@@ -317,19 +293,19 @@ margin_bottom = 39.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "12"
+text = "17"
 valign = 1
 
 [node name="Fish10_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
-margin_top = 302.333
+margin_top = 272.333
 margin_right = 90.0
-margin_bottom = 332.333
-custom_styles/fg = SubResource( 23 )
-custom_styles/bg = SubResource( 24 )
+margin_bottom = 302.333
+custom_styles/fg = SubResource( 20 )
+custom_styles/bg = SubResource( 21 )
 max_value = 25.0
-value = 13.0
+value = 12.0
 percent_visible = false
 
 [node name="Fish10_label" type="Label" parent="Fish10_Progress"]
@@ -340,22 +316,45 @@ margin_bottom = 39.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "13"
+text = "12"
 valign = 1
 
 [node name="Fish11_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
+margin_top = 302.333
+margin_right = 90.0
+margin_bottom = 332.333
+custom_styles/fg = SubResource( 22 )
+custom_styles/bg = SubResource( 23 )
+max_value = 25.0
+value = 13.0
+percent_visible = false
+
+[node name="Fish11_label" type="Label" parent="Fish11_Progress"]
+margin_left = 4.0
+margin_top = -7.0
+margin_right = 49.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "13"
+valign = 1
+
+[node name="Fish12_Progress" type="ProgressBar" parent="."]
+editor/display_folded = true
+margin_left = 30.0
 margin_top = 332.333
 margin_right = 90.0
 margin_bottom = 362.333
-custom_styles/fg = SubResource( 25 )
-custom_styles/bg = SubResource( 26 )
+custom_styles/fg = SubResource( 24 )
+custom_styles/bg = SubResource( 25 )
 max_value = 25.0
 value = 22.0
 percent_visible = false
 
-[node name="Fish11_label" type="Label" parent="Fish11_Progress"]
+[node name="Fish12_label" type="Label" parent="Fish12_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
@@ -366,19 +365,19 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "22"
 valign = 1
 
-[node name="Fish12_Progress" type="ProgressBar" parent="."]
+[node name="Fish13_Progress" type="ProgressBar" parent="."]
 editor/display_folded = true
 margin_left = 30.0
 margin_top = 362.333
 margin_right = 90.0
 margin_bottom = 392.333
-custom_styles/fg = SubResource( 27 )
-custom_styles/bg = SubResource( 28 )
+custom_styles/fg = SubResource( 26 )
+custom_styles/bg = SubResource( 27 )
 max_value = 25.0
 value = 23.0
 percent_visible = false
 
-[node name="Fish12_label" type="Label" parent="Fish12_Progress"]
+[node name="Fish13_label" type="Label" parent="Fish13_Progress"]
 margin_left = 4.0
 margin_top = -7.0
 margin_right = 49.0
