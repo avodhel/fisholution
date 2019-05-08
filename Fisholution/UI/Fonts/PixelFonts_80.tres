@@ -3,7 +3,9 @@
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 80
-outline_color = Color( 0.85098, 0.666667, 0.172549, 1 )
+size = 30
+outline_size = 1
+outline_color = Color( 0.709804, 0.709804, 0.709804, 1 )
+extra_spacing_char = 2
 font_data = ExtResource( 1 )
 
