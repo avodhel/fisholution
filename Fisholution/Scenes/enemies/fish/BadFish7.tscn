@@ -23,17 +23,14 @@ tracks/0/keys = {
 radius = 9.66737
 height = 8.09198
 
-[node name="BadFish7" type="RigidBody2D" groups=[
+[node name="BadFish7" type="Area2D" groups=[
 "red_white",
+"fish7",
 "badfish",
 "enemy",
-"fish7",
 ]]
-collision_mask = 0
-gravity_scale = 0.0
+collision_mask = 3
 script = ExtResource( 1 )
-min_speed = 150
-max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -50,4 +47,5 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

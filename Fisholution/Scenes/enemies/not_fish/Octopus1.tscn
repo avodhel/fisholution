@@ -3,8 +3,6 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/enemies_not_fish.png" type="Texture" id=2]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "right"
 tracks/0/type = "value"
@@ -24,16 +22,13 @@ tracks/0/keys = {
 radius = 6.39224
 height = 14.788
 
-[node name="Octopus1" type="RigidBody2D" groups=[
+[node name="Octopus1" type="Area2D" groups=[
+"enemy",
 "octopus",
 "not_fish",
-"enemy",
 ]]
-collision_mask = 0
-gravity_scale = 0.0
+collision_layer = 2
 script = ExtResource( 1 )
-min_speed = 150
-max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

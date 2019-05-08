@@ -19,16 +19,13 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[node name="JellyFish1" type="RigidBody2D" groups=[
-"not_fish",
+[node name="JellyFish1" type="Area2D" groups=[
 "enemy",
 "jellyfish",
+"not_fish",
 ]]
-collision_mask = 0
-gravity_scale = 0.0
+collision_layer = 2
 script = ExtResource( 1 )
-min_speed = 150
-max_speed = 250
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

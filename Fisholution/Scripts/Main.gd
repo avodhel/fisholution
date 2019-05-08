@@ -63,22 +63,16 @@ func _on_EnemyTimer_timeout():
     # Create a enemy instance and add it to the scene.
 	var enemy = Enemies[randi() % Enemies.size()].instance()
 	add_child(enemy)
-#	if enemy.is_in_group("not_fish"):
-#		if rand_range(0, 100) > 65:
-#			add_child(enemy)
-#		else:
-#			return
-#	else:
-#		add_child(enemy)
+	# increase fish of number on the fish table
 	if !enemy.is_in_group("not_fish"):
 		hud_ft.increase_or_reduce(enemy, "inc")
-    # Set the enemy's direction perpendicular to the path direction.
-	var direction = enemy_spawn_location.rotation + PI / 2
-    # Set the enemy's position to a random location.
+#    # Set the enemy's position to a random location.
 	enemy.position = enemy_spawn_location.global_position
-    # Add some randomness to the direction.
-	direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
-	enemy.rotation = direction
-    # Set the velocity (speed & direction).
-	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
-	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
+#    # Set the enemy's direction perpendicular to the path direction.
+#	var direction = enemy_spawn_location.rotation + PI / 2
+#    # Add some randomness to the direction.
+#	direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
+#	enemy.rotation = direction
+#    # Set the velocity (speed & direction).
+#	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
+#	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)

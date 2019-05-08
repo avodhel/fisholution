@@ -1,28 +1,38 @@
-extends RigidBody2D
+extends Area2D
 
 export (float) var min_scale = 0.5
 export (float) var max_scale = 4.5
-export (int) var min_speed
-export (int) var max_speed
+export (float) var min_speed = 0.8
+export (float) var max_speed = 2.8
 
 onready var sprite = $Sprite
-onready var body_coll = $bodyColl
 onready var animation = $Sprite/AnimationPlayer
 
 var rand_scale
 var rand_vector
-var sprite_scale
+var velocity = Vector2()
+var direction 
+var speed
 
 func _ready():
+	randomize()
+	direction = rand_range(-25, 25)
+#	self.rotation = direction
 	rand_scale = rand_range(min_scale, max_scale)
 	rand_vector = Vector2(rand_scale, rand_scale)
-	sprite.scale = rand_vector
-	body_coll.scale = rand_vector
-	sprite_scale = sprite.scale
+	scale = rand_vector
+	speed = rand_range(min_speed, max_speed)
 
 func _process(delta):
+	_move(delta)
 	animation.play("right")
+
+func _move(delta):
+	velocity.y -= 1
+	position += ((velocity * delta).normalized() * speed).rotated(direction)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	call_deferred('free')
 
+func _on_Enemy_area_entered(area):
+	print(area.name)

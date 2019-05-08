@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://demo/demoScene.gd" type="Script" id=1]
 [ext_resource path="res://demo/demo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://demo/demo2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://demo/demo3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://demo/demoHud.tscn" type="PackedScene" id=5]
-[ext_resource path="res://demo/MyDemoObject.tscn" type="PackedScene" id=6]
+[ext_resource path="res://demo/MyDemoObject.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -16,9 +15,7 @@ _data = {
 script = ExtResource( 1 )
 demo_objects = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 
-[node name="demoHud" parent="." instance=ExtResource( 5 )]
-
-[node name="MyDemoObject" parent="." instance=ExtResource( 6 )]
+[node name="MyDemoObject" parent="." instance=ExtResource( 5 )]
 
 [node name="Camera2D" type="Camera2D" parent="MyDemoObject"]
 position = Vector2( 227.283, 361.261 )
