@@ -24,9 +24,9 @@ radius = 8.19015
 height = 11.6659
 
 [node name="Turtle1" type="Area2D" groups=[
-"enemy",
 "turtle",
 "not_fish",
+"enemy",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -41,7 +41,6 @@ region_rect = Rect2( 0, 64, 96, 32 )
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

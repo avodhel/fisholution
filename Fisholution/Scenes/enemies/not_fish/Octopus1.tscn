@@ -23,9 +23,9 @@ radius = 6.39224
 height = 14.788
 
 [node name="Octopus1" type="Area2D" groups=[
+"not_fish",
 "enemy",
 "octopus",
-"not_fish",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -40,7 +40,6 @@ region_rect = Rect2( 0, 0, 96, 32 )
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

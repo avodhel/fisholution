@@ -19,7 +19,7 @@ var speed
 func _ready():
 	randomize()
 	direction = rand_range(-25, 25)
-#	self.rotation = direction
+	self.rotation = direction
 	rand_scale = rand_range(min_scale, max_scale)
 	rand_vector = Vector2(rand_scale, rand_scale)
 	scale = rand_vector

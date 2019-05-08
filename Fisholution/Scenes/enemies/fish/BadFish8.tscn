@@ -24,10 +24,10 @@ radius = 8.78279
 height = 9.05758
 
 [node name="BadFish8" type="Area2D" groups=[
-"fish8",
 "badfish",
-"cyan_green",
 "enemy",
+"fish8",
+"cyan_green",
 ]]
 collision_mask = 3
 script = ExtResource( 1 )
@@ -43,7 +43,6 @@ region_rect = Rect2( 0, 224, 96, 32 )
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

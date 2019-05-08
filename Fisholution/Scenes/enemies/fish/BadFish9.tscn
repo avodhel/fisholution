@@ -24,10 +24,10 @@ radius = 7.07995
 height = 11.0183
 
 [node name="BadFish9" type="Area2D" groups=[
-"fish9",
-"blue_red",
 "badfish",
 "enemy",
+"fish9",
+"blue_red",
 ]]
 scale = Vector2( 1.00226, 1 )
 collision_mask = 3
@@ -44,7 +44,6 @@ region_rect = Rect2( 0, 256, 96, 32 )
 anims/right = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
