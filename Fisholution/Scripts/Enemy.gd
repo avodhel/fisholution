@@ -1,5 +1,7 @@
 extends Area2D
 
+signal fish_died(which_fish)
+
 export (float) var min_scale = 0.5
 export (float) var max_scale = 4.5
 export (float) var min_speed = 0.8
@@ -32,7 +34,10 @@ func _move(delta):
 	position += ((velocity * delta).normalized() * speed).rotated(direction)
 
 func _on_VisibilityNotifier2D_screen_exited():
-	call_deferred('free')
+#	call_deferred('free')
+	pass
 
 func _on_Enemy_area_entered(area):
-	print(area.name)
+	if area.scale > scale:
+		call_deferred("free")
+		emit_signal("fish_died", self)

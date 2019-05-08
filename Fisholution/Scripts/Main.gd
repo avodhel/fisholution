@@ -65,11 +65,13 @@ func _on_EnemyTimer_timeout():
     # Create a enemy instance and add it to the scene.
 	var enemy = Enemies[randi() % Enemies.size()].instance()
 	add_child(enemy)
+#   # Set the enemy's position to a random location.
+	enemy.position = enemy_spawn_location.global_position
 	# increase fish of number on the fish table
 	if !enemy.is_in_group("not_fish"):
 		hud_ft.increase_or_reduce(enemy, "inc")
-#    # Set the enemy's position to a random location.
-	enemy.position = enemy_spawn_location.global_position
+	#make contact with "fish_died" signal
+	enemy.connect("fish_died", self, "_on_fish_died")
 #    # Set the enemy's direction perpendicular to the path direction.
 #	var direction = enemy_spawn_location.rotation + PI / 2
 #    # Add some randomness to the direction.
@@ -78,3 +80,15 @@ func _on_EnemyTimer_timeout():
 #    # Set the velocity (speed & direction).
 #	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
 #	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
+
+func _on_fish_died(which_fish):
+	hud_ft.increase_or_reduce(which_fish, "red")
+
+
+
+
+
+
+
+
+

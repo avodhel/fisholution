@@ -20,6 +20,7 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 1, 1, 1, 0.784314 )
 motion_mirroring = Vector2( 480, 720 )
 script = ExtResource( 1 )
 sea_rocks = [ ExtResource( 2 ) ]
