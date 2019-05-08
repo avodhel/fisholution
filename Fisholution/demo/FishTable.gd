@@ -6,6 +6,7 @@ var fish_no = null
 
 func _ready():
 	reset_table()
+	table_transparency(false)
 
 func increase_or_reduce(whichfish, situation):
 	if whichfish.is_in_group("fish1"):
@@ -61,3 +62,20 @@ func reset_table(): # reset fish table
 		var fishtable_label = fishtable_elements[i].get_child(0)
 		fishtable_labels.append(fishtable_label)
 		fishtable_label.text = str(fishtable_elements[i].value)
+
+func table_transparency(on):
+	if on:
+		modulate.a = 0.5
+	else:
+		modulate.a = 1
+
+
+
+
+
+
+
+
+
+
+

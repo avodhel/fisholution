@@ -37,12 +37,14 @@ func new_game():
 	hud_fb.show()
 	hud_fb.reset_fisholution()
 	hud_ft.reset_table()
+	hud_ft.table_transparency(true)
 	music.play()
 
 func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
+	hud.table_transparency(false)
 	gameover_sound.play()
 	music.stop()
 	$"/root/PlayerData".save_highscore(score) #save highscore
