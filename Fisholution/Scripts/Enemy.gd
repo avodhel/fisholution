@@ -24,10 +24,10 @@ func _ready():
 	rand_vector = Vector2(rand_scale, rand_scale)
 	scale = rand_vector
 	speed = rand_range(min_speed, max_speed)
+	animation.play("up")
 
 func _process(delta):
 	_move(delta)
-	animation.play("right")
 
 func _move(delta):
 	velocity.y -= 1

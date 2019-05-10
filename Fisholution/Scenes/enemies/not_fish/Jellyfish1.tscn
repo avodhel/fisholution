@@ -4,8 +4,9 @@
 [ext_resource path="res://Textures/game/enemies_not_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "right"
+resource_name = "up"
 length = 1.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -20,9 +21,9 @@ tracks/0/keys = {
 }
 
 [node name="JellyFish1" type="Area2D" groups=[
+"jellyfish",
 "not_fish",
 "enemy",
-"jellyfish",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -35,7 +36,7 @@ region_enabled = true
 region_rect = Rect2( 0, 32, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/right = SubResource( 1 )
+anims/up = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionPolygon2D" parent="."]
 rotation = 4.71239

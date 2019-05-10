@@ -1,17 +1,17 @@
 extends Node2D
 
 onready var sprite = $Sprite
-onready var animation = $Sprite/AnimationPlayer
 
+var animation
 var rand_scale
 var rand_vector
 
 func _ready():
 	_chose_object()
+	if is_in_group("sea_weed"):
+		animation = $Sprite/AnimationPlayer
+		_play_anim()
 
-func _process(delta):
-	_play_anim()
-		
 func _chose_object():
 	if is_in_group("sea_weed") and is_in_group("common_sea_object"):
 		_rand_scale(0.6, 3)

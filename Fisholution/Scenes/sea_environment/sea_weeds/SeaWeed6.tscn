@@ -3,10 +3,10 @@
 [ext_resource path="res://Scripts/SeaObject.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/sea_weeds.png" type="Texture" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
 length = 2.1
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
