@@ -60,5 +60,5 @@ func _on_random_pressed():
 		_show_fish(fish_no)
 
 func _on_start_pressed():
-	SceneManager.change_scene("GameScene") # start game
+	Global.change_scene("GameScene") # start game
 	Global.fish_no = fish_no

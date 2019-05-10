@@ -15,7 +15,7 @@ var highscore_value
 var xp = 10
 
 func _ready():
-	highscore_value = str(PlayerData.load_highscore())
+	highscore_value = str(Global.load_highscore())
 	highscore_label.text = "Highscore: " + highscore_value
 
 func show_message(text):
@@ -37,7 +37,7 @@ func game_over():
 	restart_button.show()
 	title_label.text = "Fisholution"
 	title_label.show()
-	highscore_value = str(PlayerData.load_highscore()) # update high score
+	highscore_value = str(Global.load_highscore()) # update high score
 	highscore_label.text = "Highscore: " + highscore_value # assign high score to text
 	highscore_label.show() # show high score
 	blur.show()

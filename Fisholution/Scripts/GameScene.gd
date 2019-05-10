@@ -52,7 +52,7 @@ func game_over():
 	hud_ft.table_transparency(false)
 	gameover_sound.play()
 	music.stop()
-	$"/root/PlayerData".save_highscore(score) #save highscore
+	Global.save_highscore(score) #save highscore
 	fish.stop(true) # stop fish
 
 func _on_StartTimer_timeout():

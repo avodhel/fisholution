@@ -23,8 +23,6 @@ config/icon="res://Textures/ui/button2.png"
 
 [autoload]
 
-PlayerData="*res://Scripts/PlayerData.gd"
-SceneManager="*res://Scripts/SceneManager.gd"
 Global="*res://Scripts/Global.gd"
 
 [display]
