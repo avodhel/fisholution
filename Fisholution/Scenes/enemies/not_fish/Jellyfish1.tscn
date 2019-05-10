@@ -4,7 +4,7 @@
 [ext_resource path="res://Textures/game/enemies_not_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "up"
+resource_name = "move"
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -36,7 +36,7 @@ region_enabled = true
 region_rect = Rect2( 0, 32, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/up = SubResource( 1 )
+anims/move = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionPolygon2D" parent="."]
 rotation = 4.71239
