@@ -5,7 +5,7 @@ export (int) var number_of_fish
 onready var show_fish = $ShowFish
 onready var animation = $ShowFish/AnimationPlayer
 
-var fish_no = null
+var fish_no
 
 func _ready():
 	randomize()
@@ -55,9 +55,10 @@ func _show_fish(fish_no):
 	animation.play("idle")
 
 func _on_random_pressed():
-	fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
-	print(fish_no)
-	_show_fish(fish_no)
+	if fish_no != null:
+		fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
+		_show_fish(fish_no)
 
 func _on_start_pressed():
-	$"/root/SceneManager".change_scene("GameScene") # start game
+	SceneManager.change_scene("GameScene") # start game
+	Global.fish_no = fish_no

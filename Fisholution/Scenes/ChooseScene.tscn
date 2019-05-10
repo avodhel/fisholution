@@ -1,6 +1,6 @@
 [gd_scene load_steps=81 format=2]
 
-[ext_resource path="res://Scripts/ChooseScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ChooseScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Fonts/PixelFonts_80.tres" type="DynamicFont" id=4]
@@ -1048,7 +1048,7 @@ corner_radius_bottom_left = 9
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
-[node name="ChooseScreen" type="CanvasLayer"]
+[node name="ChooseScene" type="CanvasLayer"]
 script = ExtResource( 1 )
 number_of_fish = 13
 
@@ -1455,7 +1455,6 @@ custom_constants/hseparation = 2
 text = "Choose Fish Randomly"
 
 [node name="Buttons4" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

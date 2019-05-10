@@ -176,22 +176,6 @@ func stop(condition): # stop fish when game over and move fish again when game r
 	else:
 		speed = current_speed
 
-#func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-#	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
-#		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
-#			_die() #our fish died
-#		elif (body.sprite_scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
-#			body.hide()
-#			body.queue_free()
-#			emit_signal("xp_gained")
-#			nom_sound.play()
-#		else:
-#			print(scale)
-#			print(body.sprite.scale)
-#	elif body.is_in_group("enemy") and body.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
-#		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
-#			_die() #our fish died
-
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
 		if area.scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish

@@ -466,4 +466,3 @@ color_ramp = SubResource( 10 )
 stream = ExtResource( 4 )
 
 [connection signal="area_entered" from="." to="." method="_on_Fish_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_Fish_body_entered"]

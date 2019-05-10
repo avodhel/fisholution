@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/enemies/fish/BadFish1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/enemies/fish/BadFish2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/enemies/fish/BadFish3.tscn" type="PackedScene" id=4]

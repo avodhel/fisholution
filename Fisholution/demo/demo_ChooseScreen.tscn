@@ -1,8 +1,9 @@
 [gd_scene load_steps=79 format=2]
 
-[ext_resource path="res://Scripts/ChooseScreen.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ChooseScene.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/PixelFonts_80.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=3]
+
 
 
 
