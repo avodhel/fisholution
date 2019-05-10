@@ -4,7 +4,6 @@
 [ext_resource path="res://Textures/ui/bubble.png" type="Texture" id=2]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=3]
 
-
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://advanced_pixel-7.ttf"
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "up"
+resource_name = "move"
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -25,10 +25,9 @@ radius = 11.1491
 height = 5.63121
 
 [node name="BadFish12" type="Area2D" groups=[
-"blue_navyblue",
 "fish12",
-"enemy",
 "badfish",
+"enemy",
 ]]
 collision_mask = 3
 script = ExtResource( 1 )
@@ -41,7 +40,7 @@ region_enabled = true
 region_rect = Rect2( 0, 352, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/up = SubResource( 1 )
+anims/move = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

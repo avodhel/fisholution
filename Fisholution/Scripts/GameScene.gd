@@ -25,7 +25,50 @@ func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
 	randomize()
 	_prepare_game()
-	print(Global.fish_no)
+	_chosen_fish(Global.fish_no)
+	fish.hide()
+
+func _chosen_fish(fish_no):
+	match fish_no:
+		0:
+			_load_fish("res://Scenes/enemies/fish/BadFish1.tscn", "fish1")
+		1:
+			_load_fish("res://Scenes/enemies/fish/BadFish2.tscn", "fish2")
+		2:
+			_load_fish("res://Scenes/enemies/fish/BadFish3.tscn", "fish3")
+		3:
+			_load_fish("res://Scenes/enemies/fish/BadFish4.tscn", "fish4")
+		4:
+			_load_fish("res://Scenes/enemies/fish/BadFish5.tscn", "fish5")
+		5:
+			_load_fish("res://Scenes/enemies/fish/BadFish6.tscn", "fish6")
+		6:
+			_load_fish("res://Scenes/enemies/fish/BadFish7.tscn", "fish7")
+		7:
+			_load_fish("res://Scenes/enemies/fish/BadFish8.tscn", "fish8")
+		8:
+			_load_fish("res://Scenes/enemies/fish/BadFish9.tscn", "fish9")
+		9:
+			_load_fish("res://Scenes/enemies/fish/BadFish10.tscn", "fish10")
+		10:
+			_load_fish("res://Scenes/enemies/fish/BadFish11.tscn", "fish11")
+		11:
+			_load_fish("res://Scenes/enemies/fish/BadFish12.tscn", "fish12")
+		12:
+			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
+
+#	fish.show()
+
+func _load_fish(path, fish_name):
+		var fish_scene = load(path)
+		var fish_instance = fish_scene.instance()
+		fish_instance.set_name(fish_name)
+		fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
+		add_child(fish_instance)
+		fish_instance.position = fish.position
+		fish_instance.add_to_group("my_fish")
+		fish_instance.remove_from_group("badfish")
+		fish_instance.remove_from_group("enemy")
 
 func _prepare_game():
 	score = 0

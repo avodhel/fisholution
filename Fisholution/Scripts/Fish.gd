@@ -7,7 +7,6 @@ export (float) var speed = 3
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
-onready var bubble = $Bubble
 onready var nom_sound = $Nom
 onready var fish_cam = $FishCam
 
@@ -160,12 +159,6 @@ func _pc_control():
 		velocity.y += 1
 		velocity.x += 1
 		animation.play("down-right")
-
-	if velocity.length() > 0:
-		bubble.emitting = true
-#		velocity = velocity.normalized() * speed
-	else:
-		bubble.emitting = false
 
 func _move(delta):
 	position += (velocity * delta ).normalized() * speed
