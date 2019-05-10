@@ -58,3 +58,6 @@ func _on_random_pressed():
 	fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
 	print(fish_no)
 	_show_fish(fish_no)
+
+func _on_start_pressed():
+	$"/root/SceneManager".change_scene("GameScene") # start game

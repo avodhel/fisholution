@@ -176,20 +176,36 @@ func stop(condition): # stop fish when game over and move fish again when game r
 	else:
 		speed = current_speed
 
-func _on_Fish_body_entered(body): #when something hit fish's collision this func works
-	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
-		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
+#func _on_Fish_body_entered(body): #when something hit fish's collision this func works
+#	if body.is_in_group("enemy") and body.is_in_group("badfish"): # if enemy is a fish
+#		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
+#			_die() #our fish died
+#		elif (body.sprite_scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
+#			body.hide()
+#			body.queue_free()
+#			emit_signal("xp_gained")
+#			nom_sound.play()
+#		else:
+#			print(scale)
+#			print(body.sprite.scale)
+#	elif body.is_in_group("enemy") and body.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
+#		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
+#			_die() #our fish died
+
+func _on_Fish_area_entered(area):
+	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
+		if area.scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
 			_die() #our fish died
-		elif (body.sprite_scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
-			body.hide()
-			body.queue_free()
+		elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
+			area.hide()
+			area.queue_free()
 			emit_signal("xp_gained")
 			nom_sound.play()
 		else:
 			print(scale)
-			print(body.sprite.scale)
-	elif body.is_in_group("enemy") and body.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
-		if body.sprite_scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
+			print(area.scale)
+	elif area.is_in_group("enemy") and area.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
+		if area.scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
 			_die() #our fish died
 
 func _die():
@@ -208,3 +224,4 @@ func _on_HUD_fisholution_up(): # when fisholution level increase
 		rand_gain_scale = rand_range(0.04, 0.1)
 		scale += Vector2(rand_gain_scale, rand_gain_scale) # our fish grows up
 #	fish_cam.zoom += Vector2(0.1, 0.1)
+

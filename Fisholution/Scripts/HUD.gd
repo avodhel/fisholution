@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-signal start_game # emit when we push the start button
+signal restart_game # emit when we push the start button
 signal fisholution_up
 
 onready var score_label = $ScoreLabel
 onready var fisholution_bar = $FisholutionBar
 onready var title_label = $TitleLabel
 onready var highscore_label = $HighscoreLabel
-onready var start_button = $StartButton
+onready var restart_button = $RestartButton
 onready var message_timer = $MessageTimer
 onready var blur = $Blur
 
@@ -24,9 +24,17 @@ func show_message(text):
 	message_timer.start()
 
 func game_over():
+	#show all restart ui
+	blur.visible = true
+	score_label.visible = true
+	fisholution_bar.visible = true
+	title_label.visible = true
+	highscore_label.visible = true
+	restart_button.visible = true
+	
 	show_message("Fisholution \nOver")
 	yield(message_timer, "timeout") # show message until timeout signal appears (wait time)
-	start_button.show()
+	restart_button.show()
 	title_label.text = "Fisholution"
 	title_label.show()
 	highscore_value = str($"/root/PlayerData".load_highscore()) # update high score
@@ -40,10 +48,10 @@ func update_score(score):
 func _on_MessageTimer_timeout():
 	title_label.hide()
 
-func _on_StartButton_pressed():
+func _on_RestartButton_pressed():
 	highscore_label.hide()
-	start_button.hide()
-	emit_signal("start_game")
+	restart_button.hide()
+	emit_signal("restart_game")
 	fisholution_bar.show()
 	blur.hide()
 

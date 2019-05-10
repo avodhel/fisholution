@@ -24,8 +24,17 @@ var rand_scale
 func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
 	randomize()
+	_start_game()
 
-func new_game():
+func _start_game():
+	score = 0
+	fish.start(start_position.position)
+	rand_scale = rand_range(1.5, 2)
+	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
+	fish.stop(false) # move fish
+	start_timer.start()
+
+func restart_game():
 	score = 0
 	fish.start(start_position.position)
 	rand_scale = rand_range(1.5, 2)
@@ -44,7 +53,7 @@ func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
-	hud.table_transparency(false)
+	hud_ft.table_transparency(false)
 	gameover_sound.play()
 	music.stop()
 	$"/root/PlayerData".save_highscore(score) #save highscore

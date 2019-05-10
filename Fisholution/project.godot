@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Fisholution"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/MainScene.tscn"
 boot_splash/image="res://Textures/splash/nordicebeargames transparent.png"
 boot_splash/fullsize=false
 config/icon="res://Textures/ui/button2.png"
@@ -24,6 +24,7 @@ config/icon="res://Textures/ui/button2.png"
 [autoload]
 
 PlayerData="*res://Scripts/PlayerData.gd"
+SceneManager="*res://Scripts/SceneManager.gd"
 
 [display]
 
