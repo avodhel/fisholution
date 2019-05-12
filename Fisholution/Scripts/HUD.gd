@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal restart_game # emit when we push the start button
+signal restart_game # emit when we push the restart button
 signal fisholution_up
 
 onready var score_label = $ScoreLabel

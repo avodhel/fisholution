@@ -1,6 +1,11 @@
 extends Area2D
 
+signal hit #when something hits our fish
+signal xp_gained # when fish eat little fish
+
 export (float) var speed = 3
+export (float) var min_scale = 1.5
+export (float) var max_scale = 2.5
 
 onready var animation = $Sprite/AnimationPlayer
 
@@ -13,6 +18,7 @@ var left_center
 var right_center
 var distance_x
 var distance_y
+var current_speed
 
 func _ready():
 	screensize = get_viewport_rect().size
@@ -21,6 +27,9 @@ func _ready():
 	down_center = center + Vector2(0, up_center.y)
 	left_center = center / Vector2(2, 1)
 	right_center = center + Vector2(left_center.x, 0)
+	self.connect("area_entered", self, "_on_Fish_area_entered")
+	current_speed = speed
+	_rand_scale(min_scale, max_scale)
 
 func _process(delta):
 	_pc_control()
@@ -97,6 +106,12 @@ func _pc_control():
 func _move(delta):
 	self.position += (velocity * delta ).normalized() * speed
 
+func stop(condition): # stop fish when game over and move fish again when game restart
+	if condition:
+		speed = 0
+	else:
+		speed = current_speed
+
 func _direction(dir):
 	match dir:
 		"up":
@@ -143,3 +158,58 @@ func _direction(dir):
 			velocity.x += 1
 			animation.play("move")
 			rotation_degrees = 135
+
+func _on_Fish_area_entered(area):
+	print(area)
+	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
+		if area.scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
+			_die() #our fish died
+		elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
+			area.hide()
+			area.queue_free()
+			emit_signal("xp_gained")
+#			nom_sound.play()
+		else:
+			print(scale)
+			print(area.scale)
+	elif area.is_in_group("enemy") and area.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
+		if area.scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
+			_die() #our fish died
+
+func _die():
+	hide()
+	emit_signal("hit") #game will know fish died :(
+	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
+
+func respawn(control):
+	if control:
+		show()
+		call_deferred("set_monitoring", true)
+		_rand_scale(min_scale, max_scale)
+
+func _rand_scale(min_scale, max_scale):
+	var rand_scale = rand_range(min_scale, max_scale)
+	self.scale = Vector2(rand_scale, rand_scale)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

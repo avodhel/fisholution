@@ -22,6 +22,9 @@ var Enemies = []
 var score
 var rand_scale
 
+var fish_scene
+var fish_instance
+
 func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
 	randomize()
@@ -61,8 +64,8 @@ func _chosen_fish(fish_no):
 #	fish.show()
 
 func _load_fish(path, fish_name):
-		var fish_scene = load(path)
-		var fish_instance = fish_scene.instance()
+		fish_scene = load(path)
+		fish_instance = fish_scene.instance()
 		fish_instance.set_name(fish_name)
 		fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
 		add_child(fish_instance)
@@ -82,13 +85,15 @@ func _load_fish(path, fish_name):
 		fish_instance.add_child(fish_cam)
 		fish_instance.add_child(water_effect)
 		fish_instance.add_child(enemy_path)
+		#signals
+		fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
+		fish_instance.connect("hit", self, "game_over")
 
 func _prepare_game():
+	if fish_instance != null:
+		fish_instance.respawn(true)
+		fish_instance.stop(false)
 	score = 0
-#	fish.start(start_position.position)
-	rand_scale = rand_range(1.5, 2)
-#	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
-#	fish.stop(false) # move fish
 	start_timer.start()
 
 func restart_game():
@@ -109,7 +114,7 @@ func game_over():
 	gameover_sound.play()
 	music.stop()
 	Global.save_highscore(score) #save highscore
-#	fish.stop(true) # stop fish
+	fish_instance.stop(true)
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()
@@ -133,14 +138,6 @@ func _on_EnemyTimer_timeout():
 		hud_ft.increase_or_reduce(enemy, "inc")
 	#make contact with "fish_died" signal
 	enemy.connect("fish_died", self, "_on_fish_died")
-#    # Set the enemy's direction perpendicular to the path direction.
-#	var direction = enemy_spawn_location.rotation + PI / 2
-#    # Add some randomness to the direction.
-#	direction += rand_range(-PI / 4, PI / 4) # PI/4 means 45 angle
-#	enemy.rotation = direction
-#    # Set the velocity (speed & direction).
-#	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
-#	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
 
 func _on_fish_died(which_fish):
 	hud_ft.increase_or_reduce(which_fish, "red")
