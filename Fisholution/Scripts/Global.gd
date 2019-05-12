@@ -43,3 +43,4 @@ func load_highscore():
 	save_file.open(SAVE_FILE_PATH, File.READ)
 	var data  = parse_json(save_file.get_line())
 	return data["highscore"]
+

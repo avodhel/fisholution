@@ -3,8 +3,9 @@ extends Node
 export (Array, PackedScene) var enemy_fishes
 export (Array, PackedScene) var enemy_not_fishes
 
-onready var fish = $Fish
-onready var enemy_spawn_location = $Fish/EnemyPath/EnemySpawnLocation
+onready var fish_pos = $Fish_Pos
+#onready var fish = $Fish
+onready var enemy_spawn_location = $Fish_Pos/EnemyPath/EnemySpawnLocation
 onready var start_position = $StartPosition
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
@@ -26,7 +27,7 @@ func _ready():
 	randomize()
 	_prepare_game()
 	_chosen_fish(Global.fish_no)
-	fish.hide()
+#	fish.hide()
 
 func _chosen_fish(fish_no):
 	match fish_no:
@@ -65,17 +66,29 @@ func _load_fish(path, fish_name):
 		fish_instance.set_name(fish_name)
 		fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
 		add_child(fish_instance)
-		fish_instance.position = fish.position
+		fish_instance.position = fish_pos.position
 		fish_instance.add_to_group("my_fish")
+		fish_instance.add_to_group(fish_name)
 		fish_instance.remove_from_group("badfish")
 		fish_instance.remove_from_group("enemy")
+		self.add_child_below_node(fish_pos, fish_instance)
+		#reparenting
+		var fish_cam = get_node("Fish_Pos/FishCam")
+		var water_effect = get_node("Fish_Pos/WaterEffect")
+		var enemy_path = get_node("Fish_Pos/EnemyPath")
+		fish_pos.remove_child(fish_cam)
+		fish_pos.remove_child(water_effect)
+		fish_pos.remove_child(enemy_path)
+		fish_instance.add_child(fish_cam)
+		fish_instance.add_child(water_effect)
+		fish_instance.add_child(enemy_path)
 
 func _prepare_game():
 	score = 0
-	fish.start(start_position.position)
+#	fish.start(start_position.position)
 	rand_scale = rand_range(1.5, 2)
-	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
-	fish.stop(false) # move fish
+#	fish.scale = Vector2(rand_scale, rand_scale) #randomness for our fish's scale
+#	fish.stop(false) # move fish
 	start_timer.start()
 
 func restart_game():
@@ -96,7 +109,7 @@ func game_over():
 	gameover_sound.play()
 	music.stop()
 	Global.save_highscore(score) #save highscore
-	fish.stop(true) # stop fish
+#	fish.stop(true) # stop fish
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()

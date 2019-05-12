@@ -55,9 +55,8 @@ func _show_fish(fish_no):
 	animation.play("idle")
 
 func _on_random_pressed():
-	if fish_no != null:
-		fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
-		_show_fish(fish_no)
+	fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
+	_show_fish(fish_no)
 
 func _on_start_pressed():
 	Global.change_scene("GameScene") # start game
