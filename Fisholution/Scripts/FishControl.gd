@@ -21,15 +21,18 @@ var distance_y
 var current_speed
 
 func _ready():
+	_screen_points()
+	self.connect("area_entered", self, "_on_Fish_area_entered")
+	current_speed = speed
+	_rand_scale(min_scale, max_scale)
+
+func _screen_points():
 	screensize = get_viewport_rect().size
 	center = screensize / 2 #center of the screen
 	up_center = center / Vector2(1, 2)
 	down_center = center + Vector2(0, up_center.y)
 	left_center = center / Vector2(2, 1)
 	right_center = center + Vector2(left_center.x, 0)
-	self.connect("area_entered", self, "_on_Fish_area_entered")
-	current_speed = speed
-	_rand_scale(min_scale, max_scale)
 
 func _process(delta):
 	_pc_control()
@@ -186,6 +189,7 @@ func respawn(control):
 		show()
 		call_deferred("set_monitoring", true)
 		_rand_scale(min_scale, max_scale)
+		control = false
 
 func _rand_scale(min_scale, max_scale):
 	var rand_scale = rand_range(min_scale, max_scale)

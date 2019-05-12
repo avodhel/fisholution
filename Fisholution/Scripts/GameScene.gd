@@ -21,16 +21,30 @@ onready var music = $Music
 var Enemies = []
 var score
 var rand_scale
-
 var fish_scene
 var fish_instance
 
 func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
-	randomize()
 	_prepare_game()
+	_prepare_hud()
 	_chosen_fish(Global.fish_no)
-#	fish.hide()
+
+func _prepare_game():
+	if fish_instance != null:
+		fish_instance.respawn(true)
+		fish_instance.stop(false)
+	score = 0
+	start_timer.start()
+
+func _prepare_hud():
+	hud.show_message("Get Ready")
+	hud.update_score(score)
+	hud.score_label.visible = true
+	hud_fb.show()
+	hud_fb.reset_fisholution()
+	hud_ft.reset_table()
+	hud_ft.table_transparency(true)
 
 func _chosen_fish(fish_no):
 	match fish_no:
@@ -61,49 +75,36 @@ func _chosen_fish(fish_no):
 		12:
 			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
 
-#	fish.show()
-
 func _load_fish(path, fish_name):
-		fish_scene = load(path)
-		fish_instance = fish_scene.instance()
-		fish_instance.set_name(fish_name)
-		fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
-		add_child(fish_instance)
-		fish_instance.position = fish_pos.position
-		fish_instance.add_to_group("my_fish")
-		fish_instance.add_to_group(fish_name)
-		fish_instance.remove_from_group("badfish")
-		fish_instance.remove_from_group("enemy")
-		self.add_child_below_node(fish_pos, fish_instance)
-		#reparenting
-		var fish_cam = get_node("Fish_Pos/FishCam")
-		var water_effect = get_node("Fish_Pos/WaterEffect")
-		var enemy_path = get_node("Fish_Pos/EnemyPath")
-		fish_pos.remove_child(fish_cam)
-		fish_pos.remove_child(water_effect)
-		fish_pos.remove_child(enemy_path)
-		fish_instance.add_child(fish_cam)
-		fish_instance.add_child(water_effect)
-		fish_instance.add_child(enemy_path)
-		#signals
-		fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
-		fish_instance.connect("hit", self, "game_over")
-
-func _prepare_game():
-	if fish_instance != null:
-		fish_instance.respawn(true)
-		fish_instance.stop(false)
-	score = 0
-	start_timer.start()
+	fish_scene = load(path)
+	fish_instance = fish_scene.instance()
+	fish_instance.set_name(fish_name)
+	fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
+	add_child(fish_instance)
+	fish_instance.position = fish_pos.position
+	#group
+	fish_instance.add_to_group("my_fish")
+	fish_instance.add_to_group(fish_name)
+	fish_instance.remove_from_group("badfish")
+	fish_instance.remove_from_group("enemy")
+	#node position
+	self.add_child_below_node(fish_pos, fish_instance)
+	#reparenting
+	var fish_cam = get_node("Fish_Pos/FishCam")
+	var water_effect = get_node("Fish_Pos/WaterEffect")
+	var enemy_path = get_node("Fish_Pos/EnemyPath")
+	fish_pos.remove_child(fish_cam)
+	fish_pos.remove_child(water_effect)
+	fish_pos.remove_child(enemy_path)
+	fish_instance.add_child(fish_cam)
+	fish_instance.add_child(water_effect)
+	fish_instance.add_child(enemy_path)
+	#signals
+	fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
+	fish_instance.connect("hit", self, "game_over")
 
 func restart_game():
-	_prepare_game()
-	hud.show_message("Get Ready")
-	hud.update_score(score)
-	hud_fb.show()
-	hud_fb.reset_fisholution()
-	hud_ft.reset_table()
-	hud_ft.table_transparency(true)
+	Global.change_scene("GameScene") #reload scene
 	music.play()
 
 func game_over():
