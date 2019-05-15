@@ -30,6 +30,7 @@ margin_bottom = 720.0
 color = Color( 0, 0.552941, 0.745098, 1 )
 
 [node name="parallaxBG" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 

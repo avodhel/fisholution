@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/MovingSeaObject.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/sand_creatures.png" type="Texture" id=2]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -30.5449, -24.4921, 0, 0, 0, 0, -85.9466, 43.098, 0, 0, 0, 0, 20.4247, 69.6908, 0, 0, 0, 0, -99.243, 170.522, 0, 0, 0, 0, -52.7056, 251.409, 0, 0, 0, 0, -124.728, 320.107, 0, 0, 0, 0, 65.8541, 248.084, 0, 0, 0, 0, -40.5172, 437.558, 0, 0, 0, 0, 112.392, 455.287, 0, 0, 0, 0, 246.464, 306.81, 0, 0, 0, 0, 144.525, 252.517, 0, 0, 0, 0, 236.491, 135.065, 0, 0, 0, 0, 99.0952, 131.741, 0, 0, 0, 0, 168.901, -10.0877, 0, 0, 0, 0, 53.6657, 18.7213, 0, 0, 0, 0, -30.5449, -23.3841 )
@@ -27,16 +26,16 @@ tracks/0/keys = {
 
 [node name="Crab1" type="Path2D" groups=[
 "crab",
+"moving_sea_object",
 "sand_creature",
 "rare_sea_object",
-"moving_sea_object",
 ]]
 position = Vector2( 171.792, 156.75 )
 curve = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( -13.619, 278.118 )
+position = Vector2( -13.6186, 278.118 )
 rotation = -0.361318
 offset = 652.376
 

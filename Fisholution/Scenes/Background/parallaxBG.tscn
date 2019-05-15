@@ -5,503 +5,1996 @@
 [node name="parallaxBG" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
-position = Vector2( 200, 200 )
+position = Vector2( 280, 280 )
 motion_offset = Vector2( 5, 5 )
-motion_mirroring = Vector2( 640, 880 )
+motion_mirroring = Vector2( 1280, 1760 )
 
-[node name="Tile0" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Field1" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+editor/display_folded = true
+
+[node name="Tile0" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, -80 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile0"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile0"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile1" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile1" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile1"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile1"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile2" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile2" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 80 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile2"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile2"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile3" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile3" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 160 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile3"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile3"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile4" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile4" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 240 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile4"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile4"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile5" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile5" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 320 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile5"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile5"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile6" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile6" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 400 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile6"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile6"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile7" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile7" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 480 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile7"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile7"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile8" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile8" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 560 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile8"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile8"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile9" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile9" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 640 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile9"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile9"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile10" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile10" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 0, 720 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( -80.0001, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( 0, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( 80, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( 160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile10"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile10"]
 position = Vector2( 240, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile11" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile11" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( -80, -80 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, -80 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 0 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 80 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 240 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 320 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 400 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 480 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 560 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile11"]
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile11"]
 position = Vector2( -160, 640 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Tile12" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Tile12" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field1"]
 editor/display_folded = true
 position = Vector2( 480, -80 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, -160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, -80 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 0 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 80 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 160 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 240 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 320 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 400 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 480 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 560 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tile12"]
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field1/Tile12"]
 position = Vector2( -160, 640 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
+
+[node name="Field2" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+editor/display_folded = true
+position = Vector2( 640, 0 )
+
+[node name="Tile0" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile0"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile1" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile1"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile2" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile2"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile3" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 160 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile3"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile4" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 240 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile4"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile5" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 320 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile5"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile6" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 400 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile6"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile7" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile7"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile8" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 560 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile8"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile9" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile9"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile10" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 0, 720 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile10"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile11" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( -80, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile11"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile12" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field2"]
+editor/display_folded = true
+position = Vector2( 480, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field2/Tile12"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Field3" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+editor/display_folded = true
+position = Vector2( 0, 880 )
+
+[node name="Tile0" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile0"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile1" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile1"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile2" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile2"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile3" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 160 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile3"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile4" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 240 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile4"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile5" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 320 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile5"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile6" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 400 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile6"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile7" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile7"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile8" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 560 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile8"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile9" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile9"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile10" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 0, 720 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile10"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile11" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( -80, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile11"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile12" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field3"]
+editor/display_folded = true
+position = Vector2( 480, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field3/Tile12"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Field4" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+editor/display_folded = true
+position = Vector2( 640, 880 )
+
+[node name="Tile0" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile0"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile1" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile1"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile2" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile2"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile3" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 160 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile3"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile4" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 240 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile4"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile5" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 320 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile5"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile6" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 400 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile6"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile7" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile7"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile8" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 560 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile8"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile9" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile9"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile10" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 0, 720 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( -80.0001, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( 0, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( 80, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( 160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile10"]
+position = Vector2( 240, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile11" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( -80, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile11"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Tile12" type="Node2D" parent="ParallaxBackground/ParallaxLayer/Field4"]
+editor/display_folded = true
+position = Vector2( 480, -80 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, -160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, -80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 80 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 160 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 240 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 320 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 400 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 560 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Field4/Tile12"]
+position = Vector2( -160, 640 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -280.0
+margin_top = -280.0
+margin_right = 1000.0
+margin_bottom = 1480.0
+color = Color( 0.301961, 0.811765, 0.941176, 0.431373 )
 

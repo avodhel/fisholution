@@ -104,7 +104,7 @@ func _load_fish(path, fish_name):
 	fish_instance.connect("hit", self, "game_over")
 
 func restart_game():
-	Global.change_scene("GameScene") #reload scene
+	Global.change_scene("GameScene") #reload game scene
 	music.play()
 
 func game_over():

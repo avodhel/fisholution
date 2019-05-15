@@ -35,14 +35,12 @@ enemy_fishes = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResour
 enemy_not_fishes = [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ]
 
 [node name="Fish_Pos" type="Position2D" parent="."]
-editor/display_folded = true
 position = Vector2( 240, 360 )
 
 [node name="FishCam" type="Camera2D" parent="Fish_Pos"]
 position = Vector2( 0.762024, 1.14301 )
 scale = Vector2( 2, 2 )
 current = true
-zoom = Vector2( 0.7, 0.7 )
 limit_smoothed = true
 drag_margin_left = 0.1
 drag_margin_top = 0.1

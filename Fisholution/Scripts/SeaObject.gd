@@ -8,7 +8,7 @@ var rand_vector
 
 func _ready():
 	_chose_object()
-	if is_in_group("sea_weed"):
+	if is_in_group("sea_weed") or is_in_group("starfish"):
 		animation = $Sprite/AnimationPlayer
 		_play_anim()
 
