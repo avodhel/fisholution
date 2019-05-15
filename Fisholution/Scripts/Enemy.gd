@@ -68,13 +68,15 @@ func _detect_badfish():
 	elif self.is_in_group("fish8"):
 		badfish_no = 7
 	elif self.is_in_group("fish9"):
-		badfish_no = 10
+		badfish_no = 8
 	elif self.is_in_group("fish10"):
-		badfish_no = 11
+		badfish_no = 9
+	elif self.is_in_group("fish11"):
+		badfish_no = 10
 	elif self.is_in_group("fish12"):
-		badfish_no = 12
+		badfish_no = 11
 	elif self.is_in_group("fish13"):
-		badfish_no = 13
+		badfish_no = 12
 
 
 

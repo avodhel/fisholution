@@ -97,6 +97,7 @@ texture = ExtResource( 2 )
 hframes = 3
 
 [node name="FishTable_elements" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Fish1_Progress" type="ProgressBar" parent="FishTable_elements"]
 editor/display_folded = true
