@@ -27,7 +27,7 @@ modulate = Color( 1, 1, 1, 0.341176 )
 show_behind_parent = true
 margin_right = 483.0
 margin_bottom = 720.0
-color = Color( 0, 0.552941, 0.745098, 1 )
+color = Color( 0, 0.278431, 0.388235, 1 )
 
 [node name="parallaxBG" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
