@@ -5,6 +5,7 @@ var fishtable_labels = []
 var fish_no = null
 
 func _ready():
+	fishtable_elements = $FishTable_elements.get_children()
 	reset_table()
 	table_transparency(false)
 
@@ -56,7 +57,6 @@ func _red_nof(fish_no): #reduce number of fish
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
 
 func reset_table(): # reset fish table
-	fishtable_elements = self.get_children()
 	for i in fishtable_elements.size():
 		fishtable_elements[i].value = 0
 		var fishtable_label = fishtable_elements[i].get_child(0)
@@ -64,10 +64,21 @@ func reset_table(): # reset fish table
 		fishtable_label.text = str(fishtable_elements[i].value)
 
 func table_transparency(on):
-	if on:
-		modulate.a = 0.5
-	else:
-		modulate.a = 1
+#	if on:
+#		modulate.a = 0.5
+#	else:
+#		modulate.a = 1
+
+	for i in fishtable_elements.size():
+		if on:
+			fishtable_elements[i].modulate.a = 0.5
+			fishtable_elements[Global.fish_no].modulate.a = 1
+			self.position.x = 390 #hide fishes
+		else:
+			fishtable_elements[i].modulate.a = 1
+			fishtable_elements[Global.fish_no].modulate.a = 0.5
+			self.position.x = 360 #show fishes
+
 
 
 
