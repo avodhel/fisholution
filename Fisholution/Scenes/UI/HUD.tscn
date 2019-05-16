@@ -20,6 +20,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 55
+outline_size = 1
 font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -82,7 +83,8 @@ margin_top = -67.1369
 margin_right = 200.0
 margin_bottom = 42.8631
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.717647, 0.294118, 0.878431, 1 )
+custom_colors/font_color = Color( 0, 1, 0.294118, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Highscore: 546"
 align = 1
 valign = 1

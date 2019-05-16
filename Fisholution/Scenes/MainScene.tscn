@@ -16,6 +16,7 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 55
+outline_size = 1
 font_data = ExtResource( 4 )
 
 [node name="MainScene" type="CanvasLayer"]
