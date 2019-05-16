@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/UI/FisholutionBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/ui/restart.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/UI/FishTable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Textures/ui/choosescreen.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI/FishTable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -92,20 +93,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -42.0
-margin_top = 97.7996
-margin_right = 42.0
-margin_bottom = 178.8
+margin_left = -90.0
+margin_top = 100.0
+margin_right = -6.0
+margin_bottom = 181.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="ChooseSceneButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 270.0
+margin_top = 460.0
+margin_right = 354.0
+margin_bottom = 541.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
 expand = true
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="FishTable" parent="." instance=ExtResource( 5 )]
+[node name="FishTable" parent="." instance=ExtResource( 6 )]
 
 [connection signal="fisholution_up" from="FisholutionBar" to="." method="_on_FisholutionBar_fisholution_up"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="ChooseSceneButton" to="." method="_on_ChooseSceneButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
