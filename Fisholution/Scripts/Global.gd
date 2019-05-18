@@ -1,11 +1,20 @@
 extends Node
 
+var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
+
 var fish_no
 
 #SCENE MANAGER
 const SCENE_PATH = "res://Scenes/"
 
+func _bubbleffect():
+	var instance_bubble = bubbleffect.instance()
+	add_child(instance_bubble)
+	get_node("../Global/Bubbleffect").play_effect()
+
 func change_scene(scene_name):
+	_bubbleffect()
+	yield(get_tree().create_timer(0.65), "timeout")
 	call_deferred("_deferred_change_scene", scene_name)
 	
 func _deferred_change_scene(scene_name):

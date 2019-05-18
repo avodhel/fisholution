@@ -1,4 +1,13 @@
-extends Node2D
+extends CanvasLayer
 
-func _ready():
-	$Sprite/AnimationPlayer.play("transition")
+onready var animation = $Sprite/AnimationPlayer
+onready var sprite = $Sprite
+
+func play_effect():
+	animation.play("transition")
+
+func _on_AnimationPlayer_animation_started(anim_name):
+	sprite.show()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	sprite.hide()
