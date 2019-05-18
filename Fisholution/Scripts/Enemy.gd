@@ -4,8 +4,8 @@ signal fish_died(which_fish)
 
 export (float) var min_scale = 0.5
 export (float) var max_scale = 4.5
-export (float) var min_speed = 0.8
-export (float) var max_speed = 2.8
+export (float) var min_speed = 1.8
+export (float) var max_speed = 3.8
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
@@ -40,8 +40,10 @@ func _move(delta):
 	position += ((velocity * delta).normalized() * speed).rotated(direction)
 
 func _on_VisibilityNotifier2D_screen_exited():
-#	call_deferred('free')
-	pass
+	if self.is_in_group("badfish"):
+		emit_signal("fish_died", self)
+	call_deferred('free')
+#	pass
 
 func _on_Enemy_area_entered(area):
 	if self.is_in_group("badfish") and area.is_in_group("badfish"):

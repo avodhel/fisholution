@@ -51,6 +51,10 @@ func increase_or_reduce(whichfish, situation):
 func _inc_nof(fish_no): # increase number of fish
 	fishtable_elements[fish_no].value += 1
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
+
+	if fishtable_elements[fish_no].value == fishtable_elements[fish_no].max_value:
+		print(str(fish_no) + " won the game")
+		get_tree().paused = true #pause game
 	
 func _red_nof(fish_no): #reduce number of fish
 	fishtable_elements[fish_no].value -= 1

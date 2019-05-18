@@ -21,9 +21,9 @@ tracks/0/keys = {
 }
 
 [node name="JellyFish1" type="Area2D" groups=[
+"enemy",
 "jellyfish",
 "not_fish",
-"enemy",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
