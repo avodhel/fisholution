@@ -4,16 +4,23 @@ var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
 
 var fish_no
 
+func _ready():
+	_bubbleffect("instance")
+
+#bubble transition effect
+func _bubbleffect(condition): # bubble transition
+	match condition:
+		"instance":
+			var instance_bubble = bubbleffect.instance()
+			add_child(instance_bubble)
+		"play":
+			get_node("../Global/Bubbleffect").play_effect()
+
 #SCENE MANAGER
 const SCENE_PATH = "res://Scenes/"
 
-func _bubbleffect(): # bubble transition
-	var instance_bubble = bubbleffect.instance()
-	add_child(instance_bubble)
-	get_node("../Global/Bubbleffect").play_effect()
-
 func change_scene(scene_name):
-	_bubbleffect()
+	_bubbleffect("play") #play bubble effect between scene
 	yield(get_tree().create_timer(0.65), "timeout")
 	call_deferred("_deferred_change_scene", scene_name)
 	
