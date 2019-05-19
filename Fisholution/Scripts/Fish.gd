@@ -23,7 +23,7 @@ var distance_y
 var current_speed
 
 func _ready():
-	hide() # invisible fish when the game first start
+#	hide() # invisible fish when the game first start
 	screensize = get_viewport_rect().size
 	center = get_viewport_rect().size / 2 #center of the screen
 	up_center = center / Vector2(1, 2)

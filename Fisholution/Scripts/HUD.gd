@@ -13,7 +13,7 @@ onready var message_timer = $MessageTimer
 onready var blur = $Blur
 
 var highscore_value
-var xp = 10
+var xp = 5
 
 func _ready():
 	highscore_value = str(Global.load_highscore())

@@ -104,6 +104,7 @@ texture_hover = ExtResource( 6 )
 expand = true
 
 [node name="Modes" type="VBoxContainer" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -152,7 +153,7 @@ margin_bottom = 43.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.415686, 0.678431, 0.196078, 1 )
 text = "play as an unique fish and 
-try to finish fisholution"
+try to complete fisholution"
 
 [node name="VBoxContainer2" type="HBoxContainer" parent="Modes/HBoxContainer"]
 margin_top = 47.0

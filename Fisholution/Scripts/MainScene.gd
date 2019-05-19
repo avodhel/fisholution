@@ -15,7 +15,9 @@ func _on_StartButton_pressed():
 	modes.show()
 
 func _on_FisholutionStart_pressed():
-	pass # Replace with function body.
+	Global.which_mode = "fisholution"
+	Global.change_scene("GameScene")
 
 func _on_NormalStart_pressed():
+	Global.which_mode = "normal"
 	Global.change_scene("ChooseScene") # open fish choose screen

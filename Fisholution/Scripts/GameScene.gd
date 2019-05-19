@@ -23,12 +23,17 @@ var score
 var rand_scale
 var fish_scene
 var fish_instance
+var instance_unique_fish
 
 func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
 	_prepare_game()
 	_prepare_hud()
-	_chosen_fish(Global.fish_no)
+	if Global.which_mode == "fisholution":
+		_unique_fish()
+	elif Global.which_mode == "normal":
+		_chosen_fish(Global.fish_no)
+		hud_fb.hide()
 
 func _prepare_game():
 	if fish_instance != null:
@@ -43,8 +48,35 @@ func _prepare_hud():
 	hud.score_label.visible = true
 	hud_fb.show()
 	hud_fb.reset_fisholution()
-	hud_ft.reset_table()
-	hud_ft.table_transparency(true)
+	if Global.which_mode == "normal":
+		var fish_table = ResourceLoader.load("res://Scenes/UI/Fishtable.tscn")
+		var instance_ft = fish_table.instance()
+		hud.add_child(instance_ft)
+		hud_ft = instance_ft
+		hud_ft.reset_table()
+		hud_ft.table_transparency(true)
+
+func _unique_fish():
+	var unique_fish = ResourceLoader.load("res://Scenes/Fish.tscn")
+	instance_unique_fish = unique_fish.instance()
+	add_child(instance_unique_fish)
+	instance_unique_fish.position = fish_pos.position
+	#node position
+	self.add_child_below_node(fish_pos, instance_unique_fish)
+	#reparenting
+	var fish_cam = get_node("Fish_Pos/FishCam")
+	var water_effect = get_node("Fish_Pos/WaterEffect")
+	var enemy_path = get_node("Fish_Pos/EnemyPath")
+	fish_pos.remove_child(fish_cam)
+	fish_pos.remove_child(water_effect)
+	fish_pos.remove_child(enemy_path)
+	instance_unique_fish.add_child(fish_cam)
+	instance_unique_fish.add_child(water_effect)
+	instance_unique_fish.add_child(enemy_path)
+	#signals
+	instance_unique_fish.connect("hit", self, "game_over")
+	instance_unique_fish.connect("xp_gained", hud, "_on_Fish_xp_gained")
+	hud.connect("fisholution_up", instance_unique_fish, "_on_HUD_fisholution_up")
 
 func _chosen_fish(fish_no):
 	match fish_no:
@@ -111,11 +143,14 @@ func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
-	hud_ft.table_transparency(false)
 	gameover_sound.play()
 	music.stop()
 	Global.save_highscore(score) #save highscore
-	fish_instance.stop(true)
+	if Global.which_mode == "normal":
+		hud_ft.table_transparency(false)
+		fish_instance.stop(true)
+	elif Global.which_mode == "fisholution":
+		instance_unique_fish.stop(true)
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()
@@ -135,10 +170,10 @@ func _on_EnemyTimer_timeout():
 #   # Set the enemy's position to a random location.
 	enemy.position = enemy_spawn_location.global_position
 	# increase fish of number on the fish table
-	if !enemy.is_in_group("not_fish"):
+	if !enemy.is_in_group("not_fish") and Global.which_mode == "normal":
 		hud_ft.increase_or_reduce(enemy, "inc")
-	#make contact with "fish_died" signal
-	enemy.connect("fish_died", self, "_on_fish_died")
+		#make contact with "fish_died" signal
+		enemy.connect("fish_died", self, "_on_fish_died")
 
 func _on_fish_died(which_fish):
 	hud_ft.increase_or_reduce(which_fish, "red")

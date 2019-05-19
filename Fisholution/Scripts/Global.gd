@@ -1,13 +1,15 @@
 extends Node
 
-var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
+var fish_no = 0
 
-var fish_no
+var which_mode
 
 func _ready():
 	_bubbleffect("instance")
 
 #bubble transition effect
+var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
+
 func _bubbleffect(condition): # bubble transition
 	match condition:
 		"instance":

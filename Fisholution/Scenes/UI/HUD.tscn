@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/UI/FisholutionBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/ui/restart.png" type="Texture" id=4]
 [ext_resource path="res://Textures/ui/choosescreen.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/UI/FishTable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -116,8 +115,6 @@ expand = true
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="FishTable" parent="." instance=ExtResource( 6 )]
 
 [connection signal="fisholution_up" from="FisholutionBar" to="." method="_on_FisholutionBar_fisholution_up"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
