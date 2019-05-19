@@ -7,7 +7,7 @@ var fish_no
 #SCENE MANAGER
 const SCENE_PATH = "res://Scenes/"
 
-func _bubbleffect():
+func _bubbleffect(): # bubble transition
 	var instance_bubble = bubbleffect.instance()
 	add_child(instance_bubble)
 	get_node("../Global/Bubbleffect").play_effect()
