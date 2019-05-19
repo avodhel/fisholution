@@ -5,9 +5,10 @@ var fish_no = 0
 var which_mode
 
 func _ready():
-	_bubbleffect("instance")
+	_bubbleffect("instance") #bubble transition
+	_screen_points() #controllers
 
-#bubble transition effect
+#BUBBLE TRANSITION
 var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
 
 func _bubbleffect(condition): # bubble transition
@@ -17,6 +18,140 @@ func _bubbleffect(condition): # bubble transition
 			add_child(instance_bubble)
 		"play":
 			get_node("../Global/Bubbleffect").play_effect()
+
+#CONTROLLERS
+var velocity = Vector2()
+var screensize
+var center
+var up_center
+var down_center
+var left_center
+var right_center
+var distance_x
+var distance_y
+
+func _screen_points():
+	screensize = Vector2 (ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height"))
+	center = screensize / 2 #center of the screen
+	up_center = center / Vector2(1, 2)
+	down_center = center + Vector2(0, up_center.y)
+	left_center = center / Vector2(2, 1)
+	right_center = center + Vector2(left_center.x, 0)
+
+func pc_control(animation, object):
+	if Input.is_action_pressed("ui_up"):
+		_direction("up", animation, object)
+	if Input.is_action_pressed("ui_down"):
+		_direction("down", animation, object)
+	if Input.is_action_pressed("ui_left"):
+		_direction("left", animation, object)
+	if Input.is_action_pressed("ui_right"):
+		_direction("right", animation, object)
+	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left") :
+		_direction("up-left", animation, object)
+	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right") :
+		_direction("up-right", animation, object)
+	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left") :
+		_direction("down-left", animation, object)
+	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right") :
+		_direction("down-right", animation, object)
+
+func mobile_control(event, animation, object):
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
+		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y < up_center.y): #up
+			_direction("up", animation, object)
+		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > down_center.y): #down
+			_direction("down", animation, object)
+		if (event.position.x < left_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # left
+			_direction("left", animation, object)
+		if (event.position.x > right_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # right
+			_direction("right", animation, object)
+		if (event.position.x < screensize.x / 4) and (event.position.y < screensize.y / 4): #up-left
+			_direction("up-left", animation, object)
+		if (event.position.x > screensize.x * 3 / 4) and (event.position.y < screensize.y / 4): #up-right
+			_direction("up-right", animation, object)
+		if (event.position.x < screensize.x / 4) and (event.position.y > screensize.y * 3 / 4): #down-left
+			_direction("down-left", animation, object)
+		if (event.position.x > screensize.x * 3 / 4) and (event.position.y > screensize.y * 3 / 4): #down-right
+			_direction("down-right", animation, object)
+		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or left?
+			distance_y = event.position.y - up_center.y
+			distance_x = event.position.x - left_center.x
+			if distance_x < distance_y: # left
+				_direction("left", animation, object)
+			else: # up
+				_direction("up", animation, object)
+		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or right?
+			distance_y = event.position.y - up_center.y
+			distance_x = right_center.x - event.position.x
+			if distance_x < distance_y: # right
+				_direction("right", animation, object)
+			else: # up
+				_direction("up", animation, object)
+		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or left?
+			distance_y = down_center.y - event.position.y
+			distance_x = event.position.x - left_center.x
+			if distance_x < distance_y: # left
+				_direction("left", animation, object)
+			else: # down
+				_direction("down", animation, object)
+		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or right?
+			distance_y = down_center.y - event.position.y
+			distance_x = right_center.x - event.position.x
+			if distance_x < distance_y: # right
+				_direction("right", animation, object)
+			else: # down
+				_direction("down", animation, object)
+
+func _direction(dir, animation, object):
+	match dir:
+		"up":
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			animation.play("move")
+			object.rotation_degrees = 0
+		"down":
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			animation.play("move")
+			object.rotation_degrees = 180
+		"left":
+			velocity = Vector2(0, 0)
+			velocity.x -= 1
+			animation.play("move")
+			object.rotation_degrees = 270
+		"right":
+			velocity = Vector2(0, 0)
+			velocity.x += 1
+			animation.play("move")
+			object.rotation_degrees = 90
+		"up-left":
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			velocity.x -= 1
+			animation.play("move")
+			object.rotation_degrees = 315
+		"up-right":
+			velocity = Vector2(0, 0)
+			velocity.y -= 1
+			velocity.x += 1
+			animation.play("move")
+			object.rotation_degrees = 45
+		"down-left":
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			velocity.x -= 1
+			animation.play("move")
+			object.rotation_degrees = 225
+		"down-right":
+			velocity = Vector2(0, 0)
+			velocity.y += 1
+			velocity.x += 1
+			animation.play("move")
+			object.rotation_degrees = 135
+
+func move(delta, object, speed):
+	object.position += (velocity * delta ).normalized() * speed
 
 #SCENE MANAGER
 const SCENE_PATH = "res://Scenes/"

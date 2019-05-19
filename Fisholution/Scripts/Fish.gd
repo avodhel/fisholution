@@ -23,146 +23,15 @@ var distance_y
 var current_speed
 
 func _ready():
-#	hide() # invisible fish when the game first start
-	screensize = get_viewport_rect().size
-	center = get_viewport_rect().size / 2 #center of the screen
-	up_center = center / Vector2(1, 2)
-	down_center = center + Vector2(0, up_center.y)
-	left_center = center / Vector2(2, 1)
-	right_center = center + Vector2(left_center.x, 0)
 	current_speed = speed
 
 func _process(delta):
-	_pc_control()
-	_move(delta)
+	Global.pc_control(animation, self)
+	Global.move(delta, self, speed)
 
 func _input(event):
-	_mobile_control(event)
+	Global.mobile_control(event, animation, self)
 
-func _mobile_control(event):
-	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
-		if event.position.x > 120 and event.position.x < 360 and event.position.y < up_center.y : #up
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			animation.play("up")
-		if event.position.x > 120 and event.position.x < 360 and event.position.y > down_center.y : #down
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			animation.play("down")
-		if event.position.x < left_center.x and  event.position.y > 180 and event.position.y < 540 : # left
-			velocity = Vector2(0, 0)
-			velocity.x -= 1
-			animation.play("left")
-		if event.position.x > right_center.x and  event.position.y > 180 and event.position.y < 540: # right
-			velocity = Vector2(0, 0)
-			velocity.x += 1
-			animation.play("right")
-		if event.position.x < 120 and event.position.y < 180: #up-left
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			velocity.x -= 1
-			animation.play("up-left")
-		if event.position.x > 360 and event.position.y < 180: #up-right
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			velocity.x += 1
-			animation.play("up-right")
-		if event.position.x < 120 and event.position.y > 540: #down-left
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			velocity.x -= 1
-			animation.play("down-left")
-		if event.position.x > 360 and event.position.y > 540: #down-right
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			velocity.x += 1
-			animation.play("down-right")
-		if event.position.x > 120 and event.position.x < 240 and event.position.y > 180 and event.position.y < 360: #up or left?
-			distance_y = event.position.y - up_center.y
-			distance_x = event.position.x - left_center.x
-			if distance_x < distance_y: # left
-				velocity = Vector2(0, 0)
-				velocity.x -= 1
-				animation.play("left")
-			else: # up
-				velocity = Vector2(0, 0)
-				velocity.y -= 1
-				animation.play("up")
-		if event.position.x > 240 and event.position.x < 360 and event.position.y > 180 and event.position.y < 360: #up or right?
-			distance_y = event.position.y - up_center.y
-			distance_x = right_center.x - event.position.x
-			if distance_x < distance_y: # right
-				velocity = Vector2(0, 0)
-				velocity.x += 1
-				animation.play("right")
-			else: # up
-				velocity = Vector2(0, 0)
-				velocity.y -= 1
-				animation.play("up")
-		if event.position.x > 120 and event.position.x < 240 and event.position.y > 360 and event.position.y < 540: #down or left?
-			distance_y = down_center.y - event.position.y
-			distance_x = event.position.x - left_center.x
-			if distance_x < distance_y: # left
-				velocity = Vector2(0, 0)
-				velocity.x -= 1
-				animation.play("left")
-			else: # down
-				velocity = Vector2(0, 0)
-				velocity.y += 1
-				animation.play("down")
-		if event.position.x > 240 and event.position.x < 360 and event.position.y > 360 and event.position.y < 540: #down or right?
-			distance_y = down_center.y - event.position.y
-			distance_x = right_center.x - event.position.x
-			if distance_x < distance_y: # right
-				velocity = Vector2(0, 0)
-				velocity.x += 1
-				animation.play("right")
-			else: # down
-				velocity = Vector2(0, 0)
-				velocity.y += 1
-				animation.play("down")
-
-func _pc_control():
-	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2(0, 0)
-		velocity.y -= 1
-		animation.play("up")
-	if Input.is_action_pressed("ui_down"):
-		velocity = Vector2(0, 0)
-		velocity.y += 1
-		animation.play("down")
-	if Input.is_action_pressed("ui_left"):
-		velocity = Vector2(0, 0)
-		velocity.x -= 1
-		animation.play("left")
-	if Input.is_action_pressed("ui_right"):
-		velocity = Vector2(0, 0)
-		velocity.x += 1
-		animation.play("right")
-	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left") :
-		velocity = Vector2(0, 0)
-		velocity.y -= 1
-		velocity.x -= 1
-		animation.play("up-left")
-	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right") :
-		velocity = Vector2(0, 0)
-		velocity.y -= 1
-		velocity.x += 1
-		animation.play("up-right")
-	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left") :
-		velocity = Vector2(0, 0)
-		velocity.y += 1
-		velocity.x -= 1
-		animation.play("down-left")
-	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right") :
-		velocity = Vector2(0, 0)
-		velocity.y += 1
-		velocity.x += 1
-		animation.play("down-right")
-
-func _move(delta):
-	position += (velocity * delta ).normalized() * speed
-	
 func stop(condition): # stop fish when game over and move fish again when game restart
 	if condition:
 		speed = 0

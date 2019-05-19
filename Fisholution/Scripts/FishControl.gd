@@ -21,146 +21,22 @@ var distance_y
 var current_speed
 
 func _ready():
-	_screen_points()
 	self.connect("area_entered", self, "_on_Fish_area_entered")
 	current_speed = speed
 	_rand_scale(min_scale, max_scale)
 
-func _screen_points():
-	screensize = get_viewport_rect().size
-	center = screensize / 2 #center of the screen
-	up_center = center / Vector2(1, 2)
-	down_center = center + Vector2(0, up_center.y)
-	left_center = center / Vector2(2, 1)
-	right_center = center + Vector2(left_center.x, 0)
-
 func _process(delta):
-	_pc_control()
-	_move(delta)
+	Global.pc_control(animation, self)
+	Global.move(delta, self, speed)
 
 func _input(event):
-	_mobile_control(event)
-
-func _mobile_control(event):
-	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
-		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y < up_center.y): #up
-			_direction("up")
-		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > down_center.y): #down
-			_direction("down")
-		if (event.position.x < left_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # left
-			_direction("left")
-		if (event.position.x > right_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # right
-			_direction("right")
-		if (event.position.x < screensize.x / 4) and (event.position.y < screensize.y / 4): #up-left
-			_direction("up-left")
-		if (event.position.x > screensize.x * 3 / 4) and (event.position.y < screensize.y / 4): #up-right
-			_direction("up-right")
-		if (event.position.x < screensize.x / 4) and (event.position.y > screensize.y * 3 / 4): #down-left
-			_direction("down-left")
-		if (event.position.x > screensize.x * 3 / 4) and (event.position.y > screensize.y * 3 / 4): #down-right
-			_direction("down-right")
-		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or left?
-			distance_y = event.position.y - up_center.y
-			distance_x = event.position.x - left_center.x
-			if distance_x < distance_y: # left
-				_direction("left")
-			else: # up
-				_direction("up")
-		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or right?
-			distance_y = event.position.y - up_center.y
-			distance_x = right_center.x - event.position.x
-			if distance_x < distance_y: # right
-				_direction("right")
-			else: # up
-				_direction("up")
-		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or left?
-			distance_y = down_center.y - event.position.y
-			distance_x = event.position.x - left_center.x
-			if distance_x < distance_y: # left
-				_direction("left")
-			else: # down
-				_direction("down")
-		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or right?
-			distance_y = down_center.y - event.position.y
-			distance_x = right_center.x - event.position.x
-			if distance_x < distance_y: # right
-				_direction("right")
-			else: # down
-				_direction("down")
-
-func _pc_control():
-	if Input.is_action_pressed("ui_up"):
-		_direction("up")
-	if Input.is_action_pressed("ui_down"):
-		_direction("down")
-	if Input.is_action_pressed("ui_left"):
-		_direction("left")
-	if Input.is_action_pressed("ui_right"):
-		_direction("right")
-	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left") :
-		_direction("up-left")
-	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right") :
-		_direction("up-right")
-	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left") :
-		_direction("down-left")
-	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right") :
-		_direction("down-right")
-
-func _move(delta):
-	self.position += (velocity * delta ).normalized() * speed
+	Global.mobile_control(event, animation, self)
 
 func stop(condition): # stop fish when game over and move fish again when game restart
 	if condition:
 		speed = 0
 	else:
 		speed = current_speed
-
-func _direction(dir):
-	match dir:
-		"up":
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			animation.play("move")
-			rotation_degrees = 0
-		"down":
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			animation.play("move")
-			rotation_degrees = 180
-		"left":
-			velocity = Vector2(0, 0)
-			velocity.x -= 1
-			animation.play("move")
-			rotation_degrees = 270
-		"right":
-			velocity = Vector2(0, 0)
-			velocity.x += 1
-			animation.play("move")
-			rotation_degrees = 90
-		"up-left":
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			velocity.x -= 1
-			animation.play("move")
-			rotation_degrees = 315
-		"up-right":
-			velocity = Vector2(0, 0)
-			velocity.y -= 1
-			velocity.x += 1
-			animation.play("move")
-			rotation_degrees = 45
-		"down-left":
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			velocity.x -= 1
-			animation.play("move")
-			rotation_degrees = 225
-		"down-right":
-			velocity = Vector2(0, 0)
-			velocity.y += 1
-			velocity.x += 1
-			animation.play("move")
-			rotation_degrees = 135
 
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
