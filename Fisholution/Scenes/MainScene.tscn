@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Textures/ui/button1.png" type="Texture" id=5]
 [ext_resource path="res://Textures/ui/button2.png" type="Texture" id=6]
+[ext_resource path="res://Textures/ui/choosescreen.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -17,6 +18,27 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=2]
 size = 55
 outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+extra_spacing_top = 2
+extra_spacing_bottom = 2
+extra_spacing_char = 2
+extra_spacing_space = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="MainScene" type="CanvasLayer"]
@@ -35,47 +57,124 @@ editor/display_folded = true
 
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="MainScreenElements" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="TitleLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = -225.973
-margin_right = 200.0
-margin_bottom = -48.9728
+margin_left = 40.0
+margin_top = 134.027
+margin_right = 440.0
+margin_bottom = 311.027
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
 text = "Fisholution"
 align = 1
 valign = 1
 
-[node name="HighscoreLabel" type="Label" parent="."]
+[node name="HighscoreLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = -67.1369
-margin_right = 200.0
-margin_bottom = 42.8631
+margin_left = 40.0
+margin_top = 292.863
+margin_right = 440.0
+margin_bottom = 402.863
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.717647, 0.294118, 0.878431, 1 )
 text = "Highscore: 546"
 align = 1
 valign = 1
 
-[node name="StartButton" type="TextureButton" parent="."]
+[node name="StartButton" type="TextureButton" parent="MainScreenElements"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -42.0
-margin_top = 97.7996
-margin_right = 42.0
-margin_bottom = 178.8
+margin_left = 198.0
+margin_top = 457.8
+margin_right = 282.0
+margin_bottom = 538.8
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[node name="Modes" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -220.0
+margin_top = -180.0
+margin_right = -6.0
+margin_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 2, 2 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="Label" type="Label" parent="Modes"]
+margin_right = 214.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
+text = "Choose a Mode"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Modes"]
+margin_top = 39.0
+margin_right = 214.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 40, 16 )
+alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Modes/HBoxContainer"]
+margin_right = 214.0
+margin_bottom = 43.0
+
+[node name="FisholutionStart" type="TextureButton" parent="Modes/HBoxContainer/VBoxContainer"]
+margin_right = 32.0
+margin_bottom = 43.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Modes/HBoxContainer/VBoxContainer"]
+margin_left = 36.0
+margin_right = 204.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.415686, 0.678431, 0.196078, 1 )
+text = "play as an unique fish and 
+try to finish fisholution"
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="Modes/HBoxContainer"]
+margin_top = 47.0
+margin_right = 214.0
+margin_bottom = 113.0
+
+[node name="NormalStart" type="TextureButton" parent="Modes/HBoxContainer/VBoxContainer2"]
+margin_right = 32.0
+margin_bottom = 66.0
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Modes/HBoxContainer/VBoxContainer2"]
+margin_left = 36.0
+margin_right = 214.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.207843, 0.819608, 0.317647, 1 )
+text = "play as a normal fish and 
+try to win natural selection 
+with your kind of fish"
+
+[connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Modes/HBoxContainer/VBoxContainer/FisholutionStart" to="." method="_on_FisholutionStart_pressed"]
+[connection signal="pressed" from="Modes/HBoxContainer/VBoxContainer2/NormalStart" to="." method="_on_NormalStart_pressed"]
