@@ -26,11 +26,11 @@ func _ready():
 	_rand_scale(min_scale, max_scale)
 
 func _process(delta):
-	Global.pc_control(animation, self)
+	Global.pc_control(self, animation)
 	Global.move(delta, self, speed)
 
 func _input(event):
-	Global.mobile_control(event, animation, self)
+	Global.mobile_control(event, self, animation)
 
 func stop(condition): # stop fish when game over and move fish again when game restart
 	if condition:

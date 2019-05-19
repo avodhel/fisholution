@@ -21,6 +21,7 @@ func _bubbleffect(condition): # bubble transition
 
 #CONTROLLERS
 var velocity = Vector2()
+var control_dir
 var screensize
 var center
 var up_center
@@ -38,72 +39,76 @@ func _screen_points():
 	left_center = center / Vector2(2, 1)
 	right_center = center + Vector2(left_center.x, 0)
 
-func pc_control(animation, object):
+func pc_control(object, animation):
 	if Input.is_action_pressed("ui_up"):
-		_direction("up", animation, object)
+		control_dir = "up"
 	if Input.is_action_pressed("ui_down"):
-		_direction("down", animation, object)
+		control_dir = "down"
 	if Input.is_action_pressed("ui_left"):
-		_direction("left", animation, object)
+		control_dir = "left"
 	if Input.is_action_pressed("ui_right"):
-		_direction("right", animation, object)
+		control_dir = "right"
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left") :
-		_direction("up-left", animation, object)
+		control_dir = "up-left"
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right") :
-		_direction("up-right", animation, object)
+		control_dir = "up-right"
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left") :
-		_direction("down-left", animation, object)
+		control_dir = "down-left"
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right") :
-		_direction("down-right", animation, object)
+		control_dir = "down-right"
+	
+	_direction(control_dir, object, animation)
 
-func mobile_control(event, animation, object):
+func mobile_control(event, object, animation):
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.is_pressed():
 		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y < up_center.y): #up
-			_direction("up", animation, object)
+			control_dir = "up"
 		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > down_center.y): #down
-			_direction("down", animation, object)
+			control_dir = "down"
 		if (event.position.x < left_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # left
-			_direction("left", animation, object)
+			control_dir = "left"
 		if (event.position.x > right_center.x) and  (event.position.y > screensize.y / 4) and (event.position.y < screensize.y * 3 / 4): # right
-			_direction("right", animation, object)
+			control_dir = "right"
 		if (event.position.x < screensize.x / 4) and (event.position.y < screensize.y / 4): #up-left
-			_direction("up-left", animation, object)
+			control_dir = "up-left"
 		if (event.position.x > screensize.x * 3 / 4) and (event.position.y < screensize.y / 4): #up-right
-			_direction("up-right", animation, object)
+			control_dir = "up-right"
 		if (event.position.x < screensize.x / 4) and (event.position.y > screensize.y * 3 / 4): #down-left
-			_direction("down-left", animation, object)
+			control_dir = "down-left"
 		if (event.position.x > screensize.x * 3 / 4) and (event.position.y > screensize.y * 3 / 4): #down-right
-			_direction("down-right", animation, object)
+			control_dir = "down-right"
 		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or left?
 			distance_y = event.position.y - up_center.y
 			distance_x = event.position.x - left_center.x
 			if distance_x < distance_y: # left
-				_direction("left", animation, object)
+				control_dir = "left"
 			else: # up
-				_direction("up", animation, object)
+				control_dir = "up"
 		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 4) and (event.position.y < screensize.y / 2): #up or right?
 			distance_y = event.position.y - up_center.y
 			distance_x = right_center.x - event.position.x
 			if distance_x < distance_y: # right
-				_direction("right", animation, object)
+				control_dir = "right"
 			else: # up
-				_direction("up", animation, object)
+				control_dir = "up"
 		if (event.position.x > screensize.x / 4) and (event.position.x < screensize.x / 2) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or left?
 			distance_y = down_center.y - event.position.y
 			distance_x = event.position.x - left_center.x
 			if distance_x < distance_y: # left
-				_direction("left", animation, object)
+				control_dir = "left"
 			else: # down
-				_direction("down", animation, object)
+				control_dir = "down"
 		if (event.position.x > screensize.x / 2) and (event.position.x < screensize.x * 3 / 4) and (event.position.y > screensize.y / 2) and (event.position.y < screensize.y * 3 / 4): #down or right?
 			distance_y = down_center.y - event.position.y
 			distance_x = right_center.x - event.position.x
 			if distance_x < distance_y: # right
-				_direction("right", animation, object)
+				control_dir = "right"
 			else: # down
-				_direction("down", animation, object)
+				control_dir = "down"
+		
+		_direction(control_dir, object, animation)
 
-func _direction(dir, animation, object):
+func _direction(dir, object, animation):
 	match dir:
 		"up":
 			velocity = Vector2(0, 0)
