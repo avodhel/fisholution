@@ -68,11 +68,6 @@ func reset_table(): # reset fish table
 		fishtable_label.text = str(fishtable_elements[i].value)
 
 func table_transparency(on):
-#	if on:
-#		modulate.a = 0.5
-#	else:
-#		modulate.a = 1
-
 	for i in fishtable_elements.size():
 		if on:
 			fishtable_elements[i].modulate.a = 0.5

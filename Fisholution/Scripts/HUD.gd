@@ -28,16 +28,19 @@ func game_over():
 	#show all restart ui
 	blur.visible = true
 	score_label.visible = true
-	fisholution_bar.visible = true
+	if Global.which_mode == "fisholution":
+		fisholution_bar.visible = true
 	title_label.visible = true
 	highscore_label.visible = true
 	restart_button.visible = true
-	choosescene_button.visible = true
-	
+	if Global.which_mode == "normal":
+		choosescene_button.visible = true
+	#prepare restart hud
 	show_message("Fisholution \nOver")
 	yield(message_timer, "timeout") # show message until timeout signal appears (wait time)
 	restart_button.show()
-	choosescene_button.show()
+	if Global.which_mode == "normal":
+		choosescene_button.show()
 	title_label.text = "Fisholution"
 	title_label.show()
 	highscore_value = str(Global.load_highscore()) # update high score

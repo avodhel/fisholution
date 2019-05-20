@@ -114,6 +114,7 @@ func _load_fish(path, fish_name):
 	fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
 	add_child(fish_instance)
 	fish_instance.position = fish_pos.position
+	hud_ft.increase_or_reduce(fish_instance, "inc")
 	#group
 	fish_instance.add_to_group("my_fish")
 	fish_instance.add_to_group(fish_name)
@@ -149,6 +150,7 @@ func game_over():
 	if Global.which_mode == "normal":
 		hud_ft.table_transparency(false)
 		fish_instance.stop(true)
+		hud_ft.increase_or_reduce(fish_instance, "red")
 	elif Global.which_mode == "fisholution":
 		instance_unique_fish.stop(true)
 
