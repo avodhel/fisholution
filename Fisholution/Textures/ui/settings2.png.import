@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choosescreen.png-dac8b3fd7192bdc132f160f55f1bc19e.stex"
+path="res://.import/settings2.png-fc6c1573321c4c09d517e248eecedc2d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/ui/choosescreen.png"
-dest_files=[ "res://.import/choosescreen.png-dac8b3fd7192bdc132f160f55f1bc19e.stex" ]
+source_file="res://Textures/ui/settings2.png"
+dest_files=[ "res://.import/settings2.png-fc6c1573321c4c09d517e248eecedc2d.stex" ]
 
 [params]
 

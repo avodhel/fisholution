@@ -1459,8 +1459,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -210.0
+margin_left = -80.0
 margin_top = -90.0
+margin_right = 5.0
 margin_bottom = -55.0
 rect_scale = Vector2( 2, 2 )
 alignment = 1
@@ -1468,7 +1469,7 @@ alignment = 1
 [node name="start" type="Button" parent="Buttons4" groups=[
 "button",
 ]]
-margin_right = 210.0
+margin_right = 85.0
 margin_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1485,7 +1486,7 @@ custom_colors/font_color = Color( 0.407843, 0.882353, 0.862745, 1 )
 custom_colors/font_color_hover = Color( 0.407843, 0.882353, 0.862745, 1 )
 custom_colors/font_color_pressed = Color( 0.407843, 0.882353, 0.862745, 1 )
 custom_constants/hseparation = 2
-text = "Start Fisholution"
+text = "Play"
 
 [connection signal="pressed" from="FishButtons1/Fish1_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="FishButtons1/Fish2_button" to="." method="_on_button_pressed"]

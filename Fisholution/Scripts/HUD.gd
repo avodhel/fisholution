@@ -9,6 +9,7 @@ onready var title_label = $TitleLabel
 onready var highscore_label = $HighscoreLabel
 onready var restart_button = $RestartButton
 onready var choosescene_button = $ChooseSceneButton
+onready var home_button = $HomeButton
 onready var message_timer = $MessageTimer
 onready var blur = $Blur
 
@@ -30,17 +31,20 @@ func game_over():
 	score_label.visible = true
 	if Global.which_mode == "fisholution":
 		fisholution_bar.visible = true
+	home_button.visible = true
 	title_label.visible = true
 	highscore_label.visible = true
 	restart_button.visible = true
 	if Global.which_mode == "normal":
 		choosescene_button.visible = true
+		home_button.rect_position = Vector2(195, 560)
 	#prepare restart hud
 	show_message("Fisholution \nOver")
 	yield(message_timer, "timeout") # show message until timeout signal appears (wait time)
 	restart_button.show()
 	if Global.which_mode == "normal":
 		choosescene_button.show()
+	home_button.show()
 	title_label.text = "Fisholution"
 	title_label.show()
 	highscore_value = str(Global.load_highscore()) # update high score
@@ -65,13 +69,12 @@ func _on_RestartButton_pressed():
 func _on_ChooseSceneButton_pressed():
 	Global.change_scene("ChooseScene")
 
+func _on_HomeButton_pressed():
+	Global.change_scene("MainScene")
+
 func _on_Fish_xp_gained():
 	var increase_xp = fisholution_bar.max_value / (fisholution_bar.level * xp) #reduce xp amount after every fisholution
 	fisholution_bar.fisholution_process(increase_xp)
 
 func _on_FisholutionBar_fisholution_up():
 	emit_signal("fisholution_up")
-
-
-
-

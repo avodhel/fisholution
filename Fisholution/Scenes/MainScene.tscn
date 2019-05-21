@@ -1,28 +1,37 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Textures/ui/button1.png" type="Texture" id=5]
-[ext_resource path="res://Textures/ui/button2.png" type="Texture" id=6]
-[ext_resource path="res://Textures/ui/choosescreen.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ui/play1.png" type="Texture" id=5]
+[ext_resource path="res://Textures/ui/play2.png" type="Texture" id=6]
+[ext_resource path="res://Textures/ui/settings1.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ui/settings2.png" type="Texture" id=8]
+[ext_resource path="res://Textures/ui/fisholution1.png" type="Texture" id=9]
+[ext_resource path="res://Textures/ui/fisholution2.png" type="Texture" id=10]
+[ext_resource path="res://Textures/ui/normal1.png" type="Texture" id=11]
+[ext_resource path="res://Textures/ui/normal2.png" type="Texture" id=12]
+[ext_resource path="res://Textures/ui/back1.png" type="Texture" id=13]
+[ext_resource path="res://Textures/ui/back2.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
-outline_size = 1
-outline_color = Color( 0.709804, 0.709804, 0.709804, 1 )
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 55
-outline_size = 1
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 30
+size = 65
 outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 2
 extra_spacing_bottom = 2
 extra_spacing_char = 2
@@ -30,16 +39,43 @@ extra_spacing_space = 2
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 20
-outline_size = 1
+size = 35
+outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 20
-outline_size = 1
+size = 35
+outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "spin"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainScreenElements:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -460, 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Modes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60, 80 ), Vector2( -400, 80 ) ]
+}
 
 [node name="MainScene" type="CanvasLayer"]
 layer = 5
@@ -95,87 +131,96 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 198.0
-margin_top = 457.8
-margin_right = 282.0
-margin_bottom = 538.8
+margin_left = 130.0
+margin_top = 460.0
+margin_right = 210.0
+margin_bottom = 540.0
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="Modes" type="VBoxContainer" parent="."]
-editor/display_folded = true
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -220.0
-margin_top = -180.0
-margin_right = -6.0
-margin_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_scale = Vector2( 2, 2 )
-size_flags_horizontal = 7
-size_flags_vertical = 7
+[node name="SettingsButton" type="TextureButton" parent="MainScreenElements"]
+margin_left = 260.0
+margin_top = 460.0
+margin_right = 340.0
+margin_bottom = 540.0
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+expand = true
 
-[node name="Label" type="Label" parent="Modes"]
-margin_right = 214.0
-margin_bottom = 35.0
+[node name="Modes" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 60, 80 )
+
+[node name="ChooseAMode" type="Label" parent="Modes"]
+margin_left = 480.0
+margin_top = 100.0
+margin_right = 793.0
+margin_bottom = 170.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
 text = "Choose a Mode"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Modes"]
-margin_top = 39.0
-margin_right = 214.0
-margin_bottom = 152.0
-rect_pivot_offset = Vector2( 40, 16 )
-alignment = 1
+[node name="FisholutionMode" type="Node2D" parent="Modes"]
+position = Vector2( 0, 20 )
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Modes/HBoxContainer"]
-margin_right = 214.0
-margin_bottom = 43.0
+[node name="FisholutionStart" type="TextureButton" parent="Modes/FisholutionMode"]
+margin_left = 440.0
+margin_top = 170.0
+margin_right = 504.0
+margin_bottom = 234.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
 
-[node name="FisholutionStart" type="TextureButton" parent="Modes/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
-margin_bottom = 43.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="Modes/HBoxContainer/VBoxContainer"]
-margin_left = 36.0
-margin_right = 204.0
-margin_bottom = 43.0
+[node name="Label" type="Label" parent="Modes/FisholutionMode"]
+margin_left = 540.0
+margin_top = 160.0
+margin_right = 843.0
+margin_bottom = 235.0
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.415686, 0.678431, 0.196078, 1 )
+custom_colors/font_color = Color( 0.823529, 0.8, 0.0823529, 1 )
 text = "play as an unique fish and 
 try to complete fisholution"
 
-[node name="VBoxContainer2" type="HBoxContainer" parent="Modes/HBoxContainer"]
-margin_top = 47.0
-margin_right = 214.0
-margin_bottom = 113.0
+[node name="NormalMode" type="Node2D" parent="Modes"]
+position = Vector2( 0, 40 )
 
-[node name="NormalStart" type="TextureButton" parent="Modes/HBoxContainer/VBoxContainer2"]
-margin_right = 32.0
-margin_bottom = 66.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 7 )
+[node name="NormalStart" type="TextureButton" parent="Modes/NormalMode"]
+margin_left = 440.0
+margin_top = 253.3
+margin_right = 504.0
+margin_bottom = 317.3
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+expand = true
 
-[node name="Label" type="Label" parent="Modes/HBoxContainer/VBoxContainer2"]
-margin_left = 36.0
-margin_right = 214.0
-margin_bottom = 66.0
+[node name="Label2" type="Label" parent="Modes/NormalMode"]
+margin_left = 540.0
+margin_top = 240.0
+margin_right = 861.0
+margin_bottom = 354.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.207843, 0.819608, 0.317647, 1 )
 text = "play as a normal fish and 
 try to win natural selection 
 with your kind of fish"
 
+[node name="BackButton" type="TextureButton" parent="Modes"]
+margin_left = 600.0
+margin_top = 420.0
+margin_right = 674.0
+margin_bottom = 494.0
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/spin = SubResource( 6 )
+
 [connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Modes/HBoxContainer/VBoxContainer/FisholutionStart" to="." method="_on_FisholutionStart_pressed"]
-[connection signal="pressed" from="Modes/HBoxContainer/VBoxContainer2/NormalStart" to="." method="_on_NormalStart_pressed"]
+[connection signal="pressed" from="Modes/FisholutionMode/FisholutionStart" to="." method="_on_FisholutionStart_pressed"]
+[connection signal="pressed" from="Modes/NormalMode/NormalStart" to="." method="_on_NormalStart_pressed"]
+[connection signal="pressed" from="Modes/BackButton" to="." method="_on_BackButton_pressed"]
