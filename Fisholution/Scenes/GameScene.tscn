@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/GameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/enemies/fish/BadFish1.tscn" type="PackedScene" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Sounds/gameover.wav" type="AudioStream" id=22]
-[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=23]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -57,9 +56,6 @@ curve = SubResource( 1 )
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="Fish_Pos/EnemyPath"]
 position = Vector2( -6.48004, -2.05524 )
 
-[node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 240, 360 )
-
 [node name="HUD" parent="." instance=ExtResource( 19 )]
 
 [node name="parallaxBG" parent="." instance=ExtResource( 20 )]
@@ -78,9 +74,6 @@ wait_time = 0.1
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 23 )
 
 [connection signal="restart_game" from="HUD" to="." method="restart_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

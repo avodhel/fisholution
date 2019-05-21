@@ -35,6 +35,7 @@ font_data = ExtResource( 3 )
 margin_top = -7.0
 margin_right = 150.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.5, 1.5 )
 theme = SubResource( 3 )
 custom_styles/fg = SubResource( 4 )
 custom_styles/bg = SubResource( 5 )

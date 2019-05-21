@@ -4,9 +4,7 @@ export (Array, PackedScene) var enemy_fishes
 export (Array, PackedScene) var enemy_not_fishes
 
 onready var fish_pos = $Fish_Pos
-#onready var fish = $Fish
 onready var enemy_spawn_location = $Fish_Pos/EnemyPath/EnemySpawnLocation
-onready var start_position = $StartPosition
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/ScoreLabel
@@ -16,7 +14,6 @@ onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
 onready var gameover_sound = $GameOverSound
-onready var music = $Music
 
 var Enemies = []
 var score
@@ -29,6 +26,9 @@ func _ready():
 	Enemies = enemy_fishes + enemy_not_fishes
 	_prepare_game()
 	_prepare_hud()
+	_prepare_fish()
+
+func _prepare_fish():
 	if Global.which_mode == "fisholution":
 		_unique_fish()
 	elif Global.which_mode == "normal":
@@ -138,14 +138,12 @@ func _load_fish(path, fish_name):
 
 func restart_game():
 	Global.change_scene("GameScene") #reload game scene
-	music.play()
 
 func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
 	gameover_sound.play()
-	music.stop()
 	Global.save_highscore(score) #save highscore
 	if Global.which_mode == "normal":
 		hud_ft.table_transparency(false)

@@ -19,6 +19,8 @@ var xp = 5
 func _ready():
 	highscore_value = str(Global.load_highscore())
 	highscore_label.text = "Highscore: " + highscore_value
+	if Global.which_mode == "normal":
+		score_label.rect_position = Vector2(140, 0)
 
 func show_message(text):
 	title_label.text = text
