@@ -2,14 +2,19 @@ extends Node2D
 
 var fishtable_elements = []
 var fishtable_labels = []
+var scoretable_elements = []
+var scoretable_labels = []
 var fish_no = null
 
 func _ready():
-	fishtable_elements = $FishTable_elements.get_children()
+	if self.name == "FishTable":
+		fishtable_elements = $FishTable_elements.get_children()
+	elif self.name == "ScoreTable":
+		scoretable_elements = $ScoreTable_elements.get_children()
 	reset_table()
 	table_transparency(false)
 
-func increase_or_reduce(whichfish, situation):
+func increase_or_reduce(whichfish, situation, whichtable):
 	if whichfish.is_in_group("fish1"):
 		fish_no = 0
 	elif whichfish.is_in_group("fish2"):
@@ -37,13 +42,18 @@ func increase_or_reduce(whichfish, situation):
 	elif whichfish.is_in_group("fish13"):
 		fish_no = 12
 	
-	if fish_no != null:
+	if whichtable == "fishtable" and fish_no != null:
 		match situation:
 			"inc":
 				_inc_nof(fish_no)
 				fish_no = null
 			"red":
 				_red_nof(fish_no)
+				fish_no = null
+	elif whichtable == "scoretable" and fish_no != null:
+		match situation:
+			"inc":
+				_inc_sof(fish_no)
 				fish_no = null
 	else:
 		return
@@ -52,20 +62,30 @@ func _inc_nof(fish_no): # increase number of fish
 	fishtable_elements[fish_no].value += 1
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
 
-	if fishtable_elements[fish_no].value == fishtable_elements[fish_no].max_value:
-		print(str(fish_no) + " won the game")
-		get_tree().paused = true #pause game
-	
 func _red_nof(fish_no): #reduce number of fish
 	fishtable_elements[fish_no].value -= 1
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
 
-func reset_table(): # reset fish table
+func _inc_sof(fish_no): #increase score of fish
+	scoretable_elements[fish_no].value += 1
+	scoretable_labels[fish_no].text = str(scoretable_elements[fish_no].value)
+
+	if scoretable_elements[fish_no].value == scoretable_elements[fish_no].max_value:
+		print(str(fish_no) + " won the game")
+		get_tree().paused = true #pause game
+
+func reset_table(): # reset tables
 	for i in fishtable_elements.size():
 		fishtable_elements[i].value = 0
 		var fishtable_label = fishtable_elements[i].get_child(0)
 		fishtable_labels.append(fishtable_label)
 		fishtable_label.text = str(fishtable_elements[i].value)
+
+	for i in scoretable_elements.size():
+		scoretable_elements[i].value = 0
+		var scoretable_label = scoretable_elements[i].get_child(0)
+		scoretable_labels.append(scoretable_label)
+		scoretable_label.text = str(scoretable_elements[i].value)
 
 func table_transparency(on):
 	for i in fishtable_elements.size():
@@ -77,6 +97,16 @@ func table_transparency(on):
 			fishtable_elements[i].modulate.a = 1
 			fishtable_elements[Global.fish_no].modulate.a = 0.5
 			self.position.x = 360 #show fishes
+
+	for i in scoretable_elements.size():
+		if on:
+			scoretable_elements[i].modulate.a = 0.5
+			scoretable_elements[Global.fish_no].modulate.a = 1
+			self.position.x = -30 #hide fishes
+		else:
+			scoretable_elements[i].modulate.a = 1
+			scoretable_elements[Global.fish_no].modulate.a = 0.5
+			self.position.x = 0 #show fishes
 
 
 

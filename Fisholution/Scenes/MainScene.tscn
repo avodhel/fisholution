@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
@@ -51,7 +51,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 65
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -61,14 +61,20 @@ extra_spacing_char = 2
 extra_spacing_space = 2
 font_data = ExtResource( 4 )
 
-[sub_resource type="StreamTexture" id=9]
+[sub_resource type="DynamicFont" id=7]
+size = 45
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StreamTexture" id=8]
 load_path = "res://.import/back1.png-940cab71c1f9924b1ddb337a671e3286.stex"
 
-[sub_resource type="StreamTexture" id=10]
+[sub_resource type="StreamTexture" id=9]
 load_path = "res://.import/back2.png-b06b40b20e7c7635f2e8f97d2711ccea.stex"
 
-[sub_resource type="Animation" id=6]
-resource_name = "spin_left"
+[sub_resource type="Animation" id=10]
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("MainScreenElements:position")
 tracks/0/interp = 1
@@ -76,7 +82,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 483, 0 ) ]
@@ -88,14 +94,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -880, 80 ), Vector2( -400, 80 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "spin_right"
+[sub_resource type="Animation" id=11]
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("MainScreenElements:position")
 tracks/0/interp = 1
@@ -103,7 +109,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -460, 0 ) ]
@@ -115,7 +121,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 483, 0 ), Vector2( 0, 0 ) ]
@@ -138,6 +144,7 @@ editor/display_folded = true
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
 [node name="MainScreenElements" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="TitleLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5
@@ -262,6 +269,7 @@ texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="Settings" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 483, 0 )
 
 [node name="Settings" type="Label" parent="Settings"]
@@ -269,24 +277,42 @@ margin_left = 80.0
 margin_top = 180.0
 margin_right = 393.0
 margin_bottom = 250.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
 text = "Settings"
 align = 1
 valign = 1
+
+[node name="MusicSlider" type="Node2D" parent="Settings"]
+
+[node name="MusicLabel" type="Label" parent="Settings/MusicSlider"]
+margin_left = 77.0
+margin_top = 270.0
+margin_right = 165.0
+margin_bottom = 365.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.223529, 0.34902, 0.101961, 1 )
+text = "Music"
+
+[node name="Music" type="HSlider" parent="Settings/MusicSlider"]
+anchor_right = 1.0
+margin_left = 177.0
+margin_top = 270.0
+margin_right = 377.0
+margin_bottom = 320.0
 
 [node name="SpinRightButton" type="TextureButton" parent="Settings"]
 margin_left = 197.0
 margin_top = 500.0
 margin_right = 277.0
 margin_bottom = 580.0
-texture_normal = SubResource( 9 )
-texture_hover = SubResource( 10 )
+texture_normal = SubResource( 8 )
+texture_hover = SubResource( 9 )
 expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/spin_left = SubResource( 6 )
-anims/spin_right = SubResource( 8 )
+anims/spin_left = SubResource( 10 )
+anims/spin_right = SubResource( 11 )
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )

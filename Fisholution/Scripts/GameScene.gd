@@ -10,6 +10,7 @@ onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/ScoreLabel
 onready var hud_hsl = $HUD/HighscoreLabel
 onready var hud_ft = $HUD/FishTable
+onready var hud_st = $HUD/ScoreTable
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
@@ -49,12 +50,20 @@ func _prepare_hud():
 	hud_fb.show()
 	hud_fb.reset_fisholution()
 	if Global.which_mode == "normal":
-		var fish_table = ResourceLoader.load("res://Scenes/UI/Fishtable.tscn")
+		#increase fish table
+		var fish_table = ResourceLoader.load("res://Scenes/UI/FishTable.tscn")
 		var instance_ft = fish_table.instance()
 		hud.add_child(instance_ft)
 		hud_ft = instance_ft
 		hud_ft.reset_table()
 		hud_ft.table_transparency(true)
+		#increase score table
+		var score_table = ResourceLoader.load("res://Scenes/UI/ScoreTable.tscn")
+		var instance_st = score_table.instance()
+		hud.add_child(instance_st)
+		hud_st = instance_st
+		hud_st.reset_table()
+		hud_st.table_transparency(true)
 
 func _unique_fish():
 	var unique_fish = ResourceLoader.load("res://Scenes/Fish.tscn")
@@ -114,7 +123,7 @@ func _load_fish(path, fish_name):
 	fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
 	add_child(fish_instance)
 	fish_instance.position = fish_pos.position
-	hud_ft.increase_or_reduce(fish_instance, "inc")
+	hud_ft.increase_or_reduce(fish_instance, "inc", "fishtable")
 	#group
 	fish_instance.add_to_group("my_fish")
 	fish_instance.add_to_group(fish_name)
@@ -135,6 +144,7 @@ func _load_fish(path, fish_name):
 	#signals
 	fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
 	fish_instance.connect("hit", self, "game_over")
+	fish_instance.connect("my_fish_eaten", self, "_on_fish_eaten")
 
 func restart_game():
 	Global.change_scene("GameScene") #reload game scene
@@ -147,8 +157,9 @@ func game_over():
 	Global.save_highscore(score) #save highscore
 	if Global.which_mode == "normal":
 		hud_ft.table_transparency(false)
+		hud_st.table_transparency(false)
 		fish_instance.stop(true)
-		hud_ft.increase_or_reduce(fish_instance, "red")
+		hud_ft.increase_or_reduce(fish_instance, "red", "fishtable")
 	elif Global.which_mode == "fisholution":
 		instance_unique_fish.stop(true)
 
@@ -171,12 +182,16 @@ func _on_EnemyTimer_timeout():
 	enemy.position = enemy_spawn_location.global_position
 	# increase fish of number on the fish table
 	if !enemy.is_in_group("not_fish") and Global.which_mode == "normal":
-		hud_ft.increase_or_reduce(enemy, "inc")
+		hud_ft.increase_or_reduce(enemy, "inc", "fishtable")
 		#make contact with "fish_died" signal
 		enemy.connect("fish_died", self, "_on_fish_died")
+		enemy.connect("fish_eaten", self, "_on_fish_eaten")
 
 func _on_fish_died(which_fish):
-	hud_ft.increase_or_reduce(which_fish, "red")
+	hud_ft.increase_or_reduce(which_fish, "red", "fishtable")
+
+func _on_fish_eaten(by_who):
+	hud_st.increase_or_reduce(by_who, "inc", "scoretable")
 
 
 

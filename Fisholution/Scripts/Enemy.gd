@@ -1,6 +1,7 @@
 extends Area2D
 
 signal fish_died(which_fish)
+signal fish_eaten(by_who)
 
 export (float) var min_scale = 0.5
 export (float) var max_scale = 4.5
@@ -51,6 +52,13 @@ func _on_Enemy_area_entered(area):
 			if area.scale > scale:
 				call_deferred("free")
 				emit_signal("fish_died", self)
+				emit_signal("fish_eaten", area)
+	elif self.is_in_group("badfish") and area.is_in_group("my_fish"):
+		if self.badfish_no != Global.fish_no:
+			if area.scale > scale:
+				call_deferred("free")
+				emit_signal("fish_died", self)
+				emit_signal("fish_eaten", area)
 
 func _detect_badfish():
 	if self.is_in_group("fish1"):

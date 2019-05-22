@@ -2,6 +2,7 @@ extends Area2D
 
 signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
+signal my_fish_eaten(by_who) #when my fish eaten increase score for fish who ate me
 
 export (float) var speed = 3
 export (float) var min_scale = 1.5
@@ -50,9 +51,10 @@ func _on_Fish_area_entered(area):
 		if !same_fish_control: # if badfish is not same kind fish
 			if area.scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
 				_die() #our fish died
+				emit_signal("my_fish_eaten", area)
 			elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
-				area.hide()
-				area.queue_free()
+#				area.hide()
+#				area.queue_free()
 				emit_signal("xp_gained")
 	#			nom_sound.play()
 #			else:
