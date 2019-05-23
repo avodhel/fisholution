@@ -1,5 +1,7 @@
 extends Node2D
 
+signal eliminate_fish(whichfish)
+
 onready var table_title = $TableTitle
 
 var fishtable_elements = []
@@ -67,6 +69,9 @@ func _inc_nof(fish_no): # increase number of fish
 func _red_nof(fish_no): #reduce number of fish
 	fishtable_elements[fish_no].value -= 1
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
+
+	if fishtable_elements[fish_no].value == 0:
+		emit_signal("eliminate_fish", fish_no)
 
 func _inc_sof(fish_no): #increase score of fish
 	scoretable_elements[fish_no].value += 1

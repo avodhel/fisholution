@@ -40,25 +40,29 @@ func _move(delta):
 	velocity.y -= 1
 	position += ((velocity * delta).normalized() * speed).rotated(direction)
 
-func _on_VisibilityNotifier2D_screen_exited():
-	if self.is_in_group("badfish"):
-		emit_signal("fish_died", self)
-	call_deferred('free')
-#	pass
+#func _on_VisibilityNotifier2D_screen_exited():
+#	if self.is_in_group("badfish"):
+#		emit_signal("fish_died", self)
+#	call_deferred("free")
 
 func _on_Enemy_area_entered(area):
-	if self.is_in_group("badfish") and area.is_in_group("badfish"):
+	if self.is_in_group("badfish") and area.is_in_group("badfish"): #between fishes
 		if self.badfish_no != area.badfish_no: #if badfishes are not same kind
 			if area.scale > scale:
 				call_deferred("free")
 				emit_signal("fish_died", self)
 				emit_signal("fish_eaten", area)
-	elif self.is_in_group("badfish") and area.is_in_group("my_fish"):
+	elif self.is_in_group("badfish") and area.is_in_group("my_fish"): #between fishes and my fish
 		if self.badfish_no != Global.fish_no:
 			if area.scale > scale:
 				call_deferred("free")
 				emit_signal("fish_died", self)
 				emit_signal("fish_eaten", area)
+	elif self.is_in_group("badfish") and area.is_in_group("not_fish"): #between fishes and not_fishes
+		if area.scale > scale:
+			call_deferred("free")
+			emit_signal("fish_died", self)
+			emit_signal("fish_eaten", area)
 
 func _detect_badfish():
 	if self.is_in_group("fish1"):

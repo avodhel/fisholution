@@ -58,6 +58,7 @@ func _prepare_hud():
 		hud_st = instance_tables.get_node("ScoreTable")
 		hud_ft.reset_table()
 		hud_ft.table_transparency(true)
+		hud_ft.connect("eliminate_fish", self, "_eliminate_fish")
 		hud_st.reset_table()
 		hud_st.table_transparency(true)
 
@@ -189,11 +190,14 @@ func _on_fish_died(which_fish):
 func _on_fish_eaten(by_who):
 	hud_st.increase_or_reduce(by_who, "inc", "scoretable")
 
-
-
-
-
-
-
+func _eliminate_fish(fish_no):
+	var group_name = "fish" + str(fish_no + 1)
+	print(enemy_fishes.size())
+	for f in enemy_fishes.size():
+		if enemy_fishes[f]._bundled.names[0] == "BadFish" + str(fish_no + 1):
+			print(enemy_fishes[f]._bundled.names[0])
+			enemy_fishes.remove(f)
+			Enemies = enemy_fishes + enemy_not_fishes
+			break
 
 

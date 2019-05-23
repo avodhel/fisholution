@@ -152,7 +152,7 @@ margin_bottom = 62.3327
 custom_styles/fg = SubResource( 4 )
 custom_styles/bg = SubResource( 5 )
 max_value = 25.0
-value = 12.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish2_label" type="Label" parent="FishTable_elements/Fish2_Progress"]
@@ -167,6 +167,7 @@ text = "12"
 valign = 1
 
 [node name="Fish3_Progress" type="ProgressBar" parent="FishTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 62.3327
 margin_right = 90.0
@@ -197,7 +198,7 @@ margin_bottom = 122.333
 custom_styles/fg = SubResource( 8 )
 custom_styles/bg = SubResource( 9 )
 max_value = 25.0
-value = 22.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish4_label" type="Label" parent="FishTable_elements/Fish4_Progress"]
@@ -212,6 +213,7 @@ text = "22"
 valign = 1
 
 [node name="Fish5_Progress" type="ProgressBar" parent="FishTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 122.333
 margin_right = 90.0
@@ -219,7 +221,7 @@ margin_bottom = 152.333
 custom_styles/fg = SubResource( 10 )
 custom_styles/bg = SubResource( 11 )
 max_value = 25.0
-value = 14.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish5_label" type="Label" parent="FishTable_elements/Fish5_Progress"]
@@ -288,7 +290,7 @@ margin_bottom = 242.333
 custom_styles/fg = SubResource( 16 )
 custom_styles/bg = SubResource( 17 )
 max_value = 25.0
-value = 15.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish8_label" type="Label" parent="FishTable_elements/Fish8_Progress"]
@@ -311,7 +313,7 @@ margin_bottom = 272.333
 custom_styles/fg = SubResource( 18 )
 custom_styles/bg = SubResource( 19 )
 max_value = 25.0
-value = 17.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish9_label" type="Label" parent="FishTable_elements/Fish9_Progress"]
@@ -334,7 +336,7 @@ margin_bottom = 302.333
 custom_styles/fg = SubResource( 20 )
 custom_styles/bg = SubResource( 21 )
 max_value = 25.0
-value = 12.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish10_label" type="Label" parent="FishTable_elements/Fish10_Progress"]
@@ -357,7 +359,7 @@ margin_bottom = 332.333
 custom_styles/fg = SubResource( 22 )
 custom_styles/bg = SubResource( 23 )
 max_value = 25.0
-value = 13.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish11_label" type="Label" parent="FishTable_elements/Fish11_Progress"]
@@ -380,7 +382,7 @@ margin_bottom = 362.333
 custom_styles/fg = SubResource( 24 )
 custom_styles/bg = SubResource( 25 )
 max_value = 25.0
-value = 22.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish12_label" type="Label" parent="FishTable_elements/Fish12_Progress"]
@@ -403,7 +405,7 @@ margin_bottom = 392.333
 custom_styles/fg = SubResource( 26 )
 custom_styles/bg = SubResource( 27 )
 max_value = 25.0
-value = 23.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish13_label" type="Label" parent="FishTable_elements/Fish13_Progress"]
