@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var table_title = $TableTitle
+
 var fishtable_elements = []
 var fishtable_labels = []
 var scoretable_elements = []
@@ -95,7 +97,7 @@ func table_transparency(on):
 			self.position.x = 390 #hide fishes
 		else:
 			fishtable_elements[i].modulate.a = 1
-			fishtable_elements[Global.fish_no].modulate.a = 0.5
+#			fishtable_elements[Global.fish_no].modulate.a = 0.5
 			self.position.x = 360 #show fishes
 
 	for i in scoretable_elements.size():
@@ -105,8 +107,13 @@ func table_transparency(on):
 			self.position.x = -30 #hide fishes
 		else:
 			scoretable_elements[i].modulate.a = 1
-			scoretable_elements[Global.fish_no].modulate.a = 0.5
+#			scoretable_elements[Global.fish_no].modulate.a = 0.5
 			self.position.x = 0 #show fishes
+	
+	if on:
+		table_title.visible = false
+	else:
+		table_title.visible = true
 
 
 

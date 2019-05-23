@@ -144,7 +144,6 @@ editor/display_folded = true
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
 [node name="MainScreenElements" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="TitleLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5

@@ -50,18 +50,14 @@ func _prepare_hud():
 	hud_fb.show()
 	hud_fb.reset_fisholution()
 	if Global.which_mode == "normal":
-		#increase fish table
-		var fish_table = ResourceLoader.load("res://Scenes/UI/FishTable.tscn")
-		var instance_ft = fish_table.instance()
-		hud.add_child(instance_ft)
-		hud_ft = instance_ft
+		#instance tables
+		var tables = ResourceLoader.load("res://Scenes/UI/Tables.tscn")
+		var instance_tables = tables.instance()
+		hud.add_child(instance_tables)
+		hud_ft = instance_tables.get_node("FishTable")
+		hud_st = instance_tables.get_node("ScoreTable")
 		hud_ft.reset_table()
 		hud_ft.table_transparency(true)
-		#increase score table
-		var score_table = ResourceLoader.load("res://Scenes/UI/ScoreTable.tscn")
-		var instance_st = score_table.instance()
-		hud.add_child(instance_st)
-		hud_st = instance_st
 		hud_st.reset_table()
 		hud_st.table_transparency(true)
 
