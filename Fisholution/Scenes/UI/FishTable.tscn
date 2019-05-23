@@ -1,8 +1,10 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Tables.gd" type="Script" id=1]
 [ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=3]
+[ext_resource path="res://Textures/ui/eliminate.png" type="Texture" id=4]
+[ext_resource path="res://Textures/ui/remarkable.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=28]
 size = 30
@@ -118,10 +120,8 @@ texture = ExtResource( 3 )
 hframes = 3
 
 [node name="FishTable_elements" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Fish1_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 2.3327
 margin_right = 90.0
@@ -143,8 +143,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "5"
 valign = 1
 
+[node name="eliminate" type="Sprite" parent="FishTable_elements/Fish1_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable" type="Sprite" parent="FishTable_elements/Fish1_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish2_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 32.3327
 margin_right = 90.0
@@ -166,8 +178,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "12"
 valign = 1
 
+[node name="eliminate2" type="Sprite" parent="FishTable_elements/Fish2_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable2" type="Sprite" parent="FishTable_elements/Fish2_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish3_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 62.3327
 margin_right = 90.0
@@ -189,8 +213,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "4"
 valign = 1
 
+[node name="eliminate3" type="Sprite" parent="FishTable_elements/Fish3_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable3" type="Sprite" parent="FishTable_elements/Fish3_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish4_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 92.3327
 margin_right = 90.0
@@ -212,8 +248,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "22"
 valign = 1
 
+[node name="eliminate4" type="Sprite" parent="FishTable_elements/Fish4_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable4" type="Sprite" parent="FishTable_elements/Fish4_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish5_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 122.333
 margin_right = 90.0
@@ -235,8 +283,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "14"
 valign = 1
 
+[node name="eliminate5" type="Sprite" parent="FishTable_elements/Fish5_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable5" type="Sprite" parent="FishTable_elements/Fish5_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish6_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 152.333
 margin_right = 90.0
@@ -258,8 +318,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "3"
 valign = 1
 
+[node name="eliminate6" type="Sprite" parent="FishTable_elements/Fish6_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable6" type="Sprite" parent="FishTable_elements/Fish6_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish7_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 182.333
 margin_right = 90.0
@@ -281,8 +353,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "10"
 valign = 1
 
+[node name="eliminate7" type="Sprite" parent="FishTable_elements/Fish7_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable7" type="Sprite" parent="FishTable_elements/Fish7_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish8_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 212.333
 margin_right = 90.0
@@ -304,8 +388,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "15"
 valign = 1
 
+[node name="eliminate8" type="Sprite" parent="FishTable_elements/Fish8_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable8" type="Sprite" parent="FishTable_elements/Fish8_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish9_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 242.333
 margin_right = 90.0
@@ -327,8 +423,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "17"
 valign = 1
 
+[node name="eliminate9" type="Sprite" parent="FishTable_elements/Fish9_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable9" type="Sprite" parent="FishTable_elements/Fish9_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish10_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 272.333
 margin_right = 90.0
@@ -350,8 +458,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "12"
 valign = 1
 
+[node name="eliminate10" type="Sprite" parent="FishTable_elements/Fish10_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable10" type="Sprite" parent="FishTable_elements/Fish10_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish11_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 302.333
 margin_right = 90.0
@@ -373,8 +493,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "13"
 valign = 1
 
+[node name="eliminate11" type="Sprite" parent="FishTable_elements/Fish11_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable11" type="Sprite" parent="FishTable_elements/Fish11_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish12_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 332.333
 margin_right = 90.0
@@ -396,8 +528,20 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "22"
 valign = 1
 
+[node name="eliminate12" type="Sprite" parent="FishTable_elements/Fish12_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable12" type="Sprite" parent="FishTable_elements/Fish12_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
 [node name="Fish13_Progress" type="ProgressBar" parent="FishTable_elements"]
-editor/display_folded = true
 margin_left = 30.0
 margin_top = 362.333
 margin_right = 90.0
@@ -418,4 +562,17 @@ custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "23"
 valign = 1
+
+[node name="eliminate13" type="Sprite" parent="FishTable_elements/Fish13_Progress"]
+visible = false
+position = Vector2( 30, 15 )
+scale = Vector2( 1.875, 0.937497 )
+texture = ExtResource( 4 )
+
+[node name="remarkable13" type="Sprite" parent="FishTable_elements/Fish13_Progress"]
+visible = false
+position = Vector2( -12, 15 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
 

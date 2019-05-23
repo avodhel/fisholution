@@ -13,7 +13,7 @@ var fish_no = null
 func _ready():
 	if self.name == "FishTable":
 		fishtable_elements = $FishTable_elements.get_children()
-	elif self.name == "ScoreTable":
+	if self.name == "ScoreTable":
 		scoretable_elements = $ScoreTable_elements.get_children()
 	reset_table()
 	table_transparency(false)
@@ -72,6 +72,8 @@ func _red_nof(fish_no): #reduce number of fish
 
 	if fishtable_elements[fish_no].value == 0:
 		emit_signal("eliminate_fish", fish_no)
+		_eliminate_from_table(fish_no)
+		print(fishtable_elements.size(), scoretable_elements.size())
 
 func _inc_sof(fish_no): #increase score of fish
 	scoretable_elements[fish_no].value += 1
@@ -98,21 +100,25 @@ func table_transparency(on):
 	for i in fishtable_elements.size():
 		if on:
 			fishtable_elements[i].modulate.a = 0.5
-			fishtable_elements[Global.fish_no].modulate.a = 1
+#			fishtable_elements[Global.fish_no].modulate.a = 1
+			fishtable_elements[Global.fish_no].get_child(2).visible = true # make remarkable visible
 			self.position.x = 390 #hide fishes
 		else:
 			fishtable_elements[i].modulate.a = 1
 #			fishtable_elements[Global.fish_no].modulate.a = 0.5
+			fishtable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = 360 #show fishes
 
 	for i in scoretable_elements.size():
 		if on:
 			scoretable_elements[i].modulate.a = 0.5
-			scoretable_elements[Global.fish_no].modulate.a = 1
+#			scoretable_elements[Global.fish_no].modulate.a = 1
+			scoretable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = -30 #hide fishes
 		else:
 			scoretable_elements[i].modulate.a = 1
 #			scoretable_elements[Global.fish_no].modulate.a = 0.5
+			scoretable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = 0 #show fishes
 	
 	if on:
@@ -120,6 +126,10 @@ func table_transparency(on):
 	else:
 		table_title.visible = true
 
+func _eliminate_from_table(fish_no):
+#	fishtable_elements[fish_no].modulate.a = 0
+#	scoretable_elements[fish_no].modulate.a = 0
+	fishtable_elements[fish_no].get_child(1).visible = true #visible eliminate sprite
 
 
 
