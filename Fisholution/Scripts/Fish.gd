@@ -9,6 +9,7 @@ onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
 onready var nom_sound = $Nom
 onready var fish_cam = $FishCam
+onready var die_effect = $die_effect
 
 var velocity = Vector2()
 var screensize
@@ -24,6 +25,7 @@ var current_speed
 
 func _ready():
 	current_speed = speed
+	Global.die_effect(die_effect, self)
 
 func _process(delta):
 	Global.pc_control(self, animation)
@@ -55,8 +57,11 @@ func _on_Fish_area_entered(area):
 			_die() #our fish died
 
 func _die():
-	hide()
+	self.speed = 0
+	die_effect.start()
 	emit_signal("hit") #game will know fish died :(
+
+func _on_die_effect_tween_completed(object, key):
 	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
 
 func start(pos):

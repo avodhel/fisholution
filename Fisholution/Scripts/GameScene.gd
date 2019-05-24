@@ -62,7 +62,7 @@ func _prepare_hud():
 		hud_st.reset_table()
 		hud_st.table_transparency(true)
 
-func _unique_fish():
+func _unique_fish(): #prepare fish for fisholution mode
 	var unique_fish = ResourceLoader.load("res://Scenes/Fish.tscn")
 	instance_unique_fish = unique_fish.instance()
 	add_child(instance_unique_fish)
@@ -113,7 +113,7 @@ func _chosen_fish(fish_no):
 		12:
 			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
 
-func _load_fish(path, fish_name):
+func _load_fish(path, fish_name): #preapare fish for normal mod
 	fish_scene = load(path)
 	fish_instance = fish_scene.instance()
 	fish_instance.set_name(fish_name)
@@ -142,6 +142,13 @@ func _load_fish(path, fish_name):
 	fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
 	fish_instance.connect("hit", self, "game_over")
 	fish_instance.connect("my_fish_eaten", self, "_on_fish_eaten")
+	#die_effect(tween)
+	var die_effect = Tween.new()
+	fish_instance.add_child(die_effect)
+	die_effect.playback_speed = 0.2
+	fish_instance.die_effect = fish_instance.get_node("die_effect")
+	Global.die_effect(fish_instance.die_effect, fish_instance)
+	die_effect.connect("tween_completed", fish_instance, "_on_die_effect_tween_completed")
 
 func restart_game():
 	Global.change_scene("GameScene") #reload game scene

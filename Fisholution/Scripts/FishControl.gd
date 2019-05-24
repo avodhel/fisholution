@@ -10,16 +10,8 @@ export (float) var max_scale = 2.5
 
 onready var animation = $Sprite/AnimationPlayer
 
-var velocity = Vector2()
-var screensize
-var center
-var up_center
-var down_center
-var left_center
-var right_center
-var distance_x
-var distance_y
 var current_speed
+var die_effect
 
 func _ready():
 	self.connect("area_entered", self, "_on_Fish_area_entered")
@@ -65,8 +57,11 @@ func _on_Fish_area_entered(area):
 			_die() #our fish died
 
 func _die():
-	hide()
+	self.speed = 0
+	die_effect.start()
 	emit_signal("hit") #game will know fish died :(
+
+func _on_die_effect_tween_completed(object, key):
 	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
 
 func respawn(control):

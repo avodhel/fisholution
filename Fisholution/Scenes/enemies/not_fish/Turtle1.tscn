@@ -25,9 +25,9 @@ radius = 8.19015
 height = 11.6659
 
 [node name="Turtle1" type="Area2D" groups=[
+"enemy",
 "not_fish",
 "turtle",
-"enemy",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -46,5 +46,9 @@ anims/move = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="die_effect" type="Tween" parent="."]
+playback_speed = 0.2
+playback/speed = 0.2
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -22,8 +22,8 @@ tracks/0/keys = {
 
 [node name="JellyFish1" type="Area2D" groups=[
 "enemy",
-"jellyfish",
 "not_fish",
+"jellyfish",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -43,5 +43,9 @@ rotation = 4.71239
 polygon = PoolVector2Array( 6.1618, -12.1182, 13.5064, -8.37096, 14.8554, -3.42459, 15.1552, 1.82157, 14.2559, 6.76795, 6.31169, 13.0633 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="die_effect" type="Tween" parent="."]
+playback_speed = 0.2
+playback/speed = 0.2
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
