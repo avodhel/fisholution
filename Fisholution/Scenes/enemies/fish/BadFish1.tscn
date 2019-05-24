@@ -26,8 +26,8 @@ height = 7.63391
 
 [node name="BadFish1" type="Area2D" groups=[
 "badfish",
-"fish1",
 "enemy",
+"fish1",
 ]]
 collision_mask = 3
 script = ExtResource( 1 )

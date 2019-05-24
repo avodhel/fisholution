@@ -100,26 +100,22 @@ func table_transparency(on):
 	for i in fishtable_elements.size():
 		if on:
 			fishtable_elements[i].modulate.a = 0.5
-#			fishtable_elements[Global.fish_no].modulate.a = 1
-			fishtable_elements[Global.fish_no].get_child(2).visible = true # make remarkable visible
 			self.position.x = 390 #hide fishes
 		else:
 			fishtable_elements[i].modulate.a = 1
-#			fishtable_elements[Global.fish_no].modulate.a = 0.5
-			fishtable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = 360 #show fishes
+
+		fishtable_elements[Global.fish_no].get_child(2).visible = true # visible remarkable sign
 
 	for i in scoretable_elements.size():
 		if on:
 			scoretable_elements[i].modulate.a = 0.5
-#			scoretable_elements[Global.fish_no].modulate.a = 1
-			scoretable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = -30 #hide fishes
 		else:
 			scoretable_elements[i].modulate.a = 1
-#			scoretable_elements[Global.fish_no].modulate.a = 0.5
-			scoretable_elements[Global.fish_no].get_child(2).visible = true
 			self.position.x = 0 #show fishes
+
+		scoretable_elements[Global.fish_no].get_child(2).visible = true # visible remarkable sign
 	
 	if on:
 		table_title.visible = false
@@ -127,17 +123,6 @@ func table_transparency(on):
 		table_title.visible = true
 
 func _eliminate_from_table(fish_no):
-#	fishtable_elements[fish_no].modulate.a = 0
-#	scoretable_elements[fish_no].modulate.a = 0
-	fishtable_elements[fish_no].get_child(1).visible = true #visible eliminate sprite
-
-
-
-
-
-
-
-
-
+	fishtable_elements[fish_no].get_child(1).visible = true #visible eliminate sign
 
 

@@ -57,9 +57,9 @@ valign = 1
 [node name="FisholutionBar" parent="." instance=ExtResource( 3 )]
 visible = false
 margin_left = 240.0
-margin_top = 23.125
-margin_right = 390.0
-margin_bottom = 44.125
+margin_top = 23.0
+margin_right = 360.0
+margin_bottom = 44.0
 
 [node name="TitleLabel" type="Label" parent="."]
 visible = false

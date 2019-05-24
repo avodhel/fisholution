@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/FisholutionBar.gd" type="Script" id=1]
-[ext_resource path="res://Textures/ui/bubble.png" type="Texture" id=2]
-[ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Textures/ui/process.png" type="Texture" id=1]
+[ext_resource path="res://Textures/ui/panel.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/FisholutionBar.gd" type="Script" id=3]
+[ext_resource path="res://Textures/ui/bubble.png" type="Texture" id=4]
+[ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://advanced_pixel-7.ttf"
@@ -13,37 +15,38 @@ font_data = SubResource( 1 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.368627, 0.619608, 0.207843, 0.854902 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.654902, 0.819608, 1, 0.870588 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+expand_margin_left = 17.0
+expand_margin_right = 23.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 3 )
+outline_size = 1
+font_data = ExtResource( 5 )
 
 [node name="FisholutionBar" type="ProgressBar"]
-margin_top = -7.0
-margin_right = 150.0
-margin_bottom = 14.0
+self_modulate = Color( 1, 1, 1, 0.756863 )
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 228.0
+margin_bottom = 149.0
 rect_scale = Vector2( 1.5, 1.5 )
 theme = SubResource( 3 )
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 7 )
 custom_colors/font_color = Color( 0.109804, 0.376471, 0.443137, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-value = 80.0
+value = 43.59
 percent_visible = false
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Bubble" type="TextureRect" parent="."]
 margin_left = -24.6926
@@ -51,7 +54,7 @@ margin_top = -4.92644
 margin_right = 175.307
 margin_bottom = 197.074
 rect_scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 1
 
 [node name="FisholutionLevelLabel" type="Label" parent="."]
@@ -59,7 +62,7 @@ margin_left = -24.3529
 margin_top = -6.32354
 margin_right = 5.64707
 margin_bottom = 24.6765
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0392157, 0.454902, 0.564706, 1 )
 text = "1"
 align = 1
