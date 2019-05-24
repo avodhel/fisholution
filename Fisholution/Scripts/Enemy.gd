@@ -10,6 +10,7 @@ export (float) var max_speed = 3.8
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
+onready var die_effect = $die_effect
 
 var rand_scale
 var rand_vector
@@ -22,6 +23,8 @@ var badfish_no
 func _ready():
 	_prepare_badfish()
 	_detect_badfish()
+	if !self.is_in_group("not_fish"):
+		Global.die_effect(die_effect, self) # get settings for die effect
 
 func _process(delta):
 	_move(delta)
@@ -45,6 +48,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 #		if self.is_in_group("badfish"):
 #			emit_signal("fish_died", self)
 #		self.call_deferred("free")
+	if self.is_in_group("not_fish"):
+		self.call_deferred("free")
 	if Global.which_mode == "fisholution":
 		self.call_deferred("free")
 
@@ -52,20 +57,23 @@ func _on_Enemy_area_entered(area):
 	if self.is_in_group("badfish") and area.is_in_group("badfish"): #between fishes
 		if self.badfish_no != area.badfish_no: #if badfishes are not same kind
 			if area.scale > scale:
-				self.call_deferred("free")
-				emit_signal("fish_died", self)
-				emit_signal("fish_eaten", area)
+				_fish_died(area)
 	elif self.is_in_group("badfish") and area.is_in_group("my_fish"): #between fishes and my fish
 		if self.badfish_no != Global.fish_no:
 			if area.scale > scale:
-				self.call_deferred("free")
-				emit_signal("fish_died", self)
-				emit_signal("fish_eaten", area)
+				_fish_died(area)
 	elif self.is_in_group("badfish") and area.is_in_group("not_fish"): #between fishes and not_fishes
 		if area.scale > scale:
-			self.call_deferred("free")
-			emit_signal("fish_died", self)
-			emit_signal("fish_eaten", area)
+			_fish_died(area)
+
+func _fish_died(area):
+		self.speed = 0
+		die_effect.start()
+		emit_signal("fish_died", self)
+		emit_signal("fish_eaten", area)
+
+func _on_die_effect_tween_completed(object, key):
+	self.call_deferred("free")
 
 func _detect_badfish():
 	if self.is_in_group("fish1"):
@@ -94,21 +102,6 @@ func _detect_badfish():
 		badfish_no = 11
 	elif self.is_in_group("fish13"):
 		badfish_no = 12
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

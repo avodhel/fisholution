@@ -25,9 +25,9 @@ radius = 7.07995
 height = 11.0183
 
 [node name="BadFish9" type="Area2D" groups=[
-"fish9",
-"badfish",
 "enemy",
+"badfish",
+"fish9",
 ]]
 scale = Vector2( 1.00226, 1 )
 collision_mask = 3
@@ -48,5 +48,10 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="die_effect" type="Tween" parent="."]
+playback_speed = 0.2
+playback/speed = 0.2
+
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="tween_completed" from="die_effect" to="." method="_on_die_effect_tween_completed"]

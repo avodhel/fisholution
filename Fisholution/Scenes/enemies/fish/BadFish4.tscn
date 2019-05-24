@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "move"
 length = 1.2
 loop = true
@@ -20,14 +20,14 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 7.72738
 height = 7.63391
 
 [node name="BadFish4" type="Area2D" groups=[
-"fish4",
-"badfish",
 "enemy",
+"badfish",
+"fish4",
 ]]
 collision_mask = 3
 script = ExtResource( 1 )
@@ -39,13 +39,18 @@ region_enabled = true
 region_rect = Rect2( 0, 96, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/move = SubResource( 6 )
+anims/move = SubResource( 1 )
 
 [node name="bodyColl" type="CollisionShape2D" parent="."]
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -0.92659, 0 )
 
+[node name="die_effect" type="Tween" parent="."]
+playback_speed = 0.2
+playback/speed = 0.2
+
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="tween_completed" from="die_effect" to="." method="_on_die_effect_tween_completed"]

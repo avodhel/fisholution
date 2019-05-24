@@ -8,6 +8,10 @@ func _ready():
 	_bubbleffect("instance") #bubble transition
 	_screen_points() #controllers
 
+#FISH
+func die_effect(effect, object):
+	effect.interpolate_property(object, 'scale', object.get_scale(), Vector2(0, 0), 0.05, Tween.TRANS_QUAD, Tween.EASE_OUT)
+
 #BUBBLE TRANSITION
 var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")
 
