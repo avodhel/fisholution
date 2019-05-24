@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
@@ -14,7 +14,9 @@
 [ext_resource path="res://Textures/ui/normal2.png" type="Texture" id=12]
 [ext_resource path="res://Textures/ui/back1.png" type="Texture" id=13]
 [ext_resource path="res://Textures/ui/back2.png" type="Texture" id=14]
-[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Textures/ui/panel.png" type="Texture" id=15]
+[ext_resource path="res://Textures/ui/process.png" type="Texture" id=16]
+[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -66,6 +68,16 @@ size = 45
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 32, 32 )
+expand_margin_left = 4.0
+expand_margin_right = 29.0
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StreamTexture" id=8]
 load_path = "res://.import/back1.png-940cab71c1f9924b1ddb337a671e3286.stex"
@@ -144,6 +156,7 @@ editor/display_folded = true
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
 [node name="MainScreenElements" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="TitleLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5
@@ -268,7 +281,6 @@ texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="Settings" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 483, 0 )
 
 [node name="Settings" type="Label" parent="Settings"]
@@ -283,6 +295,7 @@ align = 1
 valign = 1
 
 [node name="MusicSlider" type="Node2D" parent="Settings"]
+position = Vector2( 0, 20 )
 
 [node name="MusicLabel" type="Label" parent="Settings/MusicSlider"]
 margin_left = 77.0
@@ -290,7 +303,7 @@ margin_top = 270.0
 margin_right = 165.0
 margin_bottom = 365.0
 custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.223529, 0.34902, 0.101961, 1 )
+custom_colors/font_color = Color( 0.203922, 0.45098, 0.72549, 1 )
 text = "Music"
 
 [node name="Music" type="HSlider" parent="Settings/MusicSlider"]
@@ -299,6 +312,36 @@ margin_left = 177.0
 margin_top = 270.0
 margin_right = 377.0
 margin_bottom = 320.0
+custom_styles/slider = SubResource( 12 )
+custom_styles/grabber_area = SubResource( 13 )
+value = 44.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="SoundsSlider" type="Node2D" parent="Settings"]
+position = Vector2( 0, 100 )
+
+[node name="SoundsLabel" type="Label" parent="Settings/SoundsSlider"]
+margin_left = 77.0
+margin_top = 270.0
+margin_right = 165.0
+margin_bottom = 365.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.203922, 0.45098, 0.72549, 1 )
+text = "Sounds
+"
+
+[node name="Sounds" type="HSlider" parent="Settings/SoundsSlider"]
+anchor_right = 1.0
+margin_left = 177.0
+margin_top = 270.0
+margin_right = 377.0
+margin_bottom = 320.0
+custom_styles/slider = SubResource( 12 )
+custom_styles/grabber_area = SubResource( 13 )
+value = 65.0
+tick_count = 10
+ticks_on_borders = true
 
 [node name="SpinRightButton" type="TextureButton" parent="Settings"]
 margin_left = 197.0
@@ -314,7 +357,7 @@ anims/spin_left = SubResource( 10 )
 anims/spin_right = SubResource( 11 )
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 15 )
+stream = ExtResource( 17 )
 
 [connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MainScreenElements/SettingsButton" to="." method="_on_SettingsButton_pressed"]

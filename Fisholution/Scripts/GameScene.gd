@@ -8,7 +8,7 @@ onready var enemy_spawn_location = $Fish_Pos/EnemyPath/EnemySpawnLocation
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/ScoreLabel
-onready var hud_hsl = $HUD/HighscoreLabel
+#onready var hud_hsl = $HUD/HighscoreLabel
 onready var hud_ft = $HUD/FishTable
 onready var hud_st = $HUD/ScoreTable
 onready var start_timer = $StartTimer
@@ -18,7 +18,7 @@ onready var gameover_sound = $GameOverSound
 
 var Enemies = []
 var score
-var rand_scale
+#var rand_scale
 var fish_scene
 var fish_instance
 var instance_unique_fish
@@ -198,7 +198,7 @@ func _on_fish_eaten(by_who):
 	hud_st.increase_or_reduce(by_who, "inc", "scoretable")
 
 func _eliminate_fish(fish_no):
-	var group_name = "fish" + str(fish_no + 1)
+#	var group_name = "fish" + str(fish_no + 1)
 	print(enemy_fishes.size())
 	for f in enemy_fishes.size():
 		if enemy_fishes[f]._bundled.names[0] == "BadFish" + str(fish_no + 1):
