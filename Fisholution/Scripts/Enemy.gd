@@ -27,7 +27,7 @@ func _ready():
 	_prepare_badfish()
 	_detect_badfish()
 	if self.is_in_group("not_fish"):
-		_chose_different_not_fish()
+		_choose_different_not_fish()
 	if !self.is_in_group("not_fish"):
 		Global.die_effect(die_effect, self) # get settings for die effect
 
@@ -108,10 +108,11 @@ func _detect_badfish():
 	elif self.is_in_group("fish13"):
 		badfish_no = 12
 
-func _chose_different_not_fish():
+func _choose_different_not_fish():
 	var rand_not_fish = []
 	var number = 0
 	var number_of_enemy_not_fish
+
 	if self.is_in_group("octopus"):
 		number_of_enemy_not_fish = number_of_octopus
 	elif self.is_in_group("jellyfish"):
@@ -122,12 +123,12 @@ func _chose_different_not_fish():
 	for counter in range(number_of_enemy_not_fish):
 		rand_not_fish.append(number)
 		number += 32
-		
+
 	randomize()
 	var rand_frame = rand_not_fish[randi()%rand_not_fish.size()]
+	sprite.region_rect.position.y = rand_frame
 #	print(rand_not_fish)
 #	print(rand_frame)
-	sprite.region_rect.position.y = rand_frame
 
 
 
