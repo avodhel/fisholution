@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Textures/game/enemies_not_fish.png" type="Texture" id=2]
+[ext_resource path="res://Textures/game/enemies_not_fish(octopus).png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move"
@@ -24,10 +24,11 @@ radius = 6.39224
 height = 14.788
 
 [node name="Octopus1" type="Area2D" groups=[
-"enemy",
 "not_fish",
+"enemy",
 "octopus",
 ]]
+position = Vector2( 217.432, 238.325 )
 collision_layer = 2
 script = ExtResource( 1 )
 

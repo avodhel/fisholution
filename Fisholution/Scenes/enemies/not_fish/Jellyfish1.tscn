@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Textures/game/enemies_not_fish.png" type="Texture" id=2]
+[ext_resource path="res://Textures/game/enemies_not_fish(jellyfish).png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move"
@@ -21,19 +21,19 @@ tracks/0/keys = {
 }
 
 [node name="JellyFish1" type="Area2D" groups=[
-"enemy",
-"not_fish",
 "jellyfish",
+"not_fish",
+"enemy",
 ]]
+position = Vector2( 286.395, 373.82 )
 collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 3
-frame = 2
 region_enabled = true
-region_rect = Rect2( 0, 32, 96, 32 )
+region_rect = Rect2( 0, 0, 96, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/move = SubResource( 1 )
