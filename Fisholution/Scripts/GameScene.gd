@@ -59,6 +59,7 @@ func _prepare_hud():
 		hud_ft.reset_table()
 		hud_ft.table_transparency(true)
 		hud_ft.connect("eliminate_fish", self, "_eliminate_fish")
+		hud_st.connect("ns_completed", hud, "_show_ns_completed_panel")
 		hud_st.reset_table()
 		hud_st.table_transparency(true)
 

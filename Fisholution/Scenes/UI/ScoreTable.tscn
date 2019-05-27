@@ -119,16 +119,16 @@ texture = ExtResource( 3 )
 hframes = 3
 
 [node name="ScoreTable_elements" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Fish1_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 2.3327
 margin_right = 90.0
 margin_bottom = 32.3327
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-max_value = 50.0
+max_value = 10.0
 value = 5.0
 percent_visible = false
 
@@ -157,14 +157,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish2_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 32.3327
 margin_right = 90.0
 margin_bottom = 62.3327
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
-max_value = 50.0
-value = 12.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish2_label" type="Label" parent="ScoreTable_elements/Fish2_Progress"]
@@ -192,13 +193,14 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish3_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 62.3327
 margin_right = 90.0
 margin_bottom = 92.3327
 custom_styles/fg = SubResource( 7 )
 custom_styles/bg = SubResource( 8 )
-max_value = 50.0
+max_value = 10.0
 value = 4.0
 percent_visible = false
 
@@ -227,14 +229,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish4_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 92.3327
 margin_right = 90.0
 margin_bottom = 122.333
 custom_styles/fg = SubResource( 9 )
 custom_styles/bg = SubResource( 10 )
-max_value = 50.0
-value = 22.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish4_label" type="Label" parent="ScoreTable_elements/Fish4_Progress"]
@@ -262,14 +265,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish5_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 122.333
 margin_right = 90.0
 margin_bottom = 152.333
 custom_styles/fg = SubResource( 11 )
 custom_styles/bg = SubResource( 12 )
-max_value = 50.0
-value = 14.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish5_label" type="Label" parent="ScoreTable_elements/Fish5_Progress"]
@@ -297,13 +301,14 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish6_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 152.333
 margin_right = 90.0
 margin_bottom = 182.333
 custom_styles/fg = SubResource( 13 )
 custom_styles/bg = SubResource( 14 )
-max_value = 50.0
+max_value = 10.0
 value = 3.0
 percent_visible = false
 
@@ -332,13 +337,14 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish7_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 182.333
 margin_right = 90.0
 margin_bottom = 212.333
 custom_styles/fg = SubResource( 15 )
 custom_styles/bg = SubResource( 16 )
-max_value = 50.0
+max_value = 10.0
 value = 10.0
 percent_visible = false
 
@@ -367,14 +373,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish8_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 212.333
 margin_right = 90.0
 margin_bottom = 242.333
 custom_styles/fg = SubResource( 17 )
 custom_styles/bg = SubResource( 18 )
-max_value = 50.0
-value = 15.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish8_label" type="Label" parent="ScoreTable_elements/Fish8_Progress"]
@@ -402,14 +409,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish9_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 242.333
 margin_right = 90.0
 margin_bottom = 272.333
 custom_styles/fg = SubResource( 19 )
 custom_styles/bg = SubResource( 20 )
-max_value = 50.0
-value = 17.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish9_label" type="Label" parent="ScoreTable_elements/Fish9_Progress"]
@@ -437,14 +445,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish10_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 272.333
 margin_right = 90.0
 margin_bottom = 302.333
 custom_styles/fg = SubResource( 21 )
 custom_styles/bg = SubResource( 22 )
-max_value = 50.0
-value = 12.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish10_label" type="Label" parent="ScoreTable_elements/Fish10_Progress"]
@@ -472,14 +481,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish11_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 302.333
 margin_right = 90.0
 margin_bottom = 332.333
 custom_styles/fg = SubResource( 23 )
 custom_styles/bg = SubResource( 24 )
-max_value = 50.0
-value = 13.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish11_label" type="Label" parent="ScoreTable_elements/Fish11_Progress"]
@@ -507,14 +517,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish12_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 332.333
 margin_right = 90.0
 margin_bottom = 362.333
 custom_styles/fg = SubResource( 25 )
 custom_styles/bg = SubResource( 26 )
-max_value = 50.0
-value = 22.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish12_label" type="Label" parent="ScoreTable_elements/Fish12_Progress"]
@@ -542,14 +553,15 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="Fish13_Progress" type="ProgressBar" parent="ScoreTable_elements"]
+editor/display_folded = true
 margin_left = 30.0
 margin_top = 362.333
 margin_right = 90.0
 margin_bottom = 392.333
 custom_styles/fg = SubResource( 27 )
 custom_styles/bg = SubResource( 28 )
-max_value = 50.0
-value = 23.0
+max_value = 10.0
+value = 10.0
 percent_visible = false
 
 [node name="Fish13_label" type="Label" parent="ScoreTable_elements/Fish13_Progress"]

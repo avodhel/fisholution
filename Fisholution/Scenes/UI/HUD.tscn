@@ -51,6 +51,7 @@ color = Color( 0, 0.552941, 0.745098, 1 )
 visible = false
 
 [node name="NSCompletedPanel" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="FisholutionBar" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -65,7 +66,7 @@ margin_bottom = 44.0
 visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_right = 144.0
+margin_right = 160.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
@@ -90,6 +91,7 @@ align = 1
 valign = 1
 
 [node name="HighscoreLabel" type="Label" parent="Labels"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -110,6 +112,7 @@ pause_mode = 2
 editor/display_folded = true
 
 [node name="RestartButton" type="TextureButton" parent="Buttons"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -123,6 +126,7 @@ texture_hover = ExtResource( 7 )
 expand = true
 
 [node name="ChooseSceneButton" type="TextureButton" parent="Buttons"]
+visible = false
 margin_left = 260.0
 margin_top = 460.0
 margin_right = 340.0
@@ -132,6 +136,7 @@ texture_hover = ExtResource( 9 )
 expand = true
 
 [node name="HomeButton" type="TextureButton" parent="Buttons"]
+visible = false
 margin_left = 200.0
 margin_top = 560.0
 margin_right = 280.0

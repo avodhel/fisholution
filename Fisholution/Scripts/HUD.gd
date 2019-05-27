@@ -76,8 +76,11 @@ func _on_FisholutionBar_fisholution_up():
 func _show_fisholution_completed_panel():
 	_prepare_hud_scene("fisholution_completed")
 
-func _show_ns_completed_panel(who_win):
-	print(who_win)
+func _show_ns_completed_panel(winner_fish_no):
+	print(winner_fish_no)
+	winner_fish_label.text ="'" + "Fish" + str(winner_fish_no + 1) + "'s" 
+	winner_fish_sprite1.region_rect.position.y = 32 * winner_fish_no
+	winner_fish_sprite2.region_rect.position.y = 32 * winner_fish_no
 	_prepare_hud_scene("ns_completed")
 
 func _keep_playing():
@@ -90,8 +93,7 @@ func _prepare_hud_scene(condition):
 				fisholution_bar.connect("show_congrats_panel", self, "_show_fisholution_completed_panel")
 				keep_playing_button.connect("pressed", self, "_keep_playing")
 			elif Global.which_mode == "natural_selection":
-				score_label.rect_position = Vector2(140, 0)
-				$Tables.get_node("ScoreTable").connect("ns_completed", self, "_show_ns_completed_panel")
+				score_label.rect_position = Vector2(160, 0)
 		"restart":
 			blur.hide()
 			fisholution_completed_panel.hide()
@@ -136,7 +138,17 @@ func _prepare_hud_scene(condition):
 			title_label.hide()
 			get_tree().paused = false
 		"ns_completed":
-			pass
+			get_tree().paused = true
+			blur.show()
+			ns_completed_panel.show()
+			highscore_label.show()
+			restart_button.show()
+			choosescene_button.show()
+			home_button.rect_position = Vector2(200, 560)
+			home_button.show()
+			pause_button.hide()
+			$Tables.get_node("FishTable").table_transparency(false)
+			$Tables.get_node("ScoreTable").table_transparency(false)
 		"pause":
 			pause_button.hide()
 			resume_button.show()
