@@ -54,8 +54,12 @@ func _on_VisibilityNotifier2D_screen_exited():
 #			emit_signal("fish_died", self)
 #		self.call_deferred("free")
 	if self.is_in_group("not_fish"):
+		self.call_deferred("set_monitoring", false)
+		self.call_deferred("set_monitorable", false)
 		self.call_deferred("free")
 	if Global.which_mode == "fisholution":
+		self.call_deferred("set_monitoring", false)
+		self.call_deferred("set_monitorable", false)
 		self.call_deferred("free")
 
 func _on_Enemy_area_entered(area):
@@ -72,12 +76,15 @@ func _on_Enemy_area_entered(area):
 			_fish_died(area)
 
 func _fish_died(area):
+#		print(self.name + " eaten by " + area.name)
 		self.speed = 0
 		die_effect.start()
 		emit_signal("fish_died", self)
 		emit_signal("fish_eaten", area)
 
 func _on_die_effect_tween_completed(object, key):
+	self.call_deferred("set_monitoring", false)
+	self.call_deferred("set_monitorable", false)
 	self.call_deferred("free")
 
 func _detect_badfish():

@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "day_to_night"
-length = 300.0
+length = 180.0
 step = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 300 ),
+"times": PoolRealArray( 0, 180 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "night_to_day"
-length = 300.0
+length = 180.0
 step = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -31,7 +31,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 300 ),
+"times": PoolRealArray( 0, 180 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0.588235 ), Color( 0, 0, 0, 0 ) ]

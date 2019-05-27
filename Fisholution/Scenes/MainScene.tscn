@@ -281,6 +281,7 @@ texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="Settings" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 483, 0 )
 
 [node name="Settings" type="Label" parent="Settings"]
