@@ -3,14 +3,21 @@ extends CanvasLayer
 signal fisholution_up
 
 onready var blur = $Blur
+#fisholution completed panel
 onready var fisholution_completed_panel = $FisholutionCompletedPanel
 onready var keep_playing_button = $FisholutionCompletedPanel/Panel/KeepPlayingButton
+#ns completed panel
+onready var ns_completed_panel = $NSCompletedPanel
+onready var winner_fish_label = $NSCompletedPanel/Panel/WinnerFishLabel
+onready var winner_fish_sprite1 = $NSCompletedPanel/Panel/WonLabel/WinnerFish1
+onready var winner_fish_sprite2 = $NSCompletedPanel/Panel/WonLabel/WinnerFish2
+#fisholution bar
 onready var fisholution_bar = $FisholutionBar
-#onready var labels = $Labels
+#Labels
 onready var score_label = $Labels/ScoreLabel
 onready var title_label = $Labels/TitleLabel
 onready var highscore_label = $Labels/HighscoreLabel
-#onready var buttons =$Buttons
+#Buttons
 onready var restart_button = $Buttons/RestartButton
 onready var choosescene_button = $Buttons/ChooseSceneButton
 onready var home_button = $Buttons/HomeButton
@@ -69,17 +76,22 @@ func _on_FisholutionBar_fisholution_up():
 func _show_fisholution_completed_panel():
 	_prepare_hud_scene("fisholution_completed")
 
+func _show_ns_completed_panel(who_win):
+	print(who_win)
+	_prepare_hud_scene("ns_completed")
+
 func _keep_playing():
 	_prepare_hud_scene("keep_playing")
 
 func _prepare_hud_scene(condition):
 	match condition:
 		"ready":
-			if Global.which_mode == "normal":
-				score_label.rect_position = Vector2(140, 0)
-			elif Global.which_mode == "fisholution":
+			if Global.which_mode == "fisholution":
 				fisholution_bar.connect("show_congrats_panel", self, "_show_fisholution_completed_panel")
 				keep_playing_button.connect("pressed", self, "_keep_playing")
+			elif Global.which_mode == "natural_selection":
+				score_label.rect_position = Vector2(140, 0)
+				$Tables.get_node("ScoreTable").connect("ns_completed", self, "_show_ns_completed_panel")
 		"restart":
 			blur.hide()
 			fisholution_completed_panel.hide()
@@ -92,7 +104,7 @@ func _prepare_hud_scene(condition):
 		"game_over":
 			if Global.which_mode == "fisholution":
 				fisholution_bar.show()
-			elif Global.which_mode == "normal":
+			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
 				home_button.rect_position = Vector2(200, 560)
 			blur.show()
@@ -123,6 +135,8 @@ func _prepare_hud_scene(condition):
 			yield(get_tree().create_timer(3), "timeout")
 			title_label.hide()
 			get_tree().paused = false
+		"ns_completed":
+			pass
 		"pause":
 			pause_button.hide()
 			resume_button.show()
@@ -133,7 +147,7 @@ func _prepare_hud_scene(condition):
 			if Global.which_mode == "fisholution":
 				home_button.rect_position = Vector2(200, 460)
 				home_button.show()
-			elif Global.which_mode == "normal":
+			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
 				home_button.rect_position = Vector2(140, 460)
 				home_button.show()
@@ -148,7 +162,7 @@ func _prepare_hud_scene(condition):
 			highscore_label.hide()
 			if Global.which_mode == "fisholution":
 				home_button.hide()
-			elif Global.which_mode == "normal":
+			elif Global.which_mode == "natural_selection":
 				choosescene_button.hide()
 				home_button.hide()
 				$Tables.get_node("FishTable").table_transparency(true)

@@ -32,7 +32,7 @@ func _ready():
 func _prepare_fish():
 	if Global.which_mode == "fisholution":
 		_unique_fish()
-	elif Global.which_mode == "normal":
+	elif Global.which_mode == "natural_selection":
 		_chosen_fish(Global.fish_no)
 		hud_fb.hide()
 
@@ -49,7 +49,7 @@ func _prepare_hud():
 	hud.score_label.visible = true
 	hud_fb.show()
 	hud_fb.reset_fisholution()
-	if Global.which_mode == "normal":
+	if Global.which_mode == "natural_selection":
 		#instance tables
 		var tables = ResourceLoader.load("res://Scenes/UI/Tables.tscn")
 		var instance_tables = tables.instance()
@@ -113,7 +113,7 @@ func _chosen_fish(fish_no):
 		12:
 			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
 
-func _load_fish(path, fish_name): #preapare fish for normal mod
+func _load_fish(path, fish_name): #preapare fish for natural_selection mod
 	fish_scene = load(path)
 	fish_instance = fish_scene.instance()
 	fish_instance.set_name(fish_name)
@@ -156,7 +156,7 @@ func game_over():
 	hud.game_over()
 	gameover_sound.play()
 	Global.save_highscore(score) #save highscore
-	if Global.which_mode == "normal":
+	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)
 		fish_instance.stop(true)
@@ -182,7 +182,7 @@ func _on_EnemyTimer_timeout():
 #   # Set the enemy's position to a random location.
 	enemy.position = enemy_spawn_location.global_position
 	# increase fish of number on the fish table
-	if !enemy.is_in_group("not_fish") and Global.which_mode == "normal":
+	if !enemy.is_in_group("not_fish") and Global.which_mode == "natural_selection":
 		hud_ft.increase_or_reduce(enemy, "inc", "fishtable")
 		#make contact with "fish_died" signal
 		enemy.connect("fish_died", self, "_on_fish_died")

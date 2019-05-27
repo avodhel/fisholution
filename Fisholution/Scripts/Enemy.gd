@@ -49,7 +49,7 @@ func _move(delta):
 	position += ((velocity * delta).normalized() * speed).rotated(direction)
 
 func _on_VisibilityNotifier2D_screen_exited():
-#	if Global.which_mode == "normal":
+#	if Global.which_mode == "natural_selection":
 #		if self.is_in_group("badfish"):
 #			emit_signal("fish_died", self)
 #		self.call_deferred("free")

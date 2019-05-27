@@ -1,6 +1,7 @@
 extends Node2D
 
 signal eliminate_fish(whichfish)
+signal ns_completed(who_won)
 
 onready var table_title = $TableTitle
 
@@ -73,15 +74,14 @@ func _red_nof(fish_no): #reduce number of fish
 	if fishtable_elements[fish_no].value == 0:
 		emit_signal("eliminate_fish", fish_no)
 		_eliminate_from_table(fish_no)
-		print(fishtable_elements.size(), scoretable_elements.size())
+#		print(fishtable_elements.size(), scoretable_elements.size())
 
 func _inc_sof(fish_no): #increase score of fish
 	scoretable_elements[fish_no].value += 1
 	scoretable_labels[fish_no].text = str(scoretable_elements[fish_no].value)
 
 	if scoretable_elements[fish_no].value == scoretable_elements[fish_no].max_value:
-		print(str(fish_no) + " won the game")
-		get_tree().paused = true #pause game
+		emit_signal("ns_completed", fish_no)
 
 func reset_table(): # reset tables
 	for i in fishtable_elements.size():

@@ -116,7 +116,6 @@ custom_colors/font_color = Color( 0.823529, 0.8, 0.0823529, 1 )
 text = "Keep Playing"
 
 [node name="decors" type="Node2D" parent="Panel"]
-editor/display_folded = true
 
 [node name="left" type="Node2D" parent="Panel/decors"]
 editor/display_folded = true

@@ -10,8 +10,8 @@
 [ext_resource path="res://Textures/ui/settings2.png" type="Texture" id=8]
 [ext_resource path="res://Textures/ui/fisholution1.png" type="Texture" id=9]
 [ext_resource path="res://Textures/ui/fisholution2.png" type="Texture" id=10]
-[ext_resource path="res://Textures/ui/normal1.png" type="Texture" id=11]
-[ext_resource path="res://Textures/ui/normal2.png" type="Texture" id=12]
+[ext_resource path="res://Textures/ui/ns1.png" type="Texture" id=11]
+[ext_resource path="res://Textures/ui/ns2.png" type="Texture" id=12]
 [ext_resource path="res://Textures/ui/back1.png" type="Texture" id=13]
 [ext_resource path="res://Textures/ui/back2.png" type="Texture" id=14]
 [ext_resource path="res://Textures/ui/panel.png" type="Texture" id=15]
@@ -213,7 +213,6 @@ expand = true
 
 [node name="Modes" type="Node2D" parent="."]
 pause_mode = 2
-editor/display_folded = true
 position = Vector2( -880, 80 )
 
 [node name="ChooseAMode" type="Label" parent="Modes"]
@@ -250,11 +249,10 @@ custom_colors/font_color = Color( 0.823529, 0.8, 0.0823529, 1 )
 text = "play as an unique fish and 
 try to complete fisholution"
 
-[node name="NormalMode" type="Node2D" parent="Modes"]
-editor/display_folded = true
+[node name="NSMode" type="Node2D" parent="Modes"]
 position = Vector2( 0, 40 )
 
-[node name="NormalStart" type="TextureButton" parent="Modes/NormalMode"]
+[node name="NSStart" type="TextureButton" parent="Modes/NSMode"]
 margin_left = 440.0
 margin_top = 253.3
 margin_right = 504.0
@@ -263,7 +261,7 @@ texture_normal = ExtResource( 11 )
 texture_hover = ExtResource( 12 )
 expand = true
 
-[node name="Label2" type="Label" parent="Modes/NormalMode"]
+[node name="Label2" type="Label" parent="Modes/NSMode"]
 margin_left = 540.0
 margin_top = 240.0
 margin_right = 861.0
@@ -368,6 +366,6 @@ stream = ExtResource( 17 )
 [connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MainScreenElements/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Modes/FisholutionMode/FisholutionStart" to="." method="_on_FisholutionStart_pressed"]
-[connection signal="pressed" from="Modes/NormalMode/NormalStart" to="." method="_on_NormalStart_pressed"]
+[connection signal="pressed" from="Modes/NSMode/NSStart" to="." method="_on_NSStart_pressed"]
 [connection signal="pressed" from="Modes/SpinLeftButton" to="." method="_on_SpinLeftButton_pressed"]
 [connection signal="pressed" from="Settings/SpinRightButton" to="." method="_on_SpinRightButton_pressed"]

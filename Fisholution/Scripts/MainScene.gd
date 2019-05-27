@@ -21,8 +21,8 @@ func _on_FisholutionStart_pressed():
 	Global.which_mode = "fisholution"
 	Global.change_scene("GameScene")
 
-func _on_NormalStart_pressed():
-	Global.which_mode = "normal"
+func _on_NSStart_pressed():
+	Global.which_mode = "natural_selection"
 	Global.change_scene("ChooseScene") # open fish choose screen
 
 func _on_SpinLeftButton_pressed():
