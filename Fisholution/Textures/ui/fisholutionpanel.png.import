@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/particle.png-031363f261264c7bf83f3d0d669899f2.stex"
+path="res://.import/fisholutionpanel.png-23043d8bc9acf66076cd63bf8571e613.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/game/particle.png"
-dest_files=[ "res://.import/particle.png-031363f261264c7bf83f3d0d669899f2.stex" ]
+source_file="res://Textures/ui/fisholutionpanel.png"
+dest_files=[ "res://.import/fisholutionpanel.png-23043d8bc9acf66076cd63bf8571e613.stex" ]
 
 [params]
 

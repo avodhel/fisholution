@@ -198,11 +198,10 @@ func _on_fish_eaten(by_who):
 	hud_st.increase_or_reduce(by_who, "inc", "scoretable")
 
 func _eliminate_fish(fish_no):
-#	var group_name = "fish" + str(fish_no + 1)
-	print(enemy_fishes.size())
+#	print(enemy_fishes.size())
 	for f in enemy_fishes.size():
 		if enemy_fishes[f]._bundled.names[0] == "BadFish" + str(fish_no + 1):
-			print(enemy_fishes[f]._bundled.names[0])
+#			print(enemy_fishes[f]._bundled.names[0])
 			enemy_fishes.remove(f)
 			Enemies = enemy_fishes + enemy_not_fishes
 			break

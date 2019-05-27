@@ -3,13 +3,13 @@ extends CanvasLayer
 signal restart_game # emit when we push the restart button
 signal fisholution_up
 
-onready var score_label = $ScoreLabel
+onready var score_label = $Labels/ScoreLabel
 onready var fisholution_bar = $FisholutionBar
-onready var title_label = $TitleLabel
-onready var highscore_label = $HighscoreLabel
-onready var restart_button = $RestartButton
-onready var choosescene_button = $ChooseSceneButton
-onready var home_button = $HomeButton
+onready var title_label = $Labels/TitleLabel
+onready var highscore_label = $Labels/HighscoreLabel
+onready var restart_button = $Buttons/RestartButton
+onready var choosescene_button = $Buttons/ChooseSceneButton
+onready var home_button = $Buttons/HomeButton
 onready var message_timer = $MessageTimer
 onready var blur = $Blur
 
@@ -39,7 +39,7 @@ func game_over():
 	restart_button.visible = true
 	if Global.which_mode == "normal":
 		choosescene_button.visible = true
-		home_button.rect_position = Vector2(195, 560)
+		home_button.rect_position = Vector2(200, 560)
 	#prepare restart hud
 	show_message("Fisholution \nOver")
 	yield(message_timer, "timeout") # show message until timeout signal appears (wait time)
