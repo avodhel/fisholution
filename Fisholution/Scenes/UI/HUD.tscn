@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/FisholutionCompletedPanel.tscn" type="PackedScene" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Textures/ui/normal2.png" type="Texture" id=8]
 [ext_resource path="res://Textures/ui/home1.png" type="Texture" id=9]
 [ext_resource path="res://Textures/ui/home2.png" type="Texture" id=10]
+[ext_resource path="res://Textures/ui/pause1.png" type="Texture" id=11]
+[ext_resource path="res://Textures/ui/pause2.png" type="Texture" id=12]
+[ext_resource path="res://Textures/ui/play1.png" type="Texture" id=13]
+[ext_resource path="res://Textures/ui/play2.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -46,24 +50,21 @@ color = Color( 0, 0.552941, 0.745098, 1 )
 visible = false
 
 [node name="FisholutionBar" parent="." instance=ExtResource( 3 )]
-visible = false
-margin_left = 240.0
+margin_left = 188.471
 margin_top = 23.0
-margin_right = 360.0
+margin_right = 295.471
 margin_bottom = 44.0
 
 [node name="Labels" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="ScoreLabel" type="Label" parent="Labels"]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_right = 200.0
+margin_right = 144.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
-text = "1"
+text = "124"
 align = 1
 valign = 1
 
@@ -137,6 +138,25 @@ texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 expand = true
 
+[node name="PauseButton" type="TextureButton" parent="Buttons"]
+margin_left = 420.0
+margin_top = 20.0
+margin_right = 460.0
+margin_bottom = 61.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+expand = true
+
+[node name="ResumeButton" type="TextureButton" parent="Buttons"]
+visible = false
+margin_left = 420.0
+margin_top = 20.0
+margin_right = 460.0
+margin_bottom = 61.0
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -145,4 +165,6 @@ one_shot = true
 [connection signal="pressed" from="Buttons/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="Buttons/ChooseSceneButton" to="." method="_on_ChooseSceneButton_pressed"]
 [connection signal="pressed" from="Buttons/HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="Buttons/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]

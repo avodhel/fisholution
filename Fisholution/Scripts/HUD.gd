@@ -14,6 +14,8 @@ onready var highscore_label = $Labels/HighscoreLabel
 onready var restart_button = $Buttons/RestartButton
 onready var choosescene_button = $Buttons/ChooseSceneButton
 onready var home_button = $Buttons/HomeButton
+onready var pause_button = $Buttons/PauseButton
+onready var resume_button = $Buttons/ResumeButton
 onready var message_timer = $MessageTimer
 
 var highscore_value
@@ -50,6 +52,12 @@ func _on_ChooseSceneButton_pressed():
 
 func _on_HomeButton_pressed():
 	Global.change_scene("MainScene")
+
+func _on_PauseButton_pressed():
+	_prepare_hud_scene("pause")
+
+func _on_ResumeButton_pressed():
+	_prepare_hud_scene("resume")
 
 func _on_Fish_xp_gained():
 	var increase_xp = fisholution_bar.max_value / (fisholution_bar.level * xp) #reduce xp amount after every fisholution
@@ -91,10 +99,11 @@ func _prepare_hud_scene(condition):
 			score_label.show()
 			home_button.rect_position = Vector2(260, 460)
 			home_button.show()
-			show_message("Fisholution Over", false)
+			show_message("Game Over", false)
 			_assign_highscore()
 			highscore_label.show()
 			restart_button.show()
+			pause_button.hide()
 		"fisholution_completed":
 			get_tree().paused = true
 			blur.show()
@@ -102,22 +111,46 @@ func _prepare_hud_scene(condition):
 			highscore_label.show()
 			home_button.show()
 			home_button.rect_position = Vector2(200, 460)
+			pause_button.hide()
 		"keep_playing":
 			blur.hide()
 			fisholution_completed_panel.hide()
 			highscore_label.hide()
 			restart_button.hide()
 			home_button.hide()
+			pause_button.show()
 			show_message("Game Continues", false)
 			yield(get_tree().create_timer(3), "timeout")
 			title_label.hide()
 			get_tree().paused = false
-
-
-
-
-
-
-
-
+		"pause":
+			pause_button.hide()
+			resume_button.show()
+			get_tree().paused = true
+			blur.show()
+			show_message("Paused", false)
+			highscore_label.show()
+			if Global.which_mode == "fisholution":
+				home_button.rect_position = Vector2(200, 460)
+				home_button.show()
+			elif Global.which_mode == "normal":
+				choosescene_button.show()
+				home_button.rect_position = Vector2(140, 460)
+				home_button.show()
+				$Tables.get_node("FishTable").table_transparency(false)
+				$Tables.get_node("ScoreTable").table_transparency(false)
+		"resume":
+			resume_button.hide()
+			pause_button.show()
+			get_tree().paused = false
+			blur.hide()
+			title_label.hide()
+			highscore_label.hide()
+			if Global.which_mode == "fisholution":
+				home_button.hide()
+			elif Global.which_mode == "normal":
+				choosescene_button.hide()
+				home_button.hide()
+				$Tables.get_node("FishTable").table_transparency(true)
+				$Tables.get_node("ScoreTable").table_transparency(true)
 
