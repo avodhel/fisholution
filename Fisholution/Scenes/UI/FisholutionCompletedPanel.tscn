@@ -53,12 +53,13 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="DynamicFont" id=4]
-size = 25
+size = 30
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="FisholutionCompletedPanel" type="Node2D"]
+pause_mode = 2
 position = Vector2( 240, 360 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -102,7 +103,7 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 30 )
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="KeepPlayingButton" type="Button" parent="Panel"]
 margin_left = 80.0
 margin_top = 240.0
 margin_right = 240.0

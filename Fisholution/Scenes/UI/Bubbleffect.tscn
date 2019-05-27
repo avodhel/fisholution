@@ -33,6 +33,7 @@ tracks/1/keys = {
 }
 
 [node name="Bubbleffect" type="CanvasLayer"]
+pause_mode = 2
 layer = 20
 script = ExtResource( 1 )
 

@@ -1049,6 +1049,7 @@ expand_margin_left = 4.0
 expand_margin_right = 4.0
 
 [node name="ChooseScene" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 number_of_fish = 13
 

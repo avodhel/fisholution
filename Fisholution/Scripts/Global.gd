@@ -166,10 +166,12 @@ func move(delta, object, speed):
 const SCENE_PATH = "res://Scenes/"
 
 func change_scene(scene_name):
-	_bubbleffect("play") #play bubble effect between scene
+	_bubbleffect("play") #play bubble effect between scenes
 	yield(get_tree().create_timer(0.65), "timeout")
 	call_deferred("_deferred_change_scene", scene_name)
-	
+	if get_tree().paused == true: # if game paused
+		get_tree().paused = false # unpaused 
+
 func _deferred_change_scene(scene_name):
 	var path = SCENE_PATH + scene_name + ".tscn"
 	var root = get_tree().get_root()

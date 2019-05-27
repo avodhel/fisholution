@@ -156,6 +156,7 @@ editor/display_folded = true
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
 [node name="MainScreenElements" type="Node2D" parent="."]
+pause_mode = 2
 editor/display_folded = true
 
 [node name="TitleLabel" type="Label" parent="MainScreenElements"]
@@ -211,6 +212,7 @@ texture_hover = ExtResource( 8 )
 expand = true
 
 [node name="Modes" type="Node2D" parent="."]
+pause_mode = 2
 editor/display_folded = true
 position = Vector2( -880, 80 )
 
@@ -226,6 +228,7 @@ align = 1
 valign = 1
 
 [node name="FisholutionMode" type="Node2D" parent="Modes"]
+editor/display_folded = true
 position = Vector2( 0, 20 )
 
 [node name="FisholutionStart" type="TextureButton" parent="Modes/FisholutionMode"]
@@ -248,6 +251,7 @@ text = "play as an unique fish and
 try to complete fisholution"
 
 [node name="NormalMode" type="Node2D" parent="Modes"]
+editor/display_folded = true
 position = Vector2( 0, 40 )
 
 [node name="NormalStart" type="TextureButton" parent="Modes/NormalMode"]
@@ -281,6 +285,7 @@ texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="Settings" type="Node2D" parent="."]
+pause_mode = 2
 editor/display_folded = true
 position = Vector2( 483, 0 )
 

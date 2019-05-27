@@ -7,7 +7,7 @@ onready var fish_pos = $Fish_Pos
 onready var enemy_spawn_location = $Fish_Pos/EnemyPath/EnemySpawnLocation
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
-onready var hud_sl = $HUD/ScoreLabel
+onready var hud_sl = $HUD/Labels/ScoreLabel
 #onready var hud_hsl = $HUD/HighscoreLabel
 onready var hud_ft = $HUD/FishTable
 onready var hud_st = $HUD/ScoreTable
@@ -44,7 +44,7 @@ func _prepare_game():
 	start_timer.start()
 
 func _prepare_hud():
-	hud.show_message("Get Ready")
+	hud.show_message("Get Ready", true)
 	hud.update_score(score)
 	hud.score_label.visible = true
 	hud_fb.show()
@@ -149,9 +149,6 @@ func _load_fish(path, fish_name): #preapare fish for normal mod
 	fish_instance.die_effect = fish_instance.get_node("die_effect")
 	Global.die_effect(fish_instance.die_effect, fish_instance)
 	die_effect.connect("tween_completed", fish_instance, "_on_die_effect_tween_completed")
-
-func restart_game():
-	Global.change_scene("GameScene") #reload game scene
 
 func game_over():
 	score_timer.stop()
