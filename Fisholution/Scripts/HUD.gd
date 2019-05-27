@@ -97,7 +97,8 @@ func _prepare_hud_scene(condition):
 		"restart":
 			blur.hide()
 			fisholution_completed_panel.hide()
-			fisholution_bar.show()
+			if Global.which_mode == "fisholution":
+				fisholution_bar.show()
 			highscore_label.hide()
 			restart_button.hide()
 			home_button.hide()
