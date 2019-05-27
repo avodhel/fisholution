@@ -80,7 +80,7 @@ func _inc_sof(fish_no): #increase score of fish
 	scoretable_elements[fish_no].value += 1
 	scoretable_labels[fish_no].text = str(scoretable_elements[fish_no].value)
 
-	if scoretable_elements[fish_no].value == scoretable_elements[fish_no].max_value:
+	if scoretable_elements[fish_no].max_value == scoretable_elements[fish_no].value:
 		emit_signal("ns_completed", fish_no)
 
 func reset_table(): # reset tables
