@@ -11,16 +11,7 @@ onready var nom_sound = $Nom
 onready var fish_cam = $FishCam
 onready var die_effect = $die_effect
 
-var velocity = Vector2()
-var screensize
 var rand_gain_scale
-var center
-var up_center
-var down_center
-var left_center
-var right_center
-var distance_x
-var distance_y
 var current_speed
 
 func _ready():

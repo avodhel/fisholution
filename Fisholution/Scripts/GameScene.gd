@@ -64,7 +64,7 @@ func _prepare_hud():
 		hud_st.table_transparency(true)
 
 func _unique_fish(): #prepare fish for fisholution mode
-	var unique_fish = ResourceLoader.load("res://Scenes/Fish.tscn")
+	var unique_fish = ResourceLoader.load("res://Scenes/UniqueFish.tscn")
 	instance_unique_fish = unique_fish.instance()
 	add_child(instance_unique_fish)
 	instance_unique_fish.position = fish_pos.position
@@ -118,7 +118,7 @@ func _load_fish(path, normal_fish_name): #preapare fish for natural_selection mo
 	var normal_fish_scene = load(path)
 	instance_normal_fish = normal_fish_scene.instance()
 	instance_normal_fish.set_name(normal_fish_name)
-	instance_normal_fish.set_script(preload("res://Scripts/FishControl.gd"))
+	instance_normal_fish.set_script(preload("res://Scripts/NormalFish.gd"))
 	add_child(instance_normal_fish)
 	instance_normal_fish.position = fish_pos.position
 	hud_ft.increase_or_reduce(instance_normal_fish, "inc", "fishtable")
