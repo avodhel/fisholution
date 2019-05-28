@@ -213,6 +213,7 @@ expand = true
 
 [node name="Modes" type="Node2D" parent="."]
 pause_mode = 2
+editor/display_folded = true
 position = Vector2( -880, 80 )
 
 [node name="ChooseAMode" type="Label" parent="Modes"]

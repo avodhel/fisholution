@@ -1,4 +1,4 @@
-extends Area2D
+extends "res://Scripts/Fish.gd"
 
 signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
@@ -19,11 +19,11 @@ func _ready():
 	Global.die_effect(die_effect, self)
 
 func _process(delta):
-	Global.pc_control(self, animation)
-	Global.move(delta, self, speed)
+	pc_control(self, animation)
+	move(delta, self, speed)
 
 func _input(event):
-	Global.mobile_control(event, self, animation)
+	mobile_control(event, self, animation)
 
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish

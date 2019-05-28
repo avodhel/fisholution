@@ -160,10 +160,10 @@ func game_over():
 	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)
-		Global.fish_stop(true, instance_normal_fish.speed, instance_normal_fish.current_speed)
+		instance_normal_fish.fish_stop(true, instance_normal_fish.speed, instance_normal_fish.current_speed)
 		hud_ft.increase_or_reduce(instance_normal_fish, "red", "fishtable")
 	elif Global.which_mode == "fisholution":
-		Global.fish_stop(true, instance_unique_fish.speed, instance_unique_fish.current_speed)
+		instance_unique_fish.fish_stop(true, instance_unique_fish.speed, instance_unique_fish.current_speed)
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()

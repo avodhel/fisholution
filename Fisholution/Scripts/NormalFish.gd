@@ -1,7 +1,7 @@
-extends Area2D
+extends "res://Scripts/Fish.gd"
 
 signal hit #when something hits our fish
-signal my_fish_eaten(by_who) #when my fish eaten increase score for fish who ate me
+signal my_fish_eaten(by_who) #when my fish eaten, increase score for fish who ate our fish
 
 export (float) var speed = 3
 export (float) var min_scale = 1.5
@@ -18,11 +18,11 @@ func _ready():
 	_rand_scale(min_scale, max_scale)
 
 func _process(delta):
-	Global.pc_control(self, animation)
-	Global.move(delta, self, speed)
+	pc_control(self, animation)
+	move(delta, self, speed)
 
 func _input(event):
-	Global.mobile_control(event, self, animation)
+	mobile_control(event, self, animation)
 
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
