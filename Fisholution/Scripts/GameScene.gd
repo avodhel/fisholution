@@ -37,9 +37,6 @@ func _prepare_fish():
 		hud_fb.hide()
 
 func _prepare_game():
-	if instance_normal_fish != null:
-		instance_normal_fish.respawn(true)
-		instance_normal_fish.stop(false)
 	score = 0
 	start_timer.start()
 
@@ -88,33 +85,33 @@ func _unique_fish(): #prepare fish for fisholution mode
 func _chosen_fish(fish_no):
 	match fish_no:
 		0:
-			_load_fish("res://Scenes/enemies/fish/BadFish1.tscn", "fish1")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish1.tscn", "fish1")
 		1:
-			_load_fish("res://Scenes/enemies/fish/BadFish2.tscn", "fish2")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish2.tscn", "fish2")
 		2:
-			_load_fish("res://Scenes/enemies/fish/BadFish3.tscn", "fish3")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish3.tscn", "fish3")
 		3:
-			_load_fish("res://Scenes/enemies/fish/BadFish4.tscn", "fish4")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish4.tscn", "fish4")
 		4:
-			_load_fish("res://Scenes/enemies/fish/BadFish5.tscn", "fish5")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish5.tscn", "fish5")
 		5:
-			_load_fish("res://Scenes/enemies/fish/BadFish6.tscn", "fish6")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish6.tscn", "fish6")
 		6:
-			_load_fish("res://Scenes/enemies/fish/BadFish7.tscn", "fish7")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish7.tscn", "fish7")
 		7:
-			_load_fish("res://Scenes/enemies/fish/BadFish8.tscn", "fish8")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish8.tscn", "fish8")
 		8:
-			_load_fish("res://Scenes/enemies/fish/BadFish9.tscn", "fish9")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish9.tscn", "fish9")
 		9:
-			_load_fish("res://Scenes/enemies/fish/BadFish10.tscn", "fish10")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish10.tscn", "fish10")
 		10:
-			_load_fish("res://Scenes/enemies/fish/BadFish11.tscn", "fish11")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish11.tscn", "fish11")
 		11:
-			_load_fish("res://Scenes/enemies/fish/BadFish12.tscn", "fish12")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish12.tscn", "fish12")
 		12:
-			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
+			_load_normal_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
 
-func _load_fish(path, normal_fish_name): #preapare fish for natural_selection mod
+func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selection mode
 	var normal_fish_scene = load(path)
 	instance_normal_fish = normal_fish_scene.instance()
 	instance_normal_fish.set_name(normal_fish_name)

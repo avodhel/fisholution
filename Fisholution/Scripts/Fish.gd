@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit #when something hits our fish
+
 var velocity = Vector2()
 var control_dir
 var screensize
@@ -20,6 +22,16 @@ func fish_stop(condition, speed, current_speed): # stop fish when game over and 
 	else:
 		speed = current_speed
 
+func _die(die_effect):
+	self.speed = 0
+	die_effect.start()
+	emit_signal("hit") #game will know fish died :(
+
+func _on_die_effect_tween_completed(object, key):
+#	print("fish is free now")
+	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
+
+#CONTROLLERS
 func _screen_points():
 	screensize = Vector2 (ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height"))
 	center = screensize / 2 #center of the screen

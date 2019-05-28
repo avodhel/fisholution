@@ -1,6 +1,5 @@
 extends "res://Scripts/Fish.gd"
 
-signal hit #when something hits our fish
 signal xp_gained # when fish eat little fish
 
 export (float) var speed = 3
@@ -28,28 +27,13 @@ func _input(event):
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
 		if area.scale >= (scale + Vector2(0.7, 0.7)): #if badfish is bigger than our fish
-			_die() #our fish died
+			_die(die_effect) #our fish died
 		elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
-#			area.hide()
-#			area.queue_free()
 			emit_signal("xp_gained")
 			nom_sound.play()
 	elif area.is_in_group("enemy") and area.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
 		if area.scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
-			_die() #our fish died
-
-func _die():
-	self.speed = 0
-	die_effect.start()
-	emit_signal("hit") #game will know fish died :(
-
-func _on_die_effect_tween_completed(object, key):
-	call_deferred("set_monitoring", false) #Using call_deferred() allows us to have Godot wait to disable the shape until it’s safe to do so.
-
-func start(pos):
-	position = pos
-	show()
-	monitoring = true
+			_die(die_effect) #our fish died
 
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	sprite.region_rect.position.y += 128 # fish evolution (changing text region's position)
