@@ -107,14 +107,15 @@ func _prepare_hud_scene(condition):
 		"game_over":
 			if Global.which_mode == "fisholution":
 				fisholution_bar.show()
+				show_message("Fisholution Over", false)
 			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
 				home_button.rect_position = Vector2(200, 560)
+				show_message("Ns Over", false)
 			blur.show()
 			score_label.show()
 			home_button.rect_position = Vector2(260, 460)
 			home_button.show()
-			show_message("Game Over", false)
 			_assign_highscore()
 			highscore_label.show()
 			restart_button.show()

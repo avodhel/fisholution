@@ -8,9 +8,15 @@ func _ready():
 	_bubbleffect("instance") #bubble transition
 	_screen_points() #controllers
 
-#FISH
+#FISHES AND ENEMIES
 func die_effect(effect, object):
 	effect.interpolate_property(object, 'scale', object.get_scale(), Vector2(0, 0), 0.05, Tween.TRANS_QUAD, Tween.EASE_OUT)
+
+func fish_stop(condition, speed, current_speed): # stop fish when game over and move fish again when game restart
+	if condition:
+		speed = 0
+	else:
+		speed = current_speed
 
 #BUBBLE TRANSITION
 var bubbleffect = ResourceLoader.load("res://Scenes/UI/Bubbleffect.tscn")

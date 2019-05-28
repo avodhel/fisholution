@@ -24,7 +24,9 @@ tracks/0/keys = {
 radius = 5.05542
 height = 12.5876
 
-[node name="Fish" type="Area2D"]
+[node name="Fish" type="Area2D" groups=[
+"unique_fish",
+]]
 position = Vector2( 221.46, 406.009 )
 scale = Vector2( 2, 2 )
 z_index = 10

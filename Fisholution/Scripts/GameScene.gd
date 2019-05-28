@@ -19,8 +19,8 @@ onready var gameover_sound = $GameOverSound
 var Enemies = []
 var score
 #var rand_scale
-var fish_scene
-var fish_instance
+#var fish_scene
+var instance_normal_fish
 var instance_unique_fish
 
 func _ready():
@@ -37,9 +37,9 @@ func _prepare_fish():
 		hud_fb.hide()
 
 func _prepare_game():
-	if fish_instance != null:
-		fish_instance.respawn(true)
-		fish_instance.stop(false)
+	if instance_normal_fish != null:
+		instance_normal_fish.respawn(true)
+		instance_normal_fish.stop(false)
 	score = 0
 	start_timer.start()
 
@@ -114,21 +114,21 @@ func _chosen_fish(fish_no):
 		12:
 			_load_fish("res://Scenes/enemies/fish/BadFish13.tscn", "fish13")
 
-func _load_fish(path, fish_name): #preapare fish for natural_selection mod
-	fish_scene = load(path)
-	fish_instance = fish_scene.instance()
-	fish_instance.set_name(fish_name)
-	fish_instance.set_script(preload("res://Scripts/FishControl.gd"))
-	add_child(fish_instance)
-	fish_instance.position = fish_pos.position
-	hud_ft.increase_or_reduce(fish_instance, "inc", "fishtable")
+func _load_fish(path, normal_fish_name): #preapare fish for natural_selection mod
+	var normal_fish_scene = load(path)
+	instance_normal_fish = normal_fish_scene.instance()
+	instance_normal_fish.set_name(normal_fish_name)
+	instance_normal_fish.set_script(preload("res://Scripts/FishControl.gd"))
+	add_child(instance_normal_fish)
+	instance_normal_fish.position = fish_pos.position
+	hud_ft.increase_or_reduce(instance_normal_fish, "inc", "fishtable")
 	#group
-	fish_instance.add_to_group("my_fish")
-	fish_instance.add_to_group(fish_name)
-	fish_instance.remove_from_group("badfish")
-	fish_instance.remove_from_group("enemy")
+	instance_normal_fish.add_to_group("my_normal_fish")
+	instance_normal_fish.add_to_group(normal_fish_name)
+	instance_normal_fish.remove_from_group("badfish")
+	instance_normal_fish.remove_from_group("enemy")
 	#node position
-	self.add_child_below_node(fish_pos, fish_instance)
+	self.add_child_below_node(fish_pos, instance_normal_fish)
 	#reparenting
 	var fish_cam = get_node("Fish_Pos/FishCam")
 	var water_effect = get_node("Fish_Pos/WaterEffect")
@@ -136,20 +136,20 @@ func _load_fish(path, fish_name): #preapare fish for natural_selection mod
 	fish_pos.remove_child(fish_cam)
 	fish_pos.remove_child(water_effect)
 	fish_pos.remove_child(enemy_path)
-	fish_instance.add_child(fish_cam)
-	fish_instance.add_child(water_effect)
-	fish_instance.add_child(enemy_path)
+	instance_normal_fish.add_child(fish_cam)
+	instance_normal_fish.add_child(water_effect)
+	instance_normal_fish.add_child(enemy_path)
 	#signals
-	fish_instance.disconnect("area_entered", fish_instance, "_on_Enemy_area_entered")
-	fish_instance.connect("hit", self, "game_over")
-	fish_instance.connect("my_fish_eaten", self, "_on_fish_eaten")
+	instance_normal_fish.disconnect("area_entered", instance_normal_fish, "_on_Enemy_area_entered")
+	instance_normal_fish.connect("hit", self, "game_over")
+	instance_normal_fish.connect("my_fish_eaten", self, "_on_fish_eaten")
 	#die_effect(tween)
 	var die_effect = Tween.new()
-	fish_instance.add_child(die_effect)
+	instance_normal_fish.add_child(die_effect)
 	die_effect.playback_speed = 0.2
-	fish_instance.die_effect = fish_instance.get_node("die_effect")
-	Global.die_effect(fish_instance.die_effect, fish_instance)
-	die_effect.connect("tween_completed", fish_instance, "_on_die_effect_tween_completed")
+	instance_normal_fish.die_effect = instance_normal_fish.get_node("die_effect")
+	Global.die_effect(instance_normal_fish.die_effect, instance_normal_fish)
+	die_effect.connect("tween_completed", instance_normal_fish, "_on_die_effect_tween_completed")
 
 func game_over():
 	score_timer.stop()
@@ -160,10 +160,10 @@ func game_over():
 	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)
-		fish_instance.stop(true)
-		hud_ft.increase_or_reduce(fish_instance, "red", "fishtable")
+		Global.fish_stop(true, instance_normal_fish.speed, instance_normal_fish.current_speed)
+		hud_ft.increase_or_reduce(instance_normal_fish, "red", "fishtable")
 	elif Global.which_mode == "fisholution":
-		instance_unique_fish.stop(true)
+		Global.fish_stop(true, instance_unique_fish.speed, instance_unique_fish.current_speed)
 
 func _on_StartTimer_timeout():
 	enemy_timer.start()

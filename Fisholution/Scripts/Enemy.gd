@@ -65,15 +65,18 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Enemy_area_entered(area):
 	if self.is_in_group("badfish") and area.is_in_group("badfish"): #between fishes
 		if self.badfish_no != area.badfish_no: #if badfishes are not same kind
-			if area.scale > scale:
+			if area.scale > scale + Vector2(0.5, 0.5):
 				_fish_died(area)
-	elif self.is_in_group("badfish") and area.is_in_group("my_fish"): #between fishes and my fish
-		if self.badfish_no != Global.fish_no:
-			if area.scale > scale:
-				_fish_died(area)
-	elif self.is_in_group("badfish") and area.is_in_group("not_fish"): #between fishes and not_fishes
-		if area.scale > scale:
+	if self.is_in_group("badfish") and area.is_in_group("not_fish"): #between fishes and not_fishes
+		if area.scale > scale + Vector2(0.5, 0.5):
 			_fish_died(area)
+	if self.is_in_group("badfish") and area.is_in_group("my_normal_fish"): #between fishes and my fish (ns mode)
+		if self.badfish_no != Global.fish_no:
+			if area.scale > scale + Vector2(0.5, 0.5):
+				_fish_died(area)
+	if self.is_in_group("badfish") and area.is_in_group("unique_fish"): #between fishes and unique fish (fisholution mode)
+			if area.scale > scale + Vector2(0.5, 0.5):
+				_fish_died(area)
 
 func _fish_died(area):
 #		print(self.name + " eaten by " + area.name)
