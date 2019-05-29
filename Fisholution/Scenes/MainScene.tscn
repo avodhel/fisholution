@@ -299,10 +299,10 @@ text = "Settings"
 align = 1
 valign = 1
 
-[node name="MusicSlider" type="Node2D" parent="Settings"]
+[node name="Music" type="Node2D" parent="Settings"]
 position = Vector2( 0, 20 )
 
-[node name="MusicLabel" type="Label" parent="Settings/MusicSlider"]
+[node name="MusicLabel" type="Label" parent="Settings/Music"]
 margin_left = 77.0
 margin_top = 270.0
 margin_right = 165.0
@@ -311,7 +311,7 @@ custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.203922, 0.45098, 0.72549, 1 )
 text = "Music"
 
-[node name="Music" type="HSlider" parent="Settings/MusicSlider"]
+[node name="MusicSlider" type="HSlider" parent="Settings/Music"]
 anchor_right = 1.0
 margin_left = 177.0
 margin_top = 270.0
@@ -319,14 +319,16 @@ margin_right = 377.0
 margin_bottom = 320.0
 custom_styles/slider = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 9 )
-value = 44.0
+max_value = 1.0
+step = 0.001
+value = 0.5
 tick_count = 10
 ticks_on_borders = true
 
-[node name="SoundsSlider" type="Node2D" parent="Settings"]
+[node name="Sounds" type="Node2D" parent="Settings"]
 position = Vector2( 0, 100 )
 
-[node name="SoundsLabel" type="Label" parent="Settings/SoundsSlider"]
+[node name="SoundsLabel" type="Label" parent="Settings/Sounds"]
 margin_left = 77.0
 margin_top = 270.0
 margin_right = 165.0
@@ -336,7 +338,7 @@ custom_colors/font_color = Color( 0.203922, 0.45098, 0.72549, 1 )
 text = "Sounds
 "
 
-[node name="Sounds" type="HSlider" parent="Settings/SoundsSlider"]
+[node name="SoundsSlider" type="HSlider" parent="Settings/Sounds"]
 anchor_right = 1.0
 margin_left = 177.0
 margin_top = 270.0
@@ -344,7 +346,9 @@ margin_right = 377.0
 margin_bottom = 320.0
 custom_styles/slider = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 9 )
-value = 65.0
+max_value = 1.0
+step = 0.001
+value = 0.5
 tick_count = 10
 ticks_on_borders = true
 

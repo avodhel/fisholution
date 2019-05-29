@@ -7,6 +7,7 @@ onready var gamemusic = $GameMusic
 var high_score_value
 
 func _ready():
+#	Global.reset_highscore()
 	high_score_value = Global.load_highscore()
 	high_score.text = "Highscore: " + str(high_score_value)
 	gamemusic.play()

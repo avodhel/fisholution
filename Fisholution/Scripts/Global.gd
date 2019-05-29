@@ -68,3 +68,6 @@ func load_highscore():
 	var data  = parse_json(save_file.get_line())
 	return data["highscore"]
 
+func reset_highscore():
+	var dir = Directory.new()
+	dir.remove(SAVE_FILE_PATH)
