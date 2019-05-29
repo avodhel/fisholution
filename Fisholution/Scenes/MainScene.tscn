@@ -361,7 +361,7 @@ expand = true
 anims/spin_left = SubResource( 12 )
 anims/spin_right = SubResource( 13 )
 
-[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
 
 [connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]

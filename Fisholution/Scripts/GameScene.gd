@@ -147,6 +147,12 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	instance_normal_fish.die_effect = instance_normal_fish.get_node("die_effect")
 	Global.die_effect(instance_normal_fish.die_effect, instance_normal_fish)
 	die_effect.connect("tween_completed", instance_normal_fish, "_on_die_effect_tween_completed")
+	#sound
+	var nom_sound = AudioStreamPlayer2D.new()
+	var nom_sound_source = ResourceLoader.load("res://Sounds/nom.wav")
+	nom_sound.stream = nom_sound_source
+	instance_normal_fish.add_child(nom_sound)
+	instance_normal_fish.nom_sound = nom_sound
 
 func game_over():
 	score_timer.stop()
