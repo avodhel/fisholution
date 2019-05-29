@@ -10,7 +10,6 @@ onready var nom_sound = $Nom
 onready var fish_cam = $FishCam
 onready var die_effect = $die_effect
 
-var rand_gain_scale
 var current_speed
 
 func _ready():
@@ -38,6 +37,6 @@ func _on_Fish_area_entered(area):
 func _on_HUD_fisholution_up(): # when fisholution level increase
 	sprite.region_rect.position.y += 128 # fish evolution (changing text region's position)
 	if scale <= Vector2(2.6, 2.6):
-		rand_gain_scale = rand_range(0.05, 0.15)
+		var rand_gain_scale = rand_range(0.05, 0.15)
 		scale += Vector2(rand_gain_scale, rand_gain_scale) # our fish grows up
 

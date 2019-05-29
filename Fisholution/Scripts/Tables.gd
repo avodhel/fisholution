@@ -72,7 +72,7 @@ func _red_nof(fish_no): #reduce number of fish
 	fishtable_labels[fish_no].text = str(fishtable_elements[fish_no].value)
 
 	if fishtable_elements[fish_no].value == 0:
-		emit_signal("eliminate_fish", fish_no)
+		emit_signal("eliminate_fish", fish_no) # no more instance
 		_eliminate_from_table(fish_no)
 #		print(fishtable_elements.size(), scoretable_elements.size())
 

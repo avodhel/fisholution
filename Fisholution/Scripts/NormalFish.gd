@@ -25,7 +25,7 @@ func _input(event):
 
 func _on_Fish_area_entered(area):
 	if area.is_in_group("enemy") and area.is_in_group("badfish"): # if enemy is a fish
-		#badfish's kind kontrol
+		#badfish's kind control
 		var same_fish_control = false
 		if Global.fish_no != area.badfish_no:
 			same_fish_control = false
