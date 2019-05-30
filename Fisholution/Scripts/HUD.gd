@@ -25,11 +25,12 @@ onready var pause_button = $Buttons/PauseButton
 onready var resume_button = $Buttons/ResumeButton
 onready var message_timer = $MessageTimer
 
+var score_value = 0
 var highscore_value
 var xp = 5
 
 func _ready():
-#	assign_highscore()
+	assign_highscore()
 	_prepare_hud_scene("ready")
 
 func show_message(text, hide_or_not):
@@ -42,10 +43,13 @@ func game_over():
 	_prepare_hud_scene("game_over")
 
 func assign_highscore():
+	Global.save_highscore(score_value)
 	highscore_value = str(Global.load_highscore()) # update high score
 	highscore_label.text = "Highscore: " + highscore_value # assign high score to text
 
 func update_score(score):
+	score_value = score
+#	print(score_value)
 	score_label.text = str(score)
 
 func _on_MessageTimer_timeout():
@@ -108,15 +112,15 @@ func _prepare_hud_scene(condition):
 			if Global.which_mode == "fisholution":
 				fisholution_bar.show()
 				show_message("Fisholution Over", false)
+				home_button.rect_position = Vector2(260, 460)
 			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
 				home_button.rect_position = Vector2(200, 560)
 				show_message("Ns Over", false)
 			blur.show()
 			score_label.show()
-			home_button.rect_position = Vector2(260, 460)
 			home_button.show()
-#			_assign_highscore()
+			assign_highscore()
 			highscore_label.show()
 			restart_button.show()
 			pause_button.hide()
@@ -124,6 +128,7 @@ func _prepare_hud_scene(condition):
 			get_tree().paused = true
 			blur.show()
 			fisholution_completed_panel.show()
+			assign_highscore()
 			highscore_label.show()
 			home_button.show()
 			home_button.rect_position = Vector2(200, 460)
@@ -143,6 +148,7 @@ func _prepare_hud_scene(condition):
 			get_tree().paused = true
 			blur.show()
 			ns_completed_panel.show()
+			assign_highscore()
 			highscore_label.show()
 			restart_button.show()
 			choosescene_button.show()

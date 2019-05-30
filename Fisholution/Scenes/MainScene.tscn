@@ -251,6 +251,7 @@ text = "play as an unique fish and
 try to complete fisholution"
 
 [node name="NSMode" type="Node2D" parent="Modes"]
+editor/display_folded = true
 position = Vector2( 0, 40 )
 
 [node name="NSStart" type="TextureButton" parent="Modes/NSMode"]

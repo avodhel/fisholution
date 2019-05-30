@@ -61,6 +61,7 @@ margin_right = 295.471
 margin_bottom = 44.0
 
 [node name="Labels" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="ScoreLabel" type="Label" parent="Labels"]
 visible = false

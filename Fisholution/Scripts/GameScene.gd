@@ -159,8 +159,8 @@ func game_over():
 	enemy_timer.stop()
 	hud.game_over()
 	gameover_sound.play()
-	Global.save_highscore(score) #save highscore
-	hud.assign_highscore() #assign new highscore if have one
+#	Global.save_highscore(score) #save highscore if have new one
+#	hud.assign_highscore() #assign new highscore to hud 
 	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)
@@ -172,11 +172,12 @@ func game_over():
 func _on_StartTimer_timeout():
 	enemy_timer.start()
 	score_timer.start()
-	hud.update_score(score)
+#	hud.update_score(score)
 
 func _on_ScoreTimer_timeout():
 	score += 1
 	hud_sl.text = str(score) #score problem fixed with this line
+	hud.update_score(score)
 
 func _on_EnemyTimer_timeout():
     # Choose a random location on Path2D.
