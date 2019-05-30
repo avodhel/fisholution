@@ -160,6 +160,7 @@ func game_over():
 	hud.game_over()
 	gameover_sound.play()
 	Global.save_highscore(score) #save highscore
+	hud.assign_highscore() #assign new highscore if have one
 	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)

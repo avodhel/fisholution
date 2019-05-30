@@ -4,6 +4,7 @@ var fish_no = 0 #choose screen
 var which_mode #main screen mode choose
 
 func _ready():
+#	Global.reset_highscore()
 	_bubbleffect("instance") #bubble transition
 
 #FISHES AND ENEMIES

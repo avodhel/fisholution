@@ -29,7 +29,7 @@ var highscore_value
 var xp = 5
 
 func _ready():
-	_assign_highscore()
+#	assign_highscore()
 	_prepare_hud_scene("ready")
 
 func show_message(text, hide_or_not):
@@ -41,7 +41,7 @@ func show_message(text, hide_or_not):
 func game_over():
 	_prepare_hud_scene("game_over")
 
-func _assign_highscore():
+func assign_highscore():
 	highscore_value = str(Global.load_highscore()) # update high score
 	highscore_label.text = "Highscore: " + highscore_value # assign high score to text
 
@@ -116,7 +116,7 @@ func _prepare_hud_scene(condition):
 			score_label.show()
 			home_button.rect_position = Vector2(260, 460)
 			home_button.show()
-			_assign_highscore()
+#			_assign_highscore()
 			highscore_label.show()
 			restart_button.show()
 			pause_button.hide()
