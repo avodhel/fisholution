@@ -10,7 +10,6 @@ onready var animation = $Sprite/AnimationPlayer
 
 var current_speed
 var die_effect
-var nom_sound
 
 func _ready():
 	self.connect("area_entered", self, "_on_Fish_area_entered")
@@ -38,7 +37,7 @@ func _on_Fish_area_entered(area):
 				_die(die_effect) #our fish died
 				emit_signal("my_fish_eaten", area)
 			elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
-				nom_sound.play()
+				Settings.nom_sound.play()
 	elif area.is_in_group("enemy") and area.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
 		if area.scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
 			_die(die_effect) #our fish died

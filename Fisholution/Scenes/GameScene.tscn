@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/GameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/enemies/fish/BadFish1.tscn" type="PackedScene" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Sounds/gameover.wav" type="AudioStream" id=22]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -72,10 +71,6 @@ wait_time = 0.1
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
-
-[connection signal="restart_game" from="HUD" to="." method="restart_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

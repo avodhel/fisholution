@@ -23,7 +23,8 @@ config/icon="res://Textures/splash/fish_logo.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
+Global="*res://Globals/Global.gd"
+Settings="*res://Globals/Settings.tscn"
 
 [display]
 

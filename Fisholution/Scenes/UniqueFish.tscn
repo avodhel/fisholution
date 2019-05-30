@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UniqueFish.gd" type="Script" id=1]
 [ext_resource path="res://Textures/game/Fish.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/nom.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move"
@@ -48,9 +47,6 @@ anims/move = SubResource( 1 )
 position = Vector2( 0.537731, 0 )
 rotation = 1.5708
 shape = SubResource( 2 )
-
-[node name="Nom" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
 
 [node name="die_effect" type="Tween" parent="."]
 playback_speed = 0.2

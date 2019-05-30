@@ -8,6 +8,7 @@ func play_effect():
 
 func _on_AnimationPlayer_animation_started(anim_name):
 	sprite.show()
+	Settings.bubble_sound.play()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	sprite.hide()

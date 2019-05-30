@@ -14,7 +14,6 @@ onready var hud_st = $HUD/ScoreTable
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
-onready var gameover_sound = $GameOverSound
 
 var Enemies = []
 var score
@@ -147,18 +146,12 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	instance_normal_fish.die_effect = instance_normal_fish.get_node("die_effect")
 	Global.die_effect(instance_normal_fish.die_effect, instance_normal_fish)
 	die_effect.connect("tween_completed", instance_normal_fish, "_on_die_effect_tween_completed")
-	#sound
-	var nom_sound = AudioStreamPlayer2D.new()
-	var nom_sound_source = ResourceLoader.load("res://Sounds/nom.wav")
-	nom_sound.stream = nom_sound_source
-	instance_normal_fish.add_child(nom_sound)
-	instance_normal_fish.nom_sound = nom_sound
 
 func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
-	gameover_sound.play()
+	Settings.gameover_sound.play()
 #	Global.save_highscore(score) #save highscore if have new one
 #	hud.assign_highscore() #assign new highscore to hud 
 	if Global.which_mode == "natural_selection":

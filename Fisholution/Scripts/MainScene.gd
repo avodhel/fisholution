@@ -2,14 +2,14 @@ extends CanvasLayer
 
 onready var high_score = $MainScreenElements/HighscoreLabel
 onready var animation = $AnimationPlayer
-onready var gamemusic = $GameMusic
+onready var game_music = $GameMusic
 
 var high_score_value
 
 func _ready():
 	high_score_value = Global.load_highscore()
 	high_score.text = "Highscore: " + str(high_score_value)
-	gamemusic.play()
+	Settings.game_music.play()
 
 #MAIN SCENE
 func _on_StartButton_pressed():
@@ -22,10 +22,12 @@ func _on_SettingsButton_pressed():
 func _on_FisholutionStart_pressed():
 	Global.which_mode = "fisholution"
 	Global.change_scene("GameScene")
+	Settings.game_music.stop()
 
 func _on_NSStart_pressed():
 	Global.which_mode = "natural_selection"
 	Global.change_scene("ChooseScene") # open fish choose screen
+	Settings.game_music.stop()
 
 func _on_SpinLeftButton_pressed():
 	animation.play_backwards("spin_left")

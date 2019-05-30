@@ -29,7 +29,7 @@ func _on_Fish_area_entered(area):
 			_die(die_effect) #our fish died
 		elif (area.scale + Vector2(0.5, 0.5)) <= scale: #badfish is smaller than our fish
 			emit_signal("xp_gained")
-			nom_sound.play()
+			Settings.nom_sound.play()
 	elif area.is_in_group("enemy") and area.is_in_group("not_fish"): #if enemy is not fish, we can't eat it but they can eat us
 		if area.scale >= (scale + Vector2(0.7, 0.7)): #if enemy is bigger than our fish
 			_die(die_effect) #our fish died

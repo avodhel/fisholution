@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Textures/ui/back2.png" type="Texture" id=14]
 [ext_resource path="res://Textures/ui/panel.png" type="Texture" id=15]
 [ext_resource path="res://Textures/ui/process.png" type="Texture" id=16]
-[ext_resource path="res://Sounds/House In a Forest Loop.ogg" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -365,9 +364,6 @@ expand = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/spin_left = SubResource( 12 )
 anims/spin_right = SubResource( 13 )
-
-[node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 17 )
 
 [connection signal="pressed" from="MainScreenElements/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MainScreenElements/SettingsButton" to="." method="_on_SettingsButton_pressed"]

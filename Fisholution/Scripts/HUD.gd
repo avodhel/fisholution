@@ -30,7 +30,6 @@ var highscore_value
 var xp = 5
 
 func _ready():
-	assign_highscore()
 	_prepare_hud_scene("ready")
 
 func show_message(text, hide_or_not):
@@ -93,6 +92,7 @@ func _keep_playing():
 func _prepare_hud_scene(condition):
 	match condition:
 		"ready":
+			assign_highscore()
 			if Global.which_mode == "fisholution":
 				fisholution_bar.connect("show_congrats_panel", self, "_show_fisholution_completed_panel")
 				keep_playing_button.connect("pressed", self, "_keep_playing")
