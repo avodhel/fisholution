@@ -6,7 +6,6 @@ export (float) var speed = 3
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer
-onready var fish_cam = $FishCam
 onready var die_effect = $die_effect
 
 var current_speed

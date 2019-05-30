@@ -67,7 +67,7 @@ func _unique_fish(): #prepare fish for fisholution mode
 	add_child(instance_unique_fish)
 	instance_unique_fish.position = fish_pos.position
 	#node position
-	self.add_child_below_node(fish_pos, instance_unique_fish)
+	self.move_child(instance_unique_fish, 0)
 	#reparenting
 	var fish_cam = get_node("Fish_Pos/FishCam")
 	var water_effect = get_node("Fish_Pos/WaterEffect")
