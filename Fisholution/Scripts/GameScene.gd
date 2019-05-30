@@ -9,12 +9,14 @@ onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/Labels/ScoreLabel
 #onready var hud_hsl = $HUD/HighscoreLabel
-onready var hud_ft = $HUD/FishTable
-onready var hud_st = $HUD/ScoreTable
+#onready var hud_ft = $HUD/FishTable
+#onready var hud_st = $HUD/ScoreTable
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
 
+var hud_ft #fishtable
+var hud_st #scoretable
 var Enemies = []
 var score
 #var rand_scale
@@ -114,7 +116,7 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	var normal_fish_scene = load(path)
 	instance_normal_fish = normal_fish_scene.instance()
 	instance_normal_fish.set_name(normal_fish_name)
-	instance_normal_fish.set_script(preload("res://Scripts/NormalFish.gd"))
+	instance_normal_fish.set_script(load("res://Scripts/NormalFish.gd"))
 	add_child(instance_normal_fish)
 	instance_normal_fish.position = fish_pos.position
 	hud_ft.increase_or_reduce(instance_normal_fish, "inc", "fishtable")
@@ -124,7 +126,7 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	instance_normal_fish.remove_from_group("badfish")
 	instance_normal_fish.remove_from_group("enemy")
 	#node position
-	self.add_child_below_node(fish_pos, instance_normal_fish)
+	self.move_child(instance_normal_fish, 0)
 	#reparenting
 	var fish_cam = get_node("Fish_Pos/FishCam")
 	var water_effect = get_node("Fish_Pos/WaterEffect")
@@ -139,21 +141,12 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	instance_normal_fish.disconnect("area_entered", instance_normal_fish, "_on_Enemy_area_entered")
 	instance_normal_fish.connect("hit", self, "game_over")
 	instance_normal_fish.connect("my_fish_eaten", self, "_on_fish_eaten")
-	#die_effect(tween)
-	var die_effect = Tween.new()
-	instance_normal_fish.add_child(die_effect)
-	die_effect.playback_speed = 0.2
-	instance_normal_fish.die_effect = instance_normal_fish.get_node("die_effect")
-	Global.die_effect(instance_normal_fish.die_effect, instance_normal_fish)
-	die_effect.connect("tween_completed", instance_normal_fish, "_on_die_effect_tween_completed")
 
 func game_over():
 	score_timer.stop()
 	enemy_timer.stop()
 	hud.game_over()
 	Settings.gameover_sound.play()
-#	Global.save_highscore(score) #save highscore if have new one
-#	hud.assign_highscore() #assign new highscore to hud 
 	if Global.which_mode == "natural_selection":
 		hud_ft.table_transparency(false)
 		hud_st.table_transparency(false)

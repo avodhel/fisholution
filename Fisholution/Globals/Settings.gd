@@ -1,51 +1,57 @@
 extends Control
 
 onready var game_music = $Music/game_music
+onready var sounds = $Sounds
 onready var bubble_sound = $Sounds/bubble_sound
 onready var nom_sound = $Sounds/nom_sound
 onready var gameover_sound = $Sounds/gameover_sound
 
+var sounds_elements = []
+
 #temporary variables
-const save_path = "res://save.json"
+const SAVE_PATH = "user://settings.save"
 var settings = {}
-var play_music = 1
-var play_sounds = 1
-var new_choice = 1
-var song
-var menu = true
 
 #saved variables
-var master_volume = 2000
 var music_volume = 2000
 var sounds_volume = 2000
 
 func _ready():
-	choose_music()
+#	reset_settings()
+	load_settings()
+	sounds_elements = sounds.get_children()
 
 func _process(delta):
-	if game_music.is_playing():
-		choose_music()
+	game_music.set_max_distance(music_volume)
+	for s in sounds_elements.size():
+		sounds_elements[s].set_max_distance(sounds_volume)
+
+func save_settings():
+	var settings = {
+	music_volume = music_volume,
+	sounds_volume = sounds_volume
+	}
 	
-	if master_volume > 0 and music_volume > 0:
-		play_music = int((master_volume / 2000) * (music_volume * 2000) * 2000)
-	else:
-		play_music = 1
+	var save_file = File.new()
+	save_file.open(SAVE_PATH, File.WRITE)
+	save_file.store_line(to_json(settings))
+	save_file.close()
 
-	if master_volume > 0 and sounds_volume > 0:
-		play_sounds = int((master_volume / 2000) * (sounds_volume * 2000) * 2000)
-	else:
-		play_sounds = 1
+func load_settings():
+	var save_file = File.new()
+	if !save_file.file_exists(SAVE_PATH):
+		return
+
+	save_file.open(SAVE_PATH, File.READ)
+	var data = {}
+	data = parse_json(save_file.get_as_text())
 	
-	game_music.set_max_distance(play_music)
+	music_volume = data["music_volume"]
+	sounds_volume = data["sounds_volume"]
 
-func choose_music():
-	if menu:
-		menu_music()
-	else:
-		game_music()
+func reset_settings():
+	var dir = Directory.new()
+	dir.remove(SAVE_PATH)
 
-func menu_music():
-	pass
 
-func game_music():
-	pass
+

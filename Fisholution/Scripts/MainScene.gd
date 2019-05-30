@@ -2,13 +2,18 @@ extends CanvasLayer
 
 onready var high_score = $MainScreenElements/HighscoreLabel
 onready var animation = $AnimationPlayer
-onready var game_music = $GameMusic
+#onready var game_music = $GameMusic
+onready var music_slider = $Settings/Music/MusicSlider
+onready var sounds_slider = $Settings/Sounds/SoundsSlider
 
 var high_score_value
 
 func _ready():
 	high_score_value = Global.load_highscore()
 	high_score.text = "Highscore: " + str(high_score_value)
+	music_slider.set_value(Settings.music_volume)
+	sounds_slider.set_value(Settings.sounds_volume)
+	yield(get_tree().create_timer(1),"timeout")
 	Settings.game_music.play()
 
 #MAIN SCENE
@@ -35,3 +40,11 @@ func _on_SpinLeftButton_pressed():
 #SETTINGS SCENE
 func _on_SpinRightButton_pressed():
 	animation.play_backwards("spin_right")
+
+func _on_MusicSlider_value_changed(value):
+	Settings.music_volume = value
+	Settings.save_settings()
+
+func _on_SoundsSlider_value_changed(value):
+	Settings.sounds_volume = value
+	Settings.save_settings()

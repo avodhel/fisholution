@@ -7,14 +7,15 @@ export (float) var min_scale = 1.5
 export (float) var max_scale = 3.5
 
 onready var animation = $Sprite/AnimationPlayer
+onready var die_effect = $die_effect
 
 var current_speed
-var die_effect
 
 func _ready():
 	self.connect("area_entered", self, "_on_Fish_area_entered")
 	current_speed = speed
 	_rand_scale(min_scale, max_scale)
+	Global.die_effect(die_effect, self)
 
 func _process(delta):
 	pc_control(self, animation)
