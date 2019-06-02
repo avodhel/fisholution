@@ -20,7 +20,6 @@ var rand_vector
 var velocity = Vector2()
 var direction 
 var speed
-
 var badfish_no
 
 func _ready():

@@ -79,7 +79,7 @@ func _unique_fish(): #prepare fish for fisholution mode
 	instance_unique_fish.add_child(water_effect)
 	instance_unique_fish.add_child(enemy_path)
 	#signals
-	instance_unique_fish.connect("hit", self, "game_over")
+	instance_unique_fish.connect("fish_died", self, "game_over")
 	instance_unique_fish.connect("xp_gained", hud, "_on_Fish_xp_gained")
 	hud.connect("fisholution_up", instance_unique_fish, "_on_HUD_fisholution_up")
 
@@ -139,7 +139,7 @@ func _load_normal_fish(path, normal_fish_name): #preapare fish for natural_selec
 	instance_normal_fish.add_child(enemy_path)
 	#signals
 	instance_normal_fish.disconnect("area_entered", instance_normal_fish, "_on_Enemy_area_entered")
-	instance_normal_fish.connect("hit", self, "game_over")
+	instance_normal_fish.connect("fish_died", self, "game_over")
 	instance_normal_fish.connect("my_fish_eaten", self, "_on_fish_eaten")
 
 func game_over():

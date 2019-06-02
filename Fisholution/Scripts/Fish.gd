@@ -1,6 +1,6 @@
 extends Area2D
 
-signal hit #when something hits our fish
+signal fish_died #when something eat our fish
 
 var velocity = Vector2()
 var control_dir
@@ -12,6 +12,8 @@ var left_center
 var right_center
 var distance_x
 var distance_y
+
+var eaten_fish_count = 0
 
 func _ready():
 	_screen_points()
@@ -25,7 +27,7 @@ func fish_stop(condition, speed, current_speed): # stop fish when game over and 
 func _die(die_effect):
 	self.speed = 0
 	die_effect.start()
-	emit_signal("hit") #game will know fish died :(
+	emit_signal("fish_died") #game will know fish died :(
 
 func _on_die_effect_tween_completed(object, key):
 #	print("fish is free now")
