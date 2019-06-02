@@ -34,6 +34,7 @@ onready var winner_label = $ScoreCalculatePanel/Winner/NSWinnerLabel
 onready var total_label = $ScoreCalculatePanel/Total/TotalLabel
 
 var score_value = 0
+var total_value = 0
 var highscore_value
 var xp = 5
 
@@ -49,8 +50,8 @@ func show_message(text, hide_or_not):
 func game_over():
 	_prepare_hud_scene("game_over")
 
-func assign_highscore():
-	Global.save_highscore(score_value)
+func assign_highscore(total_value):
+	Global.save_highscore(total_value)
 	highscore_value = str(Global.load_highscore()) # update high score
 	highscore_label.text = "Highscore: " + highscore_value # assign high score to text
 
@@ -98,7 +99,6 @@ func _keep_playing():
 	_prepare_hud_scene("keep_playing")
 
 func score_calculate(eaten_fish):
-	var total_value
 	var winner_bonus = 0
 	score_label2.text = str(score_value)
 	eatenfish_label.text = str(eaten_fish) + " " + "x" + " " + str(20)
@@ -113,11 +113,12 @@ func score_calculate(eaten_fish):
 		total_value = score_value + (eaten_fish * 20) + winner_bonus
 	print(winner_bonus)
 	total_label.text = str(total_value)
+	assign_highscore(total_value)
 
 func _prepare_hud_scene(condition):
 	match condition:
 		"ready":
-			assign_highscore()
+			assign_highscore(total_value)
 			if Global.which_mode == "fisholution":
 				fisholution_bar.connect("show_congrats_panel", self, "_show_fisholution_completed_panel")
 				keep_playing_button.connect("pressed", self, "_keep_playing")
@@ -146,7 +147,7 @@ func _prepare_hud_scene(condition):
 			blur.show()
 			score_label.show()
 			home_button.show()
-			assign_highscore()
+#			assign_highscore()
 			highscore_label.rect_position = Vector2(120, 240)
 			highscore_label.show()
 			restart_button.show()
@@ -157,7 +158,7 @@ func _prepare_hud_scene(condition):
 			get_tree().paused = true
 			blur.show()
 			fisholution_completed_panel.show()
-			assign_highscore()
+#			assign_highscore()
 			highscore_label.rect_position = Vector2(120, 408)
 			highscore_label.show()
 			home_button.show()
@@ -180,7 +181,7 @@ func _prepare_hud_scene(condition):
 			get_tree().paused = true
 			blur.show()
 			ns_completed_panel.show()
-			assign_highscore()
+#			assign_highscore()
 			highscore_label.rect_position = Vector2(120, 408)
 			highscore_label.show()
 			title_label.hide() # if ns completed screen opened after ns over screen

@@ -120,7 +120,6 @@ texture = ExtResource( 3 )
 hframes = 3
 
 [node name="FishTable_elements" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Fish1_Progress" type="ProgressBar" parent="FishTable_elements"]
 editor/display_folded = true
@@ -130,7 +129,7 @@ margin_right = 90.0
 margin_bottom = 32.3327
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-max_value = 35.0
+max_value = 50.0
 value = 5.0
 percent_visible = false
 
@@ -166,7 +165,7 @@ margin_right = 90.0
 margin_bottom = 62.3327
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -202,7 +201,7 @@ margin_right = 90.0
 margin_bottom = 92.3327
 custom_styles/fg = SubResource( 7 )
 custom_styles/bg = SubResource( 8 )
-max_value = 35.0
+max_value = 50.0
 value = 4.0
 percent_visible = false
 
@@ -238,7 +237,7 @@ margin_right = 90.0
 margin_bottom = 122.333
 custom_styles/fg = SubResource( 9 )
 custom_styles/bg = SubResource( 10 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -274,7 +273,7 @@ margin_right = 90.0
 margin_bottom = 152.333
 custom_styles/fg = SubResource( 11 )
 custom_styles/bg = SubResource( 12 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -310,7 +309,7 @@ margin_right = 90.0
 margin_bottom = 182.333
 custom_styles/fg = SubResource( 13 )
 custom_styles/bg = SubResource( 14 )
-max_value = 35.0
+max_value = 50.0
 value = 3.0
 percent_visible = false
 
@@ -346,7 +345,7 @@ margin_right = 90.0
 margin_bottom = 212.333
 custom_styles/fg = SubResource( 15 )
 custom_styles/bg = SubResource( 16 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -382,7 +381,7 @@ margin_right = 90.0
 margin_bottom = 242.333
 custom_styles/fg = SubResource( 17 )
 custom_styles/bg = SubResource( 18 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -418,7 +417,7 @@ margin_right = 90.0
 margin_bottom = 272.333
 custom_styles/fg = SubResource( 19 )
 custom_styles/bg = SubResource( 20 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -454,7 +453,7 @@ margin_right = 90.0
 margin_bottom = 302.333
 custom_styles/fg = SubResource( 21 )
 custom_styles/bg = SubResource( 22 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -490,7 +489,7 @@ margin_right = 90.0
 margin_bottom = 332.333
 custom_styles/fg = SubResource( 23 )
 custom_styles/bg = SubResource( 24 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -526,7 +525,7 @@ margin_right = 90.0
 margin_bottom = 362.333
 custom_styles/fg = SubResource( 25 )
 custom_styles/bg = SubResource( 26 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
@@ -562,7 +561,7 @@ margin_right = 90.0
 margin_bottom = 392.333
 custom_styles/fg = SubResource( 27 )
 custom_styles/bg = SubResource( 28 )
-max_value = 35.0
+max_value = 50.0
 value = 10.0
 percent_visible = false
 
