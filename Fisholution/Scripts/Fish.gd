@@ -17,6 +17,7 @@ var eaten_fish_count = 0
 
 func _ready():
 	_screen_points()
+	Global.eaten_fish_count = eaten_fish_count
 
 func fish_stop(condition, speed, current_speed): # stop fish when game over and move fish again when game restart
 	if condition:

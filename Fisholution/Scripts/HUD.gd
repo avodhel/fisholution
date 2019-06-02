@@ -23,7 +23,15 @@ onready var choosescene_button = $Buttons/ChooseSceneButton
 onready var home_button = $Buttons/HomeButton
 onready var pause_button = $Buttons/PauseButton
 onready var resume_button = $Buttons/ResumeButton
+#Timer
 onready var message_timer = $MessageTimer
+#Score Calculate Panel
+onready var score_calculate_panel = $ScoreCalculatePanel
+onready var score_label2 = $ScoreCalculatePanel/Score/ScoreLabel
+onready var eatenfish_label = $ScoreCalculatePanel/EatenFish/EatenFishLabel
+onready var winner_node = $ScoreCalculatePanel/Winner
+onready var winner_label = $ScoreCalculatePanel/Winner/NSWinnerLabel
+onready var total_label = $ScoreCalculatePanel/Total/TotalLabel
 
 var score_value = 0
 var highscore_value
@@ -89,6 +97,17 @@ func _show_ns_completed_panel(winner_fish_no):
 func _keep_playing():
 	_prepare_hud_scene("keep_playing")
 
+func score_calculate(eaten_fish):
+	var total_value
+	score_label2.text = str(score_value)
+	eatenfish_label.text = str(eaten_fish) + " " + "x" + " " + str(20)
+	if Global.which_mode == "fisholution":
+		total_value = score_value + (eaten_fish * 20)
+	elif Global.which_mode == "natural_selection":
+		winner_label.text = str(100)
+		total_value = score_value + (eaten_fish * 20) + 100
+	total_label.text = str(total_value)
+
 func _prepare_hud_scene(condition):
 	match condition:
 		"ready":
@@ -111,12 +130,13 @@ func _prepare_hud_scene(condition):
 		"game_over":
 			if Global.which_mode == "fisholution":
 				fisholution_bar.show()
-				show_message("Fisholution Over", false)
 				home_button.rect_position = Vector2(260, 460)
+				show_message("Fisholution Over", false)
 			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
 				home_button.rect_position = Vector2(200, 560)
 				show_message("Ns Over", false)
+				winner_node.show()
 			blur.show()
 			score_label.show()
 			home_button.show()
@@ -124,6 +144,8 @@ func _prepare_hud_scene(condition):
 			highscore_label.show()
 			restart_button.show()
 			pause_button.hide()
+			score_calculate(Global.eaten_fish_count)
+			score_calculate_panel.show()
 		"fisholution_completed":
 			get_tree().paused = true
 			blur.show()
@@ -133,6 +155,8 @@ func _prepare_hud_scene(condition):
 			home_button.show()
 			home_button.rect_position = Vector2(200, 460)
 			pause_button.hide()
+			score_calculate(Global.eaten_fish_count)
+			score_calculate_panel.show()
 		"keep_playing":
 			blur.hide()
 			fisholution_completed_panel.hide()
@@ -157,6 +181,9 @@ func _prepare_hud_scene(condition):
 			pause_button.hide()
 			$Tables.get_node("FishTable").table_transparency(false)
 			$Tables.get_node("ScoreTable").table_transparency(false)
+			score_calculate(Global.eaten_fish_count)
+			winner_node.show()
+			score_calculate_panel.show()
 		"pause":
 			pause_button.hide()
 			resume_button.show()

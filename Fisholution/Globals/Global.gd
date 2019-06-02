@@ -1,7 +1,8 @@
 extends Node
 
-var fish_no = 0 #choose screen
-var which_mode #main screen mode choose
+var fish_no = 0 #which fish chosen
+var which_mode #which mode chosen
+var eaten_fish_count = 0 #how many fish eaten by our fish (this value used for score calculate)
 
 func _ready():
 #	reset_highscore()
