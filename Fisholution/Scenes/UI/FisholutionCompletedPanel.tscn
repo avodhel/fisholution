@@ -16,7 +16,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.894118, 0.533333, 0.341176, 1 )
 border_width_left = 3
 border_width_top = 3
@@ -28,7 +28,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.835294, 0.392157, 0.156863, 1 )
 border_width_left = 3
 border_width_top = 3
@@ -40,7 +40,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.780392, 0.368627, 0.14902, 1 )
 border_width_left = 3
 border_width_top = 3
@@ -52,7 +52,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 30
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -70,7 +70,7 @@ anchor_bottom = 0.5
 margin_left = -160.0
 margin_top = -200.0
 margin_right = 160.0
-margin_bottom = 220.0
+margin_bottom = 280.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="CongratsLabel" type="Label" parent="Panel"]
@@ -80,9 +80,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -160.0
-margin_top = -180.0
+margin_top = -200.0
 margin_right = 163.0
-margin_bottom = -78.0
+margin_bottom = -86.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.780392, 0.368627, 0.14902, 1 )
 text = "Congrats !
@@ -105,20 +105,19 @@ region_rect = Rect2( 0, 0, 32, 30 )
 
 [node name="KeepPlayingButton" type="Button" parent="Panel"]
 margin_left = 80.0
-margin_top = 240.0
+margin_top = 400.0
 margin_right = 240.0
-margin_bottom = 280.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 440.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.823529, 0.8, 0.0823529, 1 )
 text = "Keep Playing"
 
 [node name="decors" type="Node2D" parent="Panel"]
 
 [node name="left" type="Node2D" parent="Panel/decors"]
-editor/display_folded = true
 position = Vector2( -12, 0 )
 
 [node name="Sprite" type="Sprite" parent="Panel/decors/left"]
@@ -129,28 +128,27 @@ region_enabled = true
 region_rect = Rect2( 160, 0, 32, 32 )
 
 [node name="Sprite2" type="Sprite" parent="Panel/decors/left"]
-position = Vector2( 20, 140 )
+position = Vector2( 20, 172 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="Sprite3" type="Sprite" parent="Panel/decors/left"]
-position = Vector2( 20, 280 )
+position = Vector2( 20, 320 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 96, 32, 32 )
 
 [node name="Sprite4" type="Sprite" parent="Panel/decors/left"]
-position = Vector2( 20, 400 )
+position = Vector2( 20, 448 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 32, 32 )
 
 [node name="right" type="Node2D" parent="Panel/decors"]
-editor/display_folded = true
 position = Vector2( 300, 0 )
 
 [node name="Sprite" type="Sprite" parent="Panel/decors/right"]
@@ -161,21 +159,21 @@ region_enabled = true
 region_rect = Rect2( 0, 160, 32, 32 )
 
 [node name="Sprite2" type="Sprite" parent="Panel/decors/right"]
-position = Vector2( 20, 140 )
+position = Vector2( 20, 172 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 192, 32, 32 )
 
 [node name="Sprite3" type="Sprite" parent="Panel/decors/right"]
-position = Vector2( 20, 280 )
+position = Vector2( 20, 320 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 224, 32, 32 )
 
 [node name="Sprite4" type="Sprite" parent="Panel/decors/right"]
-position = Vector2( 20, 400 )
+position = Vector2( 20, 456 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 region_enabled = true
@@ -203,7 +201,7 @@ region_rect = Rect2( 96, 0, 32, 32 )
 position = Vector2( 0, 400 )
 
 [node name="Sprite" type="Sprite" parent="Panel/decors/down"]
-position = Vector2( 100, 20 )
+position = Vector2( 100, 68 )
 rotation = 0.785398
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
@@ -211,7 +209,7 @@ region_enabled = true
 region_rect = Rect2( 192, 0, 32, 32 )
 
 [node name="Sprite2" type="Sprite" parent="Panel/decors/down"]
-position = Vector2( 220, 4 )
+position = Vector2( 220, 68 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true

@@ -10,6 +10,7 @@ var fishtable_labels = []
 var scoretable_elements = []
 var scoretable_labels = []
 var fish_no = null
+var ns_winner = false
 
 func _ready():
 	if self.name == "FishTable":
@@ -18,6 +19,7 @@ func _ready():
 		scoretable_elements = $ScoreTable_elements.get_children()
 	reset_table()
 	table_transparency(false)
+	Global.ns_winner = ns_winner
 
 func increase_or_reduce(whichfish, situation, whichtable):
 	if whichfish.is_in_group("fish1"):
@@ -81,6 +83,9 @@ func _inc_sof(fish_no): #increase score of fish
 	scoretable_labels[fish_no].text = str(scoretable_elements[fish_no].value)
 
 	if scoretable_elements[fish_no].max_value == scoretable_elements[fish_no].value:
+		if Global.fish_no == fish_no: #control for the winner bonus
+			ns_winner = true
+			Global.ns_winner = ns_winner
 		emit_signal("ns_completed", fish_no)
 
 func reset_table(): # reset tables

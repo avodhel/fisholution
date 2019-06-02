@@ -99,13 +99,19 @@ func _keep_playing():
 
 func score_calculate(eaten_fish):
 	var total_value
+	var winner_bonus = 0
 	score_label2.text = str(score_value)
 	eatenfish_label.text = str(eaten_fish) + " " + "x" + " " + str(20)
 	if Global.which_mode == "fisholution":
 		total_value = score_value + (eaten_fish * 20)
 	elif Global.which_mode == "natural_selection":
-		winner_label.text = str(100)
-		total_value = score_value + (eaten_fish * 20) + 100
+		if Global.ns_winner:
+			winner_bonus = 100
+		else:
+			winner_bonus = 0
+		winner_label.text = str(winner_bonus)
+		total_value = score_value + (eaten_fish * 20) + winner_bonus
+	print(winner_bonus)
 	total_label.text = str(total_value)
 
 func _prepare_hud_scene(condition):
@@ -134,13 +140,14 @@ func _prepare_hud_scene(condition):
 				show_message("Fisholution Over", false)
 			elif Global.which_mode == "natural_selection":
 				choosescene_button.show()
-				home_button.rect_position = Vector2(200, 560)
+				home_button.rect_position = Vector2(200, 540)
 				show_message("Ns Over", false)
 				winner_node.show()
 			blur.show()
 			score_label.show()
 			home_button.show()
 			assign_highscore()
+			highscore_label.rect_position = Vector2(120, 240)
 			highscore_label.show()
 			restart_button.show()
 			pause_button.hide()
@@ -151,6 +158,7 @@ func _prepare_hud_scene(condition):
 			blur.show()
 			fisholution_completed_panel.show()
 			assign_highscore()
+			highscore_label.rect_position = Vector2(120, 408)
 			highscore_label.show()
 			home_button.show()
 			home_button.rect_position = Vector2(200, 460)
@@ -173,10 +181,12 @@ func _prepare_hud_scene(condition):
 			blur.show()
 			ns_completed_panel.show()
 			assign_highscore()
+			highscore_label.rect_position = Vector2(120, 408)
 			highscore_label.show()
+			title_label.hide() # if ns completed screen opened after ns over screen
 			restart_button.show()
 			choosescene_button.show()
-			home_button.rect_position = Vector2(200, 560)
+			home_button.rect_position = Vector2(200, 540)
 			home_button.show()
 			pause_button.hide()
 			$Tables.get_node("FishTable").table_transparency(false)
@@ -190,6 +200,7 @@ func _prepare_hud_scene(condition):
 			get_tree().paused = true
 			blur.show()
 			show_message("Paused", false)
+			highscore_label.rect_position = Vector2(120, 320)
 			highscore_label.show()
 			if Global.which_mode == "fisholution":
 				home_button.rect_position = Vector2(200, 460)

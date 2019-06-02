@@ -28,7 +28,7 @@ anchor_bottom = 0.5
 margin_left = -140.0
 margin_top = -240.0
 margin_right = 140.0
-margin_bottom = 320.0
+margin_bottom = 300.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="WinnerFishLabel" type="Label" parent="Panel"]
@@ -78,10 +78,8 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="decors" type="Node2D" parent="Panel"]
-editor/display_folded = true
 
 [node name="left" type="Node2D" parent="Panel/decors"]
-editor/display_folded = true
 position = Vector2( -12, 0 )
 
 [node name="Sprite" type="Sprite" parent="Panel/decors/left"]
@@ -106,7 +104,7 @@ region_enabled = true
 region_rect = Rect2( 0, 96, 32, 32 )
 
 [node name="Sprite4" type="Sprite" parent="Panel/decors/left"]
-position = Vector2( 20, 540 )
+position = Vector2( 20, 520 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 region_enabled = true
@@ -137,7 +135,7 @@ region_rect = Rect2( 0, 224, 32, 32 )
 
 [node name="Sprite4" type="Sprite" parent="Panel/decors/right"]
 modulate = Color( 0.882353, 0.494118, 0.239216, 1 )
-position = Vector2( 4, 540 )
+position = Vector2( 4, 520 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 region_enabled = true
@@ -155,12 +153,11 @@ region_enabled = true
 region_rect = Rect2( 96, 0, 32, 32 )
 
 [node name="down" type="Node2D" parent="Panel/decors"]
-editor/display_folded = true
 position = Vector2( 0, 540 )
 
 [node name="Sprite" type="Sprite" parent="Panel/decors/down"]
 modulate = Color( 0.215686, 0.407843, 0.894118, 1 )
-position = Vector2( 140, 20 )
+position = Vector2( 140, 0 )
 rotation = 0.785398
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
