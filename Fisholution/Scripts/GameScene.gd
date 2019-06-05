@@ -29,6 +29,7 @@ func _ready():
 	_prepare_game()
 	_prepare_hud()
 	_prepare_fish()
+	Settings.sea_sound.play()
 
 func _prepare_fish():
 	if Global.which_mode == "fisholution":

@@ -41,7 +41,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = -2
+layer = -10
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 280, 280 )

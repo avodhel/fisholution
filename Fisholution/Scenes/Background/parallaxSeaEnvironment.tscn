@@ -18,6 +18,7 @@
 [node name="parallaxSeaEnvironment" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -8
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color( 1, 1, 1, 0.784314 )

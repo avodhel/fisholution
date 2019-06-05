@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sea_sound.wav-a7c46a953ce1b4c7ab6688ee97d670ca.sample"
+
+[deps]
+
+source_file="res://Sounds/sea_sound.wav"
+dest_files=[ "res://.import/sea_sound.wav-a7c46a953ce1b4c7ab6688ee97d670ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

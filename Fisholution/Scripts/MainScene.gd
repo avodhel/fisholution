@@ -48,3 +48,4 @@ func _on_MusicSlider_value_changed(value):
 func _on_SoundsSlider_value_changed(value):
 	Settings.sounds_volume = value
 	Settings.save_settings()
+#	print("value: " + str(value))

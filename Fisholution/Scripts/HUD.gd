@@ -89,7 +89,7 @@ func _show_fisholution_completed_panel():
 	_prepare_hud_scene("fisholution_completed")
 
 func _show_ns_completed_panel(winner_fish_no):
-	print(winner_fish_no)
+#	print(winner_fish_no)
 	winner_fish_label.text ="'" + "Fish" + str(winner_fish_no + 1) + "'s" 
 	winner_fish_sprite1.region_rect.position.y = 32 * winner_fish_no
 	winner_fish_sprite2.region_rect.position.y = 32 * winner_fish_no
@@ -111,7 +111,7 @@ func score_calculate(eaten_fish):
 			winner_bonus = 0
 		winner_label.text = str(winner_bonus)
 		total_value = score_value + (eaten_fish * 20) + winner_bonus
-	print(winner_bonus)
+#	print(winner_bonus)
 	total_label.text = str(total_value)
 	assign_highscore(total_value)
 
