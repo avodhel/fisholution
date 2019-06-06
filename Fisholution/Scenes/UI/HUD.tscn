@@ -145,7 +145,6 @@ valign = 1
 
 [node name="Buttons" type="Node2D" parent="."]
 pause_mode = 2
-editor/display_folded = true
 
 [node name="RestartButton" type="TextureButton" parent="Buttons"]
 visible = false

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water_click_sound.wav-dc9104398cb07c4a54aa784ef0f50ff6.sample"
+
+[deps]
+
+source_file="res://Sounds/water_click_sound.wav"
+dest_files=[ "res://.import/water_click_sound.wav-dc9104398cb07c4a54aa784ef0f50ff6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

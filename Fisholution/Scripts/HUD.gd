@@ -64,18 +64,23 @@ func _on_MessageTimer_timeout():
 	title_label.hide()
 
 func _on_RestartButton_pressed():
+	Settings.water_click_sound.play()
 	_prepare_hud_scene("restart")
 
 func _on_ChooseSceneButton_pressed():
+	Settings.water_click_sound.play()
 	Global.change_scene("ChooseScene")
 
 func _on_HomeButton_pressed():
+	Settings.water_click_sound.play()
 	Global.change_scene("MainScene")
 
 func _on_PauseButton_pressed():
+	Settings.water_click_sound.play()
 	_prepare_hud_scene("pause")
 
 func _on_ResumeButton_pressed():
+	Settings.water_click_sound.play()
 	_prepare_hud_scene("resume")
 
 func _on_Fish_xp_gained():
@@ -96,6 +101,7 @@ func _show_ns_completed_panel(winner_fish_no):
 	_prepare_hud_scene("ns_completed")
 
 func _keep_playing():
+	Settings.water_click_sound.play()
 	_prepare_hud_scene("keep_playing")
 
 func score_calculate(eaten_fish):

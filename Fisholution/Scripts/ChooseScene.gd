@@ -12,6 +12,7 @@ func _ready():
 	_on_random_pressed()
 
 func _on_button_pressed():
+	Settings.water_click_sound.play()
 	for button in get_tree().get_nodes_in_group("button"):
 	    button.connect("pressed", self, "_some_button_pressed", [button])
 
@@ -55,9 +56,11 @@ func _show_fish(fish_no):
 	animation.play("idle")
 
 func _on_random_pressed():
+	Settings.water_click_sound.play()
 	fish_no = randi() % number_of_fish  # returns random integer between 0 and (number_of_fish - 1)
 	_show_fish(fish_no)
 
 func _on_start_pressed():
+	Settings.water_click_sound.play()
 	Global.change_scene("GameScene") # start game
 	Global.fish_no = fish_no

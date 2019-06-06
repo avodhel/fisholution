@@ -18,27 +18,33 @@ func _ready():
 
 #MAIN SCENE
 func _on_StartButton_pressed():
+	Settings.water_click_sound.play()
 	animation.play("spin_left")
 
 func _on_SettingsButton_pressed():
+	Settings.water_click_sound.play()
 	animation.play("spin_right")
 
 #MODES SCENE
 func _on_FisholutionStart_pressed():
+	Settings.water_click_sound.play()
 	Global.which_mode = "fisholution"
 	Global.change_scene("GameScene")
 	Settings.game_music.stop()
 
 func _on_NSStart_pressed():
+	Settings.water_click_sound.play()
 	Global.which_mode = "natural_selection"
 	Global.change_scene("ChooseScene") # open fish choose screen
 	Settings.game_music.stop()
 
 func _on_SpinLeftButton_pressed():
+	Settings.water_click_sound.play()
 	animation.play_backwards("spin_left")
 
 #SETTINGS SCENE
 func _on_SpinRightButton_pressed():
+	Settings.water_click_sound.play()
 	animation.play_backwards("spin_right")
 
 func _on_MusicSlider_value_changed(value):

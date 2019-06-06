@@ -6,6 +6,7 @@ onready var bubble_sound = $Sounds/bubble_sound
 onready var nom_sound = $Sounds/nom_sound
 onready var gameover_sound = $Sounds/gameover_sound
 onready var sea_sound = $Sounds/sea_sound
+onready var water_click_sound = $Sounds/water_click_sound
 
 var sounds_elements = []
 
