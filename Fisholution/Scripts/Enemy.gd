@@ -23,7 +23,7 @@ var speed
 var badfish_no
 
 func _ready():
-	_prepare_badfish()
+	_prepare_enemy()
 	_detect_badfish()
 	if self.is_in_group("not_fish"):
 		_choose_different_not_fish()
@@ -33,14 +33,18 @@ func _ready():
 func _process(delta):
 	_move(delta)
 
-func _prepare_badfish():
+func _prepare_enemy():
 	randomize()
+	#assign direction
 	direction = rand_range(-25, 25)
 	self.rotation = direction
+	#scale
 	rand_scale = rand_range(min_scale, max_scale)
 	rand_vector = Vector2(rand_scale, rand_scale)
 	scale = rand_vector
+	#speed
 	speed = rand_range(min_speed, max_speed)
+	#animation
 	animation.play("move")
 
 func _move(delta):
