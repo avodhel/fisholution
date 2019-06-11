@@ -2,7 +2,7 @@ extends "res://Scripts/Fish.gd"
 
 signal xp_gained # when fish eat little fish
 
-export (float) var speed = 3
+#export (float) var speed = 3
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer

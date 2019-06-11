@@ -26,12 +26,18 @@ config/icon="res://Textures/splash/fish_logo.png"
 Global="*res://Globals/Global.gd"
 Settings="*res://Globals/Settings.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/width=480
 window/size/height=720
 window/size/test_width=360
 window/size/test_height=540
+window/vsync/use_vsync=false
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 

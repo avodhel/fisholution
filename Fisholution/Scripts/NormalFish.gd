@@ -2,7 +2,7 @@ extends "res://Scripts/Fish.gd"
 
 signal my_fish_eaten(by_who) #when my fish eaten, increase score for fish who ate our fish
 
-export (float) var speed = 3
+#export (float) var speed = 3
 export (float) var min_scale = 1.5
 export (float) var max_scale = 3.5
 
