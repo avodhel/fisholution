@@ -1,9 +1,11 @@
 extends Node
 
+#GAME VALUES
 var fish_no = 0 #which fish chosen
 var which_mode #which mode chosen
 var eaten_fish_count = 0 #how many fish eaten by our fish (this value used for score calculate)
 var ns_winner = false #if our fish's kind won the ns mode
+var score_limit = 35 #score limit for ns mode
 
 func _ready():
 #	reset_highscore()

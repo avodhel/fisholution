@@ -8,8 +8,8 @@ export (int) var number_of_jellyfish = 3
 export (int) var number_of_turtle = 2
 export (float) var min_scale = 0.5
 export (float) var max_scale = 4.5
-export (float) var min_speed = 6.8
-export (float) var max_speed = 8.8
+export (float) var min_speed = 1.8
+export (float) var max_speed = 3.8
 
 onready var sprite = $Sprite
 onready var animation = $Sprite/AnimationPlayer

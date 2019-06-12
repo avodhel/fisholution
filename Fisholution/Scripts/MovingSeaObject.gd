@@ -1,6 +1,6 @@
 extends Path2D
 
-export var speed = 100
+export var speed = 20
 
 var direction = 1 #left or right
 var rand_scale

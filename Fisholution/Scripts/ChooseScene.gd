@@ -4,12 +4,18 @@ export (int) var number_of_fish
 
 onready var show_fish = $ShowFish
 onready var animation = $ShowFish/AnimationPlayer
+#Score Limit
+onready var limit_slider = $ScoreLimit/LimitSlider
+onready var score_limit_label = $ScoreLimit/LimitSlider/ScoreLabel
 
 var fish_no
+var score_limit_value
 
 func _ready():
 	randomize()
 	_on_random_pressed()
+	score_limit_label.text = str(limit_slider.value)
+	score_limit_value = limit_slider.value
 
 func _on_button_pressed():
 	Settings.water_click_sound.play()
@@ -64,3 +70,10 @@ func _on_start_pressed():
 	Settings.water_click_sound.play()
 	Global.change_scene("GameScene") # start game
 	Global.fish_no = fish_no
+	Global.score_limit = score_limit_value
+	print(Global.score_limit)
+
+func _on_LimitSlider_value_changed(value):
+	score_limit_value = value
+	score_limit_label.text = str(score_limit_value)
+	Global.score_limit = score_limit_value

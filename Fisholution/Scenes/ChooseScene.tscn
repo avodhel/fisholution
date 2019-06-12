@@ -1,10 +1,13 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Scripts/ChooseScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Fonts/PixelFonts_80.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Textures/game/enemies_fish.png" type="Texture" id=5]
+[ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Textures/ui/fisholutionpanel.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ui/process.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -978,6 +981,28 @@ corner_radius_bottom_left = 9
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
+[sub_resource type="DynamicFont" id=78]
+size = 33
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=76]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+expand_margin_left = 10.0
+
+[sub_resource type="StyleBoxTexture" id=77]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
 [sub_resource type="StyleBoxFlat" id=71]
 bg_color = Color( 0.271007, 0.456186, 0.11271, 1 )
 border_width_left = 2
@@ -1060,6 +1085,7 @@ margin_bottom = 720.0
 color = Color( 0, 0.552941, 0.745098, 1 )
 
 [node name="parallaxBG" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 
 [node name="parallaxSeaEnvironment" parent="parallaxBG" instance=ExtResource( 3 )]
 
@@ -1091,9 +1117,9 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.5
-margin_top = 480.0
+margin_top = 420.0
 margin_right = -15.5
-margin_bottom = -205.0
+margin_bottom = -265.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -1270,9 +1296,9 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.5
-margin_top = 515.0
+margin_top = 455.0
 margin_right = -15.5
-margin_bottom = -170.0
+margin_bottom = -230.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -1428,9 +1454,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -120.0
-margin_top = -150.0
+margin_top = -210.0
 margin_right = 116.0
-margin_bottom = -115.0
+margin_bottom = -175.0
 alignment = 1
 
 [node name="random" type="Button" parent="Buttons3" groups=[
@@ -1455,7 +1481,55 @@ custom_colors/font_color_pressed = Color( 0.878431, 0.796078, 0.611765, 1 )
 custom_constants/hseparation = 2
 text = "Choose Fish Randomly"
 
+[node name="ScoreLimit" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -142.5
+margin_top = -150.0
+margin_right = 142.5
+margin_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScoreLimit"]
+margin_left = 3.05005
+margin_right = 138.05
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 78 )
+custom_colors/font_color = Color( 0.831373, 0.517647, 0.690196, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Score Limit:"
+align = 1
+valign = 1
+
+[node name="LimitSlider" type="HSlider" parent="ScoreLimit"]
+margin_left = 151.245
+margin_right = 282.245
+margin_bottom = 32.0
+custom_styles/slider = SubResource( 76 )
+custom_styles/grabber_area = SubResource( 77 )
+min_value = 20.0
+max_value = 50.0
+step = 5.0
+value = 35.0
+ticks_on_borders = false
+
+[node name="ScoreLabel" type="Label" parent="ScoreLimit/LimitSlider"]
+margin_left = -4.50009
+margin_top = -3.80005
+margin_right = 130.5
+margin_bottom = 36.2
+custom_fonts/font = SubResource( 79 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "35"
+align = 1
+valign = 1
+
 [node name="Buttons4" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -1503,4 +1577,5 @@ text = "Play"
 [connection signal="pressed" from="FishButtons2/Fish12_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="FishButtons2/Fish13_button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Buttons3/random" to="." method="_on_random_pressed"]
+[connection signal="value_changed" from="ScoreLimit/LimitSlider" to="." method="_on_LimitSlider_value_changed"]
 [connection signal="pressed" from="Buttons4/start" to="." method="_on_start_pressed"]

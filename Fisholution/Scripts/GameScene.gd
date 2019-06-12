@@ -8,9 +8,6 @@ onready var enemy_spawn_location = $Fish_Pos/EnemyPath/EnemySpawnLocation
 onready var hud = $HUD
 onready var hud_fb = $HUD/FisholutionBar
 onready var hud_sl = $HUD/Labels/ScoreLabel
-#onready var hud_hsl = $HUD/HighscoreLabel
-#onready var hud_ft = $HUD/FishTable
-#onready var hud_st = $HUD/ScoreTable
 onready var start_timer = $StartTimer
 onready var score_timer =$ScoreTimer
 onready var enemy_timer = $EnemyTimer
@@ -19,8 +16,6 @@ var hud_ft #fishtable
 var hud_st #scoretable
 var Enemies = []
 var score
-#var rand_scale
-#var fish_scene
 var instance_normal_fish
 var instance_unique_fish
 

@@ -82,7 +82,7 @@ func _inc_sof(fish_no): #increase score of fish
 	scoretable_elements[fish_no].value += 1
 	scoretable_labels[fish_no].text = str(scoretable_elements[fish_no].value)
 
-	if scoretable_elements[fish_no].max_value == scoretable_elements[fish_no].value:
+	if Global.score_limit == scoretable_elements[fish_no].value:
 		if Global.fish_no == fish_no: #control for the winner bonus
 			ns_winner = true
 			Global.ns_winner = ns_winner
