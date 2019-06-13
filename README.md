@@ -7,7 +7,7 @@ There are two modes, *fisholution mode* and *natural selection mode*.
 Don't be eaten and try to complete all fisholution stages. After every successfull fisholution your fish will evolve.
 
 ### Natural Selection Mode: 
-Choose a fish between 13 different fishes and stay alive, eat other fishes and try to reach 50 score first to win natural selection. Every fishes are enemy each other on this mode. Also there are other dangerous sea creatures, so stay away from them.  
+Choose a fish between 13 different fishes and stay alive, eat other fishes and try to reach *score limit* first to win natural selection. Every fishes are enemy each other on this mode. Also there are other dangerous sea creatures, so stay away from them.  
 
 **Good Luck !!!**
 ## ʕ•㉨•ʔ
