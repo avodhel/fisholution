@@ -3,32 +3,26 @@
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background/parallaxBG.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Background/parallaxSeaEnvironment.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Textures/ui/play1.png" type="Texture" id=5]
-[ext_resource path="res://Textures/ui/play2.png" type="Texture" id=6]
-[ext_resource path="res://Textures/ui/settings1.png" type="Texture" id=7]
-[ext_resource path="res://Textures/ui/settings2.png" type="Texture" id=8]
-[ext_resource path="res://Textures/ui/fisholution1.png" type="Texture" id=9]
-[ext_resource path="res://Textures/ui/fisholution2.png" type="Texture" id=10]
-[ext_resource path="res://Textures/ui/ns1.png" type="Texture" id=11]
-[ext_resource path="res://Textures/ui/ns2.png" type="Texture" id=12]
-[ext_resource path="res://Textures/ui/back1.png" type="Texture" id=13]
-[ext_resource path="res://Textures/ui/back2.png" type="Texture" id=14]
-[ext_resource path="res://Textures/ui/panel.png" type="Texture" id=15]
-[ext_resource path="res://Textures/ui/process.png" type="Texture" id=16]
-
-[sub_resource type="DynamicFont" id=1]
-size = 80
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = 2
-font_data = ExtResource( 4 )
+[ext_resource path="res://Textures/ui/title.png" type="Texture" id=4]
+[ext_resource path="res://UI/Fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Textures/ui/play1.png" type="Texture" id=6]
+[ext_resource path="res://Textures/ui/play2.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ui/settings1.png" type="Texture" id=8]
+[ext_resource path="res://Textures/ui/settings2.png" type="Texture" id=9]
+[ext_resource path="res://Textures/ui/fisholution1.png" type="Texture" id=10]
+[ext_resource path="res://Textures/ui/fisholution2.png" type="Texture" id=11]
+[ext_resource path="res://Textures/ui/ns1.png" type="Texture" id=12]
+[ext_resource path="res://Textures/ui/ns2.png" type="Texture" id=13]
+[ext_resource path="res://Textures/ui/back1.png" type="Texture" id=14]
+[ext_resource path="res://Textures/ui/back2.png" type="Texture" id=15]
+[ext_resource path="res://Textures/ui/panel.png" type="Texture" id=16]
+[ext_resource path="res://Textures/ui/process.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=2]
 size = 55
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 65
@@ -38,19 +32,19 @@ extra_spacing_top = 2
 extra_spacing_bottom = 2
 extra_spacing_char = 2
 extra_spacing_space = 2
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 35
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 35
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 65
@@ -60,22 +54,22 @@ extra_spacing_top = 2
 extra_spacing_bottom = 2
 extra_spacing_char = 2
 extra_spacing_space = 2
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 45
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 32, 32 )
 expand_margin_left = 4.0
 expand_margin_right = 29.0
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StreamTexture" id=10]
@@ -155,22 +149,11 @@ color = Color( 0, 0.278431, 0.388235, 1 )
 
 [node name="MainScreenElements" type="Node2D" parent="."]
 pause_mode = 2
-editor/display_folded = true
 
-[node name="TitleLabel" type="Label" parent="MainScreenElements"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 40.0
-margin_top = 134.027
-margin_right = 440.0
-margin_bottom = 311.027
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.870588, 0.635294, 0.168627, 1 )
-text = "Fisholution"
-align = 1
-valign = 1
+[node name="Title" type="Sprite" parent="MainScreenElements"]
+position = Vector2( 240, 200 )
+scale = Vector2( 1.3, 1.5 )
+texture = ExtResource( 4 )
 
 [node name="HighscoreLabel" type="Label" parent="MainScreenElements"]
 anchor_left = 0.5
@@ -196,8 +179,8 @@ margin_left = 130.0
 margin_top = 460.0
 margin_right = 210.0
 margin_bottom = 540.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 expand = true
 
 [node name="SettingsButton" type="TextureButton" parent="MainScreenElements"]
@@ -205,8 +188,8 @@ margin_left = 260.0
 margin_top = 460.0
 margin_right = 340.0
 margin_bottom = 540.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 expand = true
 
 [node name="Modes" type="Node2D" parent="."]
@@ -234,8 +217,8 @@ margin_left = 440.0
 margin_top = 170.0
 margin_right = 504.0
 margin_bottom = 234.0
-texture_normal = ExtResource( 9 )
-texture_hover = ExtResource( 10 )
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
 expand = true
 
 [node name="Label" type="Label" parent="Modes/FisholutionMode"]
@@ -257,8 +240,8 @@ margin_left = 440.0
 margin_top = 253.3
 margin_right = 504.0
 margin_bottom = 317.3
-texture_normal = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
 expand = true
 
 [node name="Label2" type="Label" parent="Modes/NSMode"]
@@ -278,8 +261,8 @@ margin_top = 500.0
 margin_right = 779.0
 margin_bottom = 579.0
 rect_rotation = 180.0
-texture_normal = ExtResource( 13 )
-texture_hover = ExtResource( 14 )
+texture_normal = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
 expand = true
 
 [node name="Settings" type="Node2D" parent="."]

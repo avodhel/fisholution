@@ -1102,7 +1102,7 @@ valign = 1
 
 [node name="ShowFish" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 240, 270 )
+position = Vector2( 240, 240 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 5 )
 hframes = 3
