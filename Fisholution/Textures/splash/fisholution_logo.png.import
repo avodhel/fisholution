@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish_logo.png-9d49f2793c85d221bd78578e27b7ea7f.stex"
+path="res://.import/fisholution_logo.png-e6f437fc29b7f792e836670a25c22b64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/splash/fish_logo.png"
-dest_files=[ "res://.import/fish_logo.png-9d49f2793c85d221bd78578e27b7ea7f.stex" ]
+source_file="res://Textures/splash/fisholution_logo.png"
+dest_files=[ "res://.import/fisholution_logo.png-e6f437fc29b7f792e836670a25c22b64.stex" ]
 
 [params]
 

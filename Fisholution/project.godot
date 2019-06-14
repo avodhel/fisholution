@@ -19,7 +19,7 @@ config/name="Fisholution"
 run/main_scene="res://Scenes/MainScene.tscn"
 boot_splash/image="res://Textures/splash/nordicebeargames transparent.png"
 boot_splash/fullsize=false
-config/icon="res://Textures/splash/fish_logo.png"
+config/icon="res://Textures/splash/fisholution_logo.png"
 
 [autoload]
 
