@@ -2,7 +2,7 @@ extends Area2D
 
 signal fish_died #when something eat our fish
 
-export (float) var speed = 3
+export (float) var speed = 8
 
 var velocity = Vector2()
 var control_dir
