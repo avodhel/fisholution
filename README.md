@@ -12,6 +12,11 @@ Choose a fish between 13 different fishes and stay alive, eat other fishes and t
 **Good Luck !!!**
 ## ʕ•㉨•ʔ
 
+#LINKS
+
+- [itch.io](https://nordicebear.itch.io/fisholution)
+- [Google Play](https://play.google.com/store/apps/details?id=com.NordicebearGames.Fisholution)
+
 #CREDITS
 
 - Some of musics and sounds made with [Bosca Ceoil](https://boscaceoil.net) by me and some of them made by different artists from [FreeSound](https://freesound.org).
