@@ -14,11 +14,10 @@ Don't be eaten and try to complete all fisholution stages. After every successfu
 Choose a fish between 13 different fishes and stay alive, eat other fishes and try to reach *score limit* first to win natural selection. Every fishes are enemy each other on this mode. Also there are other dangerous sea creatures, so stay away from them.  
 
 **Good Luck !!!**
-## ʕ•㉨•ʔ
 
 #LINKS
 
-- [itch.io](https://nordicebear.itch.io/fisholution)
+- [itch.io](https://avodhel.itch.io/fisholution)
 - [Google Play](https://play.google.com/store/apps/details?id=com.NordicebearGames.Fisholution)
 
 #CREDITS
